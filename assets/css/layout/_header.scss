@@ -1,3 +1,64 @@
 .header {
   width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-top: 17px;
+  padding-bottom: 17px;
+  display: flex;
+  align-items: center;
+
+
+  .logo {
+    width: 100%;
+    max-width: 112px;
+    margin-right: 114px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .search {
+    width: 100%;
+    max-width: 247px;
+    min-height: 30px;
+    padding: 0;
+    padding-top: 4px;
+    font-size: 12px;
+    padding-bottom: 3px;
+    padding-left: 16px;
+    padding-right: 32px;
+    border: 1px solid #D6C7CE;
+    background: $white url('/icons/search.svg') no-repeat 97% 2px;
+    background-size: 22px;
+    border-radius: 40px;
+    outline: none;
+  }
+
+  .main-nav {
+    margin-left: 49px;
+    display: flex;
+    align-items: center;
+
+    a {
+      font-weight: normal;
+      font-size: 15px;
+      line-height: 22px;
+      color: $black;
+      text-decoration: none;
+      margin-right: 40px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:hover:not(.active) {
+        text-decoration: underline;
+      }
+
+      &.active {
+        font-weight: bold;
+      }
+    }
+  }
 }

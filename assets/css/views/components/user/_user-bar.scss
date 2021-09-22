@@ -1,0 +1,37 @@
+.user-bar{
+  margin-left: auto;
+
+  &__items{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    .login-link{
+      font-weight: normal;
+      font-size: 11px;
+      line-height: 16px;
+      color: $t-pink;
+      text-transform: uppercase;
+      padding: 0;
+      text-decoration: none;
+      margin-right: 18px;
+
+      &:hover{
+        color: $black;
+      }
+    }
+
+    .language{
+      width: 100%;
+      max-width: 22px;
+      height: 22px;
+      padding: 0;
+      border: none;
+      cursor: pointer;
+
+      img{
+        width: 100%;
+      }
+    }
+  }
+}
