@@ -1,3 +1,28 @@
 .home {
   width: 100%;
+
+  .experts-responses {
+    width: 100%;
+
+    .custom-arrow.slick-arrow{
+      background: transparent url('/icons/slider-arrows.svg') center no-repeat;
+      background-size: 100%;
+      width: 15px;
+      height: 15px;
+
+      &::before{
+        display: none;
+      }
+
+      &.custom-arrow__next{
+        transform: rotate(180deg);
+        right: 15px;
+      }
+
+      &.slick-prev{
+        left: 7px;
+        z-index: 10;
+      }
+    }
+  }
 }
