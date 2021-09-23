@@ -15,17 +15,17 @@
 </template>
 
 <script>
-export default {
-  name: 'ExpertResponse',
-  props: {
-    title: {
-      type: String,
-      default: ''
-    },
-    content: {
-      type: String,
-      default: ''
+  export default {
+    name: 'ExpertResponse',
+    props: {
+      title: {
+        type: String,
+        default: ''
+      },
+      content: {
+        type: String,
+        default: ''
+      }
     }
   }
-}
 </script>
