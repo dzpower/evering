@@ -4,9 +4,11 @@
       <div class='experts-response'>
         <h2 class='default-h2'>
           Expert responses
+
         </h2>
         <VueSlickCarousel :variableWidth='true' :arrows="true">
           <div>1</div>
+
 
         </VueSlickCarousel>
       </div>
