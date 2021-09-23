@@ -7,6 +7,10 @@
   display: flex;
   align-items: center;
 
+  &-yellow{
+    background: $yellow;
+  }
+
 
   .logo {
     width: 100%;
