@@ -1,0 +1,22 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  &__preview {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 7px;
+    margin-bottom: 9px;
+    img  {
+      width: 100%;
+      height: auto;
+    }
+  }
+  &__title {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 17px;
+    color: $black;
+  }
+}
