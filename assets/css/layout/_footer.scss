@@ -1,3 +1,90 @@
-.footer{
+
+
+.footer {
   width: 100%;
+
+  &-link {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    color: $white;
+    background: none;
+    border: none;
+    padding: 0;
+    text-decoration: underline;
+    margin-left: 36px;
+  }
+
+  &-copyright {
+    margin-left: auto;
+  }
+
+  button.footer-link, span.footer-link {
+    text-decoration: none;
+  }
+
+  &-nav {
+    width: 100%;
+    background: $header-bg;
+    padding: 24px 0;
+
+    .wrapper {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    &__item {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 20px;
+      color: $black;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      &::after {
+        content: "";
+        display: flex;
+        width: 4px;
+        height: 4px;
+        border-left: 2px solid $blueberry;
+        border-top: 2px solid $blueberry;
+        // Active - 45deg
+        transform: rotate(225deg);
+        margin-left: 6px;
+      }
+    }
+  }
+
+  &-bottom {
+    background: $blueberry;
+    padding: 25px 0;
+
+    .wrapper {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  // Country Button
+  &-country {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+
+    &__icon {
+      width: 17px;
+      height: 17px;
+      margin-right: 5px;
+    }
+
+    &__name {
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 20px;
+      color: $white;
+    }
+  }
 }
