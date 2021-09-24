@@ -1,10 +1,12 @@
 .catalog {
   width: 100%;
+
   & > .main {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
   }
+
   &-column {
     width: 100%;
     max-width: 1020px;
@@ -20,8 +22,10 @@
 .catalog-filter {
   width: 100%;
   max-width: 217px;
+
   .filter-item {
     margin-bottom: 10px;
+
     &:last-child {
       margin-bottom: 0;
     }
@@ -40,6 +44,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 30px 1.33%;
+
   .catalog-item {
     width: 24%;
   }
@@ -49,7 +54,7 @@
   font-style: normal;
   font-weight: bold;
   font-size: 12px;
-  line-height: 17px;
+  line-height: 16px;
   color: $white;
   height: 30px;
   max-width: 175px;
