@@ -1,0 +1,43 @@
+.pagination {
+  display: flex;
+  align-items: center;
+
+  &__icon {
+    width: 15px;
+    height: 15px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__right {
+    transform: rotate(180deg);
+  }
+
+  &__body {
+    padding: 0 12px;
+  }
+
+  &__item {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    color: $black;
+    margin-right: 24px;
+
+    &.active {
+      font-weight: bold;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+}

@@ -11,59 +11,105 @@
     width: 100%;
     max-width: 1020px;
   }
-}
 
-.catalog-tags {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
+  // Bar
+  &-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
 
-.catalog-filter {
-  width: 100%;
-  max-width: 217px;
+  &-middlebar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+    margin-bottom: 16px;
 
-  .filter-item {
-    margin-bottom: 10px;
+    .pagination {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
 
-    &:last-child {
-      margin-bottom: 0;
+    .catalog-sort {
+      display: flex;
+      align-items: center;
+
+      &__label {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 17px;
+        color: $black;
+        margin-right: 24px;
+      }
     }
   }
-}
 
-.catalog-topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 30px;
-}
+  &-bottombar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 
-.catalog-list {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px 1.33%;
+  // List of Result
+  &-list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px 1.33%;
+    margin-bottom: 16px;
 
-  .catalog-item {
-    width: 24%;
+    .catalog-item {
+      width: 24%;
+    }
+  }
+
+  // Filter
+  &-filter {
+    width: 100%;
+    max-width: 217px;
+
+    .filter-item {
+      margin-bottom: 10px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  // Tags
+  &-tags {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &-mp-button {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 16px;
+    color: $white;
+    height: 30px;
+    max-width: 175px;
+    background: #D2C5CC;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-decoration: none;
   }
 }
 
-.catalog-mp-button {
-  font-style: normal;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 16px;
-  color: $white;
-  height: 30px;
-  max-width: 175px;
-  background: #D2C5CC;
-  border-radius: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  text-decoration: none;
-}
+
+
+
+
+
+
+
 

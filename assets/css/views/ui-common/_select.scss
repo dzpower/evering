@@ -1,0 +1,14 @@
+.default-select {
+  background: none;
+  border: none;
+  outline: none;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 17px;
+  color: $black;
+  padding-left: 12px;
+
+  option {
+    border: none;
+  }
+}
