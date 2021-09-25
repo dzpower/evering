@@ -37,21 +37,24 @@
         </div>
       </div>
     </main>
-    <EmailSubscribe />
   </div>
 </template>
 
 <script>
-  import FilterItem from '@/components/views/pages/catalog/FilterItem';
-  import EmailSubscribe from '@/components/ui-common/EmailSubscribe';
+  import FilterItem from '@/components/views/pages/catalog/FilterItem'
   import Card from '@/components/ui-common/Card'
-  import Tag from '@/components/ui-common/Tag';
-  import Pagination from '@/components/ui-common/Pagination';
-  import Select from '@/components/ui-common/Select';;
+  import Tag from '@/components/ui-common/Tag'
+  import Pagination from '@/components/ui-common/Pagination'
+  import Select from '@/components/ui-common/Select'
 
   export default {
-    components: { Pagination, Tag, FilterItem, EmailSubscribe, Card, Select },
-    data: () => {
+    components: { Pagination,
+      Tag,
+      FilterItem,
+      Card,
+      Select
+    },
+    data() {
       return {
         tags: [
           {
