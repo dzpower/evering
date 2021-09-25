@@ -1,0 +1,31 @@
+.eve-button {
+  width: auto;
+  padding: 8px 35px;
+  border-radius: 40px;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  text-decoration: none;
+  background: $header-bg;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  user-select: none;
+
+  &:hover{
+    background: darken($header-bg, 5%);
+  }
+
+  img {
+    margin-right: 10px;
+    width: 14px;
+    height: 14px;
+    line-height: 0;
+  }
+
+  &--icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
