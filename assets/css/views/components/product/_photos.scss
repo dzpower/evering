@@ -1,0 +1,35 @@
+.product-photos {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2.72%;
+
+  &__item {
+    border-radius: 7px;
+    overflow: hidden;
+    width: 31.5%;
+    height: 68px;
+
+    img {
+      width: 100%;
+      overflow: hidden;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &:first-child {
+      width: 100%;
+      margin-bottom: 30px;
+      height: 222px;
+    }
+
+    &:nth-child(2),
+    &:nth-child(3), {
+      width: 47%;
+      height: 105px;
+      margin-bottom: 30px;
+    }
+
+  }
+}

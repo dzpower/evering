@@ -1,0 +1,88 @@
+.catalog-product {
+  width: 100%;
+
+  .default-photo {
+    flex-grow: 1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      border-radius: 7px;
+      object-fit: cover;
+    }
+  }
+
+  .default-tabs {
+    margin-bottom: 20px;
+  }
+
+  .product-photos, &__videos {
+    width: 21%;
+  }
+
+  &__content {
+    height: auto;
+    width: 58%;
+
+    .default-text {
+      padding-top: 12px;
+      border-top: 1px solid $border-color;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__columns {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 0 12px;
+  }
+
+  // Articles
+  &__articles {
+    margin-bottom: 12px;
+
+    .post-interesting {
+      max-width: 251px;
+    }
+
+    .custom-arrow {
+      top: 30%;
+    }
+
+    .slick-prev {
+      left: 7px;
+      z-index: 20;
+    }
+
+    .slick-next {
+      right: 7px;
+    }
+  }
+
+  // User Photos
+  &__user-photos {
+    display: flex;
+    gap: 0 12px;
+    margin-bottom: 20px;
+
+    .default-photo {
+      flex-grow: 1;
+      height: 222px;
+    }
+  }
+
+  // Discussions
+  &__discussions {
+
+    .discussion {
+      width: 100%;
+      margin-bottom: 20px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
