@@ -6,3 +6,44 @@
   margin: 0;
   padding-bottom: 6px;
 }
+
+.default-text {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: justify;
+  color: $black;
+}
+
+.--caret {
+
+  &-after {
+
+    &::after {
+      content: "";
+      display: flex;
+      width: 4px;
+      height: 4px;
+      border-left: 2px solid $blueberry;
+      border-top: 2px solid $blueberry;
+      // Active - 45deg
+      transform: rotate(225deg);
+      margin-left: 6px;
+    }
+  }
+
+  &-before  {
+
+    &::before {
+      content: "";
+      display: flex;
+      width: 4px;
+      height: 4px;
+      border-left: 2px solid $blueberry;
+      border-top: 2px solid $blueberry;
+      // Active - 45deg
+      transform: rotate(225deg);
+      margin-right: 6px;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+.product-videos {
+  .default-video {
+    margin-bottom: 22px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

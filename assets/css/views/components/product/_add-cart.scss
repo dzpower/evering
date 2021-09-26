@@ -1,0 +1,39 @@
+.add-cart {
+  width: 100%;
+
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+
+  & &__button {
+    font-weight: bold;
+    padding: 6px 13px;
+  }
+
+  &__result {
+    width: 100%;
+
+    &-item {
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 23px;
+      color: $black;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__mp {
+    margin-top: 22px;
+  }
+
+  & &__edit {
+    font-weight: 500;
+    padding: 6px 13px;
+    margin-top: 60px;
+  }
+}

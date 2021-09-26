@@ -1,0 +1,34 @@
+.default-tabs {
+  width: fit-content;
+  display: flex;
+  border-bottom: 1px solid $border-color;
+  align-items: center;
+
+  &__item {
+    padding: 0 18px 12px 18px;
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    color: $black;
+
+    &:hover {
+      color: $red;
+    }
+
+    &.active {
+      position: relative;
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: $red;
+        bottom: 0;
+      }
+    }
+  }
+}

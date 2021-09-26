@@ -1,0 +1,85 @@
+.discussion {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+
+  &__preview {
+    width: 100%;
+    max-width: 157px;
+    height: 142px;
+    margin-right: 42px;
+  }
+
+  &__content {
+    display: flex;
+    align-items: flex-start;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    color: $black;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+  }
+
+  &__likes {
+    display: flex;
+    align-items: center;
+    margin-right: 12px;
+
+    &-button {
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      padding: 0;
+      margin-right: 5px;
+      width: 14px;
+      height: 13px;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  &__reply {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  &__show {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  // Author
+  &__author {
+
+    &-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 100%;
+      margin-right: 22px;
+      img {
+        overflow: hidden;
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    &-name {
+      font-weight: bold;
+      margin-right: 12px;
+    }
+
+    &-message {
+      margin: 0 0 6px;
+    }
+  }
+}

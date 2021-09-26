@@ -28,4 +28,12 @@
     justify-content: center;
     align-items: center;
   }
+
+  &.dark {
+    background: #D2C5CC;
+    color: $white;
+    & > * {
+      color: white;
+    }
+  }
 }
