@@ -1,0 +1,39 @@
+.category-item {
+  width: 100%;
+  max-width: 246px;
+  display: block;
+  overflow: hidden;
+  border-radius: 7px;
+
+  figure {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+
+    img{
+      width: 100%;
+      height: 161px;
+      object-fit: cover;
+      overflow: hidden;
+      border-radius: 7px;
+    }
+
+    figcaption {
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      top: auto;
+      left: 0;
+      text-align: center;
+      font-weight: 500;
+      font-size: 21px;
+      line-height: 124%;
+      color: $white;
+      background: rgba(0, 0, 0, 0.5);
+      padding-top: 2px;
+      padding-bottom: 2px;
+      padding-left: 9px;
+      border-radius: 7px;
+    }
+  }
+}

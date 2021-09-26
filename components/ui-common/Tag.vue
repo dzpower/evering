@@ -1,9 +1,10 @@
 <template>
-  <a
+  <NuxtLink
+    to='#'
     class="default-tag"
   >
     <slot />
-  </a>
+  </NuxtLink>
 </template>
 
 <script>

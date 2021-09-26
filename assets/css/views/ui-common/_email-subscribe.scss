@@ -2,7 +2,8 @@
   width: 100%;
   margin-top: 90px;
   margin-bottom: 45px;
-  .main {
+
+  &__inner {
     display: flex;
     flex-direction: column;
     align-items: center;
