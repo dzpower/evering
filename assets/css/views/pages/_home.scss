@@ -33,27 +33,6 @@
     padding-top: 34px;
   }
 
-  .custom-arrow.slick-arrow{
-    background: transparent url('/icons/slider-arrows.svg') center no-repeat;
-    background-size: 100%;
-    width: 15px;
-    height: 15px;
-
-    &::before{
-      display: none;
-    }
-
-    &.custom-arrow__next{
-      transform: rotate(180deg);
-      right: 15px;
-    }
-
-    &.slick-prev{
-      left: 7px;
-      z-index: 10;
-    }
-  }
-
   .more-interesting{
     padding-top: 29px;
     padding-bottom: 28px;
@@ -70,5 +49,26 @@
     .default-tag{
       flex-basis: 20%;
     }
+  }
+}
+
+.custom-arrow.slick-arrow{
+  background: transparent url('/icons/slider-arrows.svg') center no-repeat !important;
+  background-size: 100% !important;
+  width: 15px;
+  height: 15px;
+
+  &::before{
+    display: none;
+  }
+
+  &.custom-arrow__next{
+    transform: rotate(180deg);
+    right: 15px;
+  }
+
+  &.slick-prev{
+    left: 7px;
+    z-index: 10;
   }
 }
