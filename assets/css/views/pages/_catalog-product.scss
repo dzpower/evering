@@ -17,7 +17,7 @@
     margin-bottom: 20px;
   }
 
-  .product-photos, &__videos {
+  .product-photos, &__rightcol {
     width: 21%;
   }
 
@@ -84,5 +84,10 @@
         margin-bottom: 0;
       }
     }
+  }
+
+
+  .add-cart {
+    margin-bottom: 24px;
   }
 }

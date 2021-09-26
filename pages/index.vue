@@ -70,7 +70,7 @@
         </VueSlickCarousel>
       </div>
       <div class='home-products__actions'>
-        <EveButton>
+        <EveButton class="dark">
           More offers
         </EveButton>
         <EveButton icon>

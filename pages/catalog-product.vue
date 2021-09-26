@@ -9,6 +9,8 @@
 
         <div class="catalog-product__content">
 
+          <Preview></Preview>
+
           <p class="default-text">
             Since the first release of the doll, the manufacturer has relied on quality: professional fashion designer Charlotte Johnson develops outfits for it, which later became legendary and recognizable; artist Betty Lou Mabey creates the first promotional photos and a literary image of Barbie for catalogs and the future magazine "Barbie Magazine". Since the first release of the doll, the manufacturer has relied on quality: professional fashion designer Charlotte Johnson develops outfits for it, which later became legendary and recognizable; artist Betty Lou Mabey creates the first promotional photos and a literary image of Barbie for catalogs and the future magazine "Barbie Magazine".Since the first release of the doll, the manufacturer has relied on quality: professional fashion designer Charlotte Johnson develops outfits for it, which later became legendary and recognizable; artist Betty Lou Mabey creates the first promotional photos and a literary image of Barbie for catalogs and the future magazine "Barbie Magazine".
           </p>
@@ -61,11 +63,18 @@
 
         </div>
 
-        <div class="catalog-product__videos"></div>
+        <div class="catalog-product__rightcol">
+
+          <AddCart />
+
+          <h2 class="default-h2">Video</h2>
+
+          <Videos />
+
+        </div>
 
       </div>
     </main>
-    <EmailSubscribe />
   </div>
 </template>
 
@@ -76,10 +85,13 @@ import 'vue-slick-carousel/dist/vue-slick-carousel.css';
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css';
 import Tabs from '@/components/ui-common/Tabs';
 import Photos from '@/components/views/pages/product/Photos';
-import EmailSubscribe from '@/components/ui-common/EmailSubscribe';
 import PostInteresting from '@/components/views/pages/home/PostInteresting';
 import Discussion from '@/components/ui-common/Discussion';
+import Preview from '@/components/views/pages/product/Preview';
+import AddCart from '@/components/views/pages/product/AddCart';
+import Videos from '@/components/views/pages/product/Videos';
+
 export default {
-    components: {Discussion, PostInteresting, EmailSubscribe, Photos, Tabs, VueSlickCarousel},
+    components: {Videos, AddCart, Preview, Discussion, PostInteresting, Photos, Tabs, VueSlickCarousel},
 }
 </script>
