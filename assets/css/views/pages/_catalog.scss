@@ -1,28 +1,5 @@
 .catalog {
   width: 100%;
-
-  &-middlebar {
-
-    .pagination {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .catalog-sort {
-      display: flex;
-      align-items: center;
-
-      &__label {
-        font-weight: 500;
-        font-size: 12px;
-        line-height: 17px;
-        color: $black;
-        margin-right: 24px;
-      }
-    }
-  }
-
 }
 
 
