@@ -14,3 +14,106 @@
   max-width: 1280px;
   margin: 0 auto;
 }
+
+// Catalog, MarketPlace, Brands
+.result-page {
+  width: 100%;
+
+  & > .main {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &-column {
+    width: 100%;
+    max-width: 1020px;
+  }
+
+  // Bar
+  &-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  &-middlebar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+    margin-bottom: 16px;
+
+    .pagination {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+  }
+
+  &-bottombar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  // List of Result
+  &-list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px 1.33%;
+    margin-bottom: 16px;
+
+    .card {
+      width: 24%;
+    }
+  }
+
+  // Filter
+  &-filter {
+    width: 100%;
+    max-width: 217px;
+
+    .filter-item {
+      margin-bottom: 10px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  // Tags
+  &-tags {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &-mp-button {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 16px;
+    color: $white;
+    height: 30px;
+    max-width: 175px;
+    background: #D2C5CC;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-decoration: none;
+    padding: 6px 14px;
+  }
+}
+
+
+
+
+

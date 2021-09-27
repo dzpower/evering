@@ -1,15 +1,15 @@
 <template>
-  <div class="catalog container">
+  <div class="result-page catalog container">
     <main class="main">
-      <aside class="catalog-filter">
+      <aside class="result-page-filter">
         <FilterItem
           v-for="item in 5"
           :key="item"
         ></FilterItem>
       </aside>
-      <div class="catalog-column">
-        <div class="catalog-topbar">
-          <div class="catalog-tags">
+      <div class="result-page-column">
+        <div class="result-page-topbar">
+          <div class="result-page-tags">
             <Tag
               v-for="(tag, index) in tags"
               :key="index"
@@ -17,22 +17,22 @@
             >
               {{tag.name}}</Tag>
           </div>
-          <a href="#" class="catalog-mp-button">Search in the marketplace</a>
+          <a href="#" class="result-page-mp-button">Search in the marketplace</a>
         </div>
-        <div class="catalog-middlebar">
+        <div class="result-page-middlebar">
           <Pagination />
           <div class="catalog-sort">
             <span class="catalog-sort__label">Sorting</span>
             <Select />
           </div>
         </div>
-        <div class="catalog-list">
+        <div class="result-page-list">
           <Card
             v-for="item in 20"
             :key="item"
           ></Card>
         </div>
-        <div class="catalog-bottombar">
+        <div class="result-page-bottombar">
           <Pagination />
         </div>
       </div>
