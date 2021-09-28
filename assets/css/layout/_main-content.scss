@@ -68,8 +68,9 @@
     gap: 30px 1.33%;
     margin-bottom: 16px;
 
-    .card {
+    .card, .product-preview {
       width: 24%;
+      padding-right: 0;
     }
   }
 
@@ -110,6 +111,20 @@
     width: 100%;
     text-decoration: none;
     padding: 6px 14px;
+  }
+
+  // Sort Select
+  &-sort {
+    display: flex;
+    align-items: center;
+
+    &__label {
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 17px;
+      color: $black;
+      margin-right: 24px;
+    }
   }
 }
 

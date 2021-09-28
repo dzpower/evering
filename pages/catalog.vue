@@ -21,8 +21,8 @@
         </div>
         <div class="result-page-middlebar">
           <Pagination />
-          <div class="catalog-sort">
-            <span class="catalog-sort__label">Sorting</span>
+          <div class="result-page-sort">
+            <span class="result-page-sort__label">Sorting</span>
             <Select />
           </div>
         </div>

@@ -1,0 +1,32 @@
+.marketplace {
+  width: 100%;
+
+  &-topbar {
+    margin-bottom: 15px;
+  }
+
+  &-tags {
+    margin-bottom: 36px;
+  }
+
+  &-middlebar {
+    margin-bottom: 36px;
+    justify-content: flex-start;
+  }
+
+  &-list {
+    margin-bottom: 30px;
+  }
+
+  &-slider {
+    margin-bottom: 36px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .card {
+      padding-right: 12px;
+    }
+  }
+}
