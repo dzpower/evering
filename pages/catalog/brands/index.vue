@@ -31,6 +31,7 @@
           <Card
             v-for="item in 8"
             :key="item"
+            :to="`${$route.path}/${item}`"
           ></Card>
         </div>
         <div class="result-page-bottombar brands-bottombar">
