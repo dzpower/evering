@@ -1,7 +1,9 @@
 <template>
   <div class='catalog-product prod'>
     <main class='main'>
-      <Tabs />
+      <RouterTabs
+        :items='tabs'
+      />
       <div class='catalog-product__columns'>
         <Photos />
         <div class='catalog-product__content'>
@@ -84,7 +86,7 @@
 import VueSlickCarousel from 'vue-slick-carousel'
 import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
-import Tabs from '@/components/ui-common/Tabs'
+import RouterTabs from '@/components/ui-common/RouterTabs'
 import Photos from '@/components/views/pages/product/Photos'
 import PostInteresting from '@/components/views/pages/home/PostInteresting'
 import Discussion from '@/components/ui-common/Discussion'
@@ -93,6 +95,31 @@ import AddCart from '@/components/views/pages/product/AddCart'
 import Videos from '@/components/views/pages/product/Videos'
 
 export default {
-  components: { Videos, AddCart, Preview, Discussion, PostInteresting, Photos, Tabs, VueSlickCarousel }
+  components: {
+    Videos,
+    AddCart,
+    Preview,
+    Discussion,
+    PostInteresting,
+    Photos,
+    RouterTabs,
+    VueSlickCarousel
+  },
+  data() {
+    return {
+      tabs: [
+        {
+          tabContent: 'Page in the catalog',
+          link: `/catalog/${this.$route.params.product}`,
+          activeRouter: 'catalog'
+        },
+        {
+          tabContent: 'Product on the marketplace',
+          link: `/marketplace/${this.$route.params.product}`,
+          activeRouter: 'marketplace'
+        }
+      ]
+    }
+  }
 }
 </script>

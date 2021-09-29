@@ -30,6 +30,7 @@
           <Card
             v-for="item in 20"
             :key="item"
+            :to='`${$route.path}/${item}`'
           ></Card>
         </div>
         <div class="result-page-bottombar">

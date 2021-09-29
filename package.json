@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
+    "ap-style-title-case": "^1.1.2",
     "awesome-vue-star-rating": "^1.0.9",
     "core-js": "^3.15.1",
     "nuxt": "^2.15.7",

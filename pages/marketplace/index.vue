@@ -9,7 +9,7 @@
       </aside>
       <div class="result-page-column">
         <div class="result-page-topbar marketplace-topbar">
-          <Tabs />
+          <RouterTabs />
           <a href="#" class="result-page-mp-button">Open in the catalog</a>
         </div>
         <div class="result-page-tags marketplace-tags">
@@ -27,6 +27,7 @@
             <Card
               v-for="item in 4"
               :key="item"
+              :to='`${$route.path}/${item}`'
             ></Card>
             <template #prevArrow>
               <div class='custom-arrow'>
@@ -71,7 +72,7 @@
   import Card from '@/components/ui-common/Card'
   import Tag from '@/components/ui-common/Tag'
   import Pagination from '@/components/ui-common/Pagination'
-  import Tabs from '@/components/ui-common/Tabs'
+  import RouterTabs from '@/components/ui-common/RouterTabs'
   import Select from '@/components/ui-common/Select'
   import ProductPreview from '@/components/views/pages/home/ProductPreview';
 
@@ -83,7 +84,7 @@
       FilterItem,
       Card,
       VueSlickCarousel,
-      Tabs,
+      RouterTabs,
       Select
     },
     data() {

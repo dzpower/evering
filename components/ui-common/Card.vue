@@ -1,6 +1,6 @@
 <template>
   <NuxtLink
-    to="#"
+    :to="to"
     class="card catalog-item"
   >
     <div class="card__preview">
@@ -12,7 +12,13 @@
 
 <script>
 export default {
-  name: "Card"
+  name: "Card",
+  props: {
+    to: {
+      type: String,
+      default: '#'
+    }
+  }
 }
 </script>
 

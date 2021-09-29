@@ -7,12 +7,16 @@
   display: flex;
   align-items: center;
 
-  &-container{
+  &-container {
     background: $header-bg;
   }
 
-  &-green{
+  &-green {
     background: $green;
+  }
+
+  &-purple {
+    background: $header-bg__marketplace;
   }
 
   .logo {
