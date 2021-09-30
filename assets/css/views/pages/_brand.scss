@@ -1,0 +1,69 @@
+.brand-page {
+  width: 100%;
+
+  .default-text {
+    margin-bottom: 72px;
+  }
+
+  &__top-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 700px;
+
+    .eve-button  {
+      max-width: none;
+      padding: 7px 15px;
+      margin-bottom: 14px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__articles {
+    margin-bottom: 30px;
+
+    .post-interesting {
+      margin-bottom: 16px;
+      max-width: none;
+      padding-right: 0;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__products {
+    margin-bottom: 10px;
+    .card {
+      max-width: 250px;
+      padding-right: 12px;
+    }
+  }
+
+  &__references {
+    margin-bottom: 42px;
+
+    .reference {
+      margin-bottom: 24px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__albums {
+    margin-bottom: 10px;
+
+    .new-album {
+      margin-bottom: 10px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
