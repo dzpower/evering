@@ -1,0 +1,49 @@
+.purchase {
+  width: 100%;
+  display: flex;
+  padding-bottom: 12px;
+  border-bottom: 1px solid $border-color;
+
+  &__image {
+    width: 24%;
+    height: 222px;
+  }
+
+  &__wrapper {
+    width: 74%;
+    position: relative;
+    padding-left: 12px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__info {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  &__button.eve-button {
+    position: absolute;
+    bottom: 0;
+    padding: 5px 10px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &__item {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    color: $black;
+
+    &-head {
+      margin-bottom: 12px;
+    }
+
+    &-value {
+      font-weight: bold;
+    }
+  }
+}

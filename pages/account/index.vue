@@ -1,40 +1,12 @@
 <template>
-  <div class="result-page catalog container">
+  <div class="result-page account-page container">
     <main class="main">
-      <aside class="result-page-filter">
-        <FilterItem
-          v-for="item in 5"
-          :key="item"
-        ></FilterItem>
-      </aside>
+      <Navbar class="result-page-navbar" />
       <div class="result-page-column">
-        <div class="result-page-topbar">
-          <div class="result-page-tags">
-            <Tag
-              v-for="(tag, index) in tags"
-              :key="index"
-              :href="tag.link"
-            >
-              {{tag.name}}</Tag>
-          </div>
-          <a href="#" class="result-page-mp-button">Search in the marketplace</a>
-        </div>
-        <div class="result-page-middlebar">
-          <Pagination />
-          <div class="result-page-sort">
-            <span class="result-page-sort__label">Sorting</span>
-            <Select />
-          </div>
-        </div>
-        <div class="result-page-list">
-          <Card
-            v-for="item in 20"
-            :key="item"
-            :to='`${$route.path}/${item}`'
-          ></Card>
-        </div>
-        <div class="result-page-bottombar">
-          <Pagination />
+        <AccountBar />
+        <h2 class="default-h2">My purchases</h2>
+        <div class="account-page__purchases">
+          <Purchase v-for="item in 4" :key="item" />
         </div>
       </div>
     </main>
@@ -42,44 +14,12 @@
 </template>
 
 <script>
-  import FilterItem from '@/components/views/pages/catalog/FilterItem'
-  import Card from '@/components/ui-common/Card'
-  import Tag from '@/components/ui-common/Tag'
-  import Pagination from '@/components/ui-common/Pagination'
-  import Select from '@/components/ui-common/Select'
+
+  import Navbar from '@/components/views/pages/account/Navbar';
+  import AccountBar from '@/components/ui-common/AccountBar'
+  import Purchase from '@/components/ui-common/Purchase';
 
   export default {
-    components: { Pagination,
-      Tag,
-      FilterItem,
-      Card,
-      Select
-    },
-    data() {
-      return {
-        tags: [
-          {
-            name: 'Fashion',
-            link: '#'
-          },
-          {
-            name: 'Collectible',
-            link: '#'
-          },
-          {
-            name: 'Popular',
-            link: '#'
-          },
-          {
-            name: 'New products',
-            link: '#'
-          },
-          {
-            name: 'Recommendations',
-            link: '#'
-          },
-        ]
-      }
-    }
+    components: {Purchase, Navbar, AccountBar},
   }
 </script>

@@ -1,0 +1,17 @@
+.account-page {
+
+  .account-bar {
+    margin-bottom: 8px;
+  }
+
+  &__purchases {
+
+    .purchase {
+      margin-bottom: 12px;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}
