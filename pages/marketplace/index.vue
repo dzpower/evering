@@ -23,7 +23,7 @@
 
         <h2 class="default-h2">Hot topics</h2>
         <div class="marketplace-slider">
-          <VueSlickCarousel :variable-width='true' :arrows='true'>
+          <vue-slick-carousel :variable-width='true' :arrows='true'>
             <Card
               v-for="item in 4"
               :key="item"
@@ -37,7 +37,7 @@
               <div class='custom-arrow custom-arrow__next'>
               </div>
             </template>
-          </VueSlickCarousel>
+          </vue-slick-carousel>
         </div>
 
         <div class="result-page-middlebar">
@@ -58,16 +58,12 @@
         <div class="result-page-bottombar">
           <Pagination />
         </div>
-
       </div>
     </main>
   </div>
 </template>
 
 <script>
-  import VueSlickCarousel from 'vue-slick-carousel'
-  import 'vue-slick-carousel/dist/vue-slick-carousel.css'
-  import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
   import FilterItem from '@/components/views/pages/catalog/FilterItem'
   import Card from '@/components/ui-common/Card'
   import Tag from '@/components/ui-common/Tag'
@@ -83,7 +79,6 @@
       Tag,
       FilterItem,
       Card,
-      VueSlickCarousel,
       RouterTabs,
       Select
     },

@@ -13,6 +13,8 @@ import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import EmailSubscribe from '@/components/ui-common/EmailSubscribe'
 import BreadCrumbs from '@/components/ui-common/BreadCrumbs'
+import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 
   export default {
     components: {

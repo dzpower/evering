@@ -9,7 +9,8 @@
 
 <script>
 
-import DefaultVideo from '@/components/ui-common/DefaultVideo';
+import DefaultVideo from '@/components/ui-common/DefaultVideo'
+
 export default {
   name: "Videos",
   components: {DefaultVideo}

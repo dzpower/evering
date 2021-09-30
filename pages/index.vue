@@ -5,7 +5,7 @@
         <h2 class='default-h2'>
           Expert responses
         </h2>
-        <VueSlickCarousel :variable-width='true' :arrows='true'>
+        <vue-slick-carousel :variable-width='true' :arrows='true'>
           <ExpertResponse
             v-for='item in 15'
             :key='item'
@@ -21,11 +21,11 @@
             <div class='custom-arrow custom-arrow__next'>
             </div>
           </template>
-        </VueSlickCarousel>
+        </vue-slick-carousel>
       </div>
       <div class='most-interesting'>
         <h2 class='default-h2'>The most interesting thing on Everigin</h2>
-        <VueSlickCarousel :variable-width='true' :arrows='true'>
+        <vue-slick-carousel :variable-width='true' :arrows='true'>
           <PostInteresting
             v-for='i in 10'
             :key='i'
@@ -38,7 +38,7 @@
             <div class='custom-arrow custom-arrow__next'>
             </div>
           </template>
-        </VueSlickCarousel>
+        </vue-slick-carousel>
       </div>
       <div class='more-interesting'>
         <EveButton>More interesting things on Everigin</EveButton>
@@ -52,7 +52,7 @@
           {{tag.name}}</Tag>
       </div>
       <div class='home-products'>
-        <VueSlickCarousel :variable-width='true' :arrows='true'>
+        <vue-slick-carousel :variable-width='true' :arrows='true'>
           <ProductPreview
             v-for='item in 10'
             :key='item'
@@ -67,7 +67,7 @@
             <div class='custom-arrow custom-arrow__next'>
             </div>
           </template>
-        </VueSlickCarousel>
+        </vue-slick-carousel>
       </div>
       <div class='home-products__actions'>
         <EveButton class="dark">
@@ -91,7 +91,7 @@
         <h2 class='default-h2'>
           Favourite brands
         </h2>
-        <VueSlickCarousel :variable-width='true' :arrows='true'>
+        <vue-slick-carousel :variable-width='true' :arrows='true'>
           <ProductPreview
             v-for='item in 10'
             :key='item'
@@ -106,16 +106,13 @@
             <div class='custom-arrow custom-arrow__next'>
             </div>
           </template>
-        </VueSlickCarousel>
+        </vue-slick-carousel>
       </div>
     </main>
   </div>
 </template>
 
 <script>
-import VueSlickCarousel from 'vue-slick-carousel'
-import 'vue-slick-carousel/dist/vue-slick-carousel.css'
-import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 import ExpertResponse from '@/components/views/pages/home/ExpertResponse'
 import PostInteresting from '@/components/views/pages/home/PostInteresting'
 import EveButton from '@/components/ui-common/EveButton'
@@ -126,7 +123,6 @@ import CategoryItem from '@/components/views/pages/home/CategoryItem'
 export default {
   components: {
     EveButton,
-    VueSlickCarousel,
     ExpertResponse,
     PostInteresting,
     Tag,

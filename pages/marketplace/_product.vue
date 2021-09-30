@@ -8,102 +8,75 @@
         <Photos />
         <div class='catalog-product__content'>
           <Preview></Preview>
-          <p class='default-text'>
-            Since the first release of the doll, the manufacturer has relied on quality: professional fashion designer
-            Charlotte Johnson develops outfits for it, which later became legendary and recognizable; artist Betty Lou
-            Mabey creates the first promotional photos and a literary image of Barbie for catalogs and the future
-            magazine "Barbie Magazine". Since the first release of the doll, the manufacturer has relied on quality:
-            professional fashion designer Charlotte Johnson develops outfits for it, which later became legendary and
-            recognizable; artist Betty Lou Mabey creates the first promotional photos and a literary image of Barbie for
-            catalogs and the future magazine "Barbie Magazine".Since the first release of the doll, the manufacturer has
-            relied on quality: professional fashion designer Charlotte Johnson develops outfits for it, which later
-            became legendary and recognizable; artist Betty Lou Mabey creates the first promotional photos and a
-            literary image of Barbie for catalogs and the future magazine "Barbie Magazine".
-          </p>
-          <h2 class='default-h2'>Popular articles</h2>
-          <div class='catalog-product__articles'>
-            <VueSlickCarousel :variable-width='true' :arrows='true' :items='3'>
-              <post-interesting
-                v-for='i in 3'
-                :key='i'
-              />
-              <template #prevArrow>
-                <div class='custom-arrow'>
-                </div>
-              </template>
-              <template #nextArrow>
-                <div class='custom-arrow custom-arrow__next'>
-                </div>
-              </template>
-            </VueSlickCarousel>
 
-          </div>
-
-          <h2 class='default-h2'>The best photos of buyers</h2>
-
-          <div class='catalog-product__user-photos'>
-
-            <div
-              v-for='item in 3'
-              :key='item'
-              class='default-photo'
-            >
-              <img src='/content/01.png' alt='user photo'>
-            </div>
-
-          </div>
-
-          <h2 class='default-h2'>Group discussions</h2>
-
-          <div class='catalog-product__discussions'>
-
-            <Discussion
-              v-for='item in 3'
-              :key='item'
+          <div class='reviews-wrapper'>
+            <h2 class='default-h2'>Reviews</h2>
+            <Review
+              v-for='n in 3'
+              :key='n'
             />
-
           </div>
-
+          <Pagination />
         </div>
 
         <div class='catalog-product__rightcol'>
-
           <AddCart />
-
-          <h2 class='default-h2'>Video</h2>
-
-          <Videos />
-
         </div>
-
+      </div>
+      <div class='similars-products'>
+        <h2 class='default-h2'>
+          Similar products
+        </h2>
+        <vue-slick-carousel :variable-width='true' :arrows='true'>
+          <ProductPreview
+            v-for='item in 10'
+            :key='item'
+            :rating='4'
+            :price='12222'
+          />
+          <template #prevArrow>
+            <div class='custom-arrow'>
+            </div>
+          </template>
+          <template #nextArrow>
+            <div class='custom-arrow custom-arrow__next'>
+            </div>
+          </template>
+        </vue-slick-carousel>
+        <div class='home-products__actions'>
+          <EveButton class="dark">
+            More offers
+          </EveButton>
+          <EveButton icon>
+            <template #icon><img src='/icons/edit.svg' alt=''></template>
+            Place an ad
+          </EveButton>
+        </div>
       </div>
     </main>
   </div>
 </template>
 
 <script>
-
-import VueSlickCarousel from 'vue-slick-carousel'
-import 'vue-slick-carousel/dist/vue-slick-carousel.css'
-import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 import RouterTabs from '@/components/ui-common/RouterTabs'
 import Photos from '@/components/views/pages/product/Photos'
-import PostInteresting from '@/components/views/pages/home/PostInteresting'
-import Discussion from '@/components/ui-common/Discussion'
 import Preview from '@/components/views/pages/product/Preview'
 import AddCart from '@/components/views/pages/product/AddCart'
-import Videos from '@/components/views/pages/product/Videos'
+import Review from '@/components/ui-common/Review'
+import ProductPreview from '@/components/views/pages/home/ProductPreview'
+import Pagination from '@/components/ui-common/Pagination'
+import EveButton from '@/components/ui-common/EveButton'
 
 export default {
   components: {
-    Videos,
     AddCart,
     Preview,
-    Discussion,
-    PostInteresting,
     Photos,
     RouterTabs,
-    VueSlickCarousel
+    Review,
+    Pagination,
+    ProductPreview,
+    EveButton
   },
   data() {
     return {

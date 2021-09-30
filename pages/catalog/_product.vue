@@ -22,7 +22,7 @@
           </p>
           <h2 class='default-h2'>Popular articles</h2>
           <div class='catalog-product__articles'>
-            <VueSlickCarousel :variable-width='true' :arrows='true' :items='3'>
+            <vue-slick-carousel :variable-width='true' :arrows='true' :items='3'>
               <post-interesting
                 v-for='i in 3'
                 :key='i'
@@ -35,7 +35,7 @@
                 <div class='custom-arrow custom-arrow__next'>
                 </div>
               </template>
-            </VueSlickCarousel>
+            </vue-slick-carousel>
 
           </div>
 
@@ -83,9 +83,6 @@
 
 <script>
 
-import VueSlickCarousel from 'vue-slick-carousel'
-import 'vue-slick-carousel/dist/vue-slick-carousel.css'
-import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 import RouterTabs from '@/components/ui-common/RouterTabs'
 import Photos from '@/components/views/pages/product/Photos'
 import PostInteresting from '@/components/views/pages/home/PostInteresting'
@@ -102,8 +99,7 @@ export default {
     Discussion,
     PostInteresting,
     Photos,
-    RouterTabs,
-    VueSlickCarousel
+    RouterTabs
   },
   data() {
     return {

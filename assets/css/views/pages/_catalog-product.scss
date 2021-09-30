@@ -1,6 +1,11 @@
 .catalog-product {
   width: 100%;
 
+  .reviews-wrapper{
+    width: 100%;
+    padding-top: 32px;
+  }
+
   .default-photo {
     flex-grow: 1;
 
@@ -86,8 +91,12 @@
     }
   }
 
-
   .add-cart {
     margin-bottom: 24px;
   }
+}
+
+.similars-products {
+  width: 100%;
+  padding-top: 32px;
 }

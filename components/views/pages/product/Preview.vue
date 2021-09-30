@@ -1,7 +1,7 @@
 <template>
   <div class="product-gallery">
     <div class="product-gallery__photos">
-      <VueSlickCarousel :variable-width='false' :arrows="true">
+      <vue-slick-carousel :variable-width='false' :arrows="true">
         <div
           v-for="item in 3"
           :key="item"
@@ -17,7 +17,7 @@
           <div class="custom-arrow custom-arrow__next">
           </div>
         </template>
-      </VueSlickCarousel>
+      </vue-slick-carousel>
     </div>
     <div class="product-gallery__other">
       <EveButton class="product-gallery__button">
@@ -35,14 +35,11 @@
 </template>
 
 <script>
-import VueSlickCarousel from 'vue-slick-carousel';
-import 'vue-slick-carousel/dist/vue-slick-carousel.css';
-import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css';
 import EveButton from '@/components/ui-common/EveButton';
 import DefaultVideo from '@/components/ui-common/DefaultVideo';
 
 export default {
   name: "Preview",
-  components: {EveButton, VueSlickCarousel, DefaultVideo},
+  components: {EveButton, DefaultVideo},
 }
 </script>

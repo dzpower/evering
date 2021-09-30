@@ -1,7 +1,7 @@
 <template>
   <div class="pagination">
     <button class="pagination__icon pagination__left">
-      <img src="icons/slider-arrows.svg" alt="left">
+      <img src="/icons/slider-arrows.svg" alt="left">
     </button>
     <div class="pagination__body">
       <span class="pagination__item active">1</span>
@@ -13,14 +13,14 @@
       <span class="pagination__item">120</span>
     </div>
     <button class="pagination__icon pagination__right">
-      <img src="icons/slider-arrows.svg" alt="left">
+      <img src="/icons/slider-arrows.svg" alt="left">
     </button>
   </div>
 </template>
 
 <script>
   export default {
-    name: "Pagination"
+    name: "Pagination",
   }
 </script>
 

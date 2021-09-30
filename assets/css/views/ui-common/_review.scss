@@ -1,0 +1,70 @@
+.review {
+  width: 100%;
+  padding-bottom: 36px;
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+
+  .discussion__show{
+    margin-left: 28px;
+  }
+
+  .discussion__likes{
+    margin-right: 0;
+  }
+
+  .discussion__reply{
+    margin-left: 28px;
+    padding-left: 0;
+  }
+
+  time{
+    position: absolute;
+    top: 0;
+    left: auto;
+    right: 0;
+    font-weight: normal;
+    font-size: 14px;
+    line-height:  186%;
+  }
+
+  &-user{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 58px;
+    border-radius: 58px;
+    margin-right: 12px;
+
+    figure {
+      overflow: hidden;
+
+      img{
+        display: block;
+        width: 100%;
+        height: 58px;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &-photos{
+    width: 100%;
+    display: flex;
+    padding-top: 16px;
+
+    &__item{
+      width: 78px;
+      height: 69px;
+      object-fit: cover;
+      overflow: hidden;
+      border-radius: 8px;
+      margin-right: 8px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

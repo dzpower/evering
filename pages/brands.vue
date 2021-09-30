@@ -39,7 +39,7 @@
 
         <h2 class="default-h2">Manufacturers</h2>
         <div class="brands-slider">
-          <VueSlickCarousel :variable-width='true' :arrows='true'>
+          <vue-slick-carousel :variable-width='true' :arrows='true'>
             <Card
               v-for="item in 4"
               :key="item"
@@ -52,12 +52,12 @@
               <div class='custom-arrow custom-arrow__next'>
               </div>
             </template>
-          </VueSlickCarousel>
+          </vue-slick-carousel>
         </div>
 
         <h2 class="default-h2">Characters</h2>
         <div class="brands-slider">
-          <VueSlickCarousel :variable-width='true' :arrows='true'>
+          <vue-slick-carousel :variable-width='true' :arrows='true'>
             <Card
               v-for="item in 4"
               :key="item"
@@ -70,12 +70,12 @@
               <div class='custom-arrow custom-arrow__next'>
               </div>
             </template>
-          </VueSlickCarousel>
+          </vue-slick-carousel>
         </div>
 
         <h2 class="default-h2">Top 100 dolls</h2>
         <div class="brands-slider">
-          <VueSlickCarousel :variable-width='true' :arrows='true'>
+          <vue-slick-carousel :variable-width='true' :arrows='true'>
             <Card
               v-for="item in 4"
               :key="item"
@@ -88,12 +88,12 @@
               <div class='custom-arrow custom-arrow__next'>
               </div>
             </template>
-          </VueSlickCarousel>
+          </vue-slick-carousel>
         </div>
 
         <h2 class="default-h2">Top 100 collectors</h2>
         <div class="brands-slider">
-          <VueSlickCarousel :variable-width='true' :arrows='true'>
+          <vue-slick-carousel :variable-width='true' :arrows='true'>
             <Card
               v-for="item in 4"
               :key="item"
@@ -106,7 +106,7 @@
               <div class='custom-arrow custom-arrow__next'>
               </div>
             </template>
-          </VueSlickCarousel>
+          </vue-slick-carousel>
         </div>
 
       </div>
@@ -115,9 +115,6 @@
 </template>
 
 <script>
-  import VueSlickCarousel from 'vue-slick-carousel'
-  import 'vue-slick-carousel/dist/vue-slick-carousel.css'
-  import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
   import FilterItem from '@/components/views/pages/catalog/FilterItem'
   import Card from '@/components/ui-common/Card'
   import Tag from '@/components/ui-common/Tag'
@@ -127,8 +124,7 @@
     components: { Pagination,
       Tag,
       FilterItem,
-      Card,
-      VueSlickCarousel
+      Card
     },
     data() {
       return {
