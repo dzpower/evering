@@ -1,0 +1,156 @@
+<template>
+  <div class='item-page brand-page prod'>
+    <main class='main'>
+      <div class='item-page__columns'>
+        <div class="default-photo item-page__leftcol">
+          <img src='/content/01.png' alt='user photo'>
+        </div>
+        <div class='item-page__content'>
+          <h2 class='default-h2'>
+            <strong>Barbie</strong>
+          </h2>
+          <p class='default-text'>
+            It is no secret that the most favorite doll of both little girls and adult representatives of the fair sex is Barbie. She is so loved by representatives of the beautiful half of humanity that they are ready to take an example from her, adopting her style of clothing. The girl-doll has become a model of style for a huge number of young ladies. The number of clothes present in the Barbie wardrobe is very large. All little girls choose a Barbie doll for themselves, wanting to be like her when they become adults. The Barbie brand offers little princesses not to wait so long, but now to replenish their wardrobe with the outfits of their favorite Barbie.
+
+            <br>
+            <br>
+
+            <strong>The history of the appearance of the Barbie brand (Barbie):</strong>
+
+            <br>
+            <br>
+
+            The trademark, called Barbie, originated in 1984. This year, the company Siport decided to start manufacturing shoes with this name. A few years later, an English clothing company showed interest in the brand. Soon both companies joined together and became partners, and today the name Barbie is worn by both collections of English women's clothing and collections of Italian shoes. The Barbie trademark considers its primary task to be the creation of such excellent models that will be able to transfer Barbie fans to a fabulous atmosphere, give them outfits that match the style of their favorite.
+
+            <br>
+            <br>
+
+            <strong>Product range and design:</strong>
+
+            <br>
+            <br>
+
+            Today, the Barbie trademark is the most popular brand that produces clothes for children. The Barbie brand is engaged in the manufacture of things intended for girls from birth to the age of fourteen. Such products are characterized by glamor combined with simplicity, convenience and high quality characteristics.
+
+            <br>
+
+            Source: <a href="https://www.relook.ru/brand/Barbie.html">https://www.relook.ru/brand/Barbie.html</a>
+
+            <br>
+
+            <EveButton class="default-text__size-btn">
+              <div class="--caret-after">Less</div>
+            </EveButton>
+          </p>
+
+          <div class='brand-page__products'>
+            <VueSlickCarousel :variable-width='true' :arrows='true' :items='3'>
+              <Card
+                v-for="item in 5"
+                :key="item"
+                class=""
+              ></Card>
+              <template #prevArrow>
+                <div class='custom-arrow'>
+                </div>
+              </template>
+              <template #nextArrow>
+                <div class='custom-arrow custom-arrow__next'>
+                </div>
+              </template>
+            </VueSlickCarousel>
+          </div>
+
+          <div class="brand-page__albums">
+            <NewAlbum v-for="item in 3" :key="item" />
+          </div>
+
+
+        </div>
+
+        <div class='item-page__rightcol'>
+
+          <div class="brand-page__top-bar">
+            <EveButton icon>
+              <template #icon>
+                <img src="/icons/edit.svg" alt="edit">
+              </template>
+              Edit a page
+            </EveButton>
+            <EveButton class="dark">
+              Products in the marketplace
+            </EveButton>
+          </div>
+
+          <h2 class='default-h2'>Article</h2>
+          <div class="brand-page__articles">
+            <Article
+              v-for="item in 3"
+              :key="item"
+            />
+          </div>
+
+          <h2 class='default-h2'>References</h2>
+
+          <div class="brand-page__references">
+            <Reference
+              :expert="true"
+            />
+            <Reference
+              :expert="false"
+            />
+          </div>
+
+          <h2 class='default-h2'>Photo Albums</h2>
+          <div class="brand-page__articles">
+            <Article
+              v-for="item in 3"
+              :key="item"
+            />
+          </div>
+
+        </div>
+
+      </div>
+    </main>
+  </div>
+</template>
+
+<script>
+
+import VueSlickCarousel from 'vue-slick-carousel'
+import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+import EveButton from '@/components/ui-common/EveButton'
+import Article from "@/components/views/pages/brands/Article"
+import Card from '@/components/ui-common/Card'
+import Reference from '@/components/ui-common/Reference';
+import NewAlbum from '@/components/views/pages/brands/NewAlbum';
+
+export default {
+  components: {
+    NewAlbum,
+    Reference,
+    EveButton,
+    VueSlickCarousel,
+    Article,
+    Card,
+  },
+  data() {
+    return {
+      tabs: [
+        {
+          tabContent: 'Page in the catalog',
+          link: `/catalog/${this.$route.params.product}`,
+          activeRouter: 'catalog'
+        },
+        {
+          tabContent: 'Product on the marketplace',
+          link: `/marketplace/${this.$route.params.product}`,
+          activeRouter: 'marketplace'
+        }
+      ]
+    }
+  }
+}
+</script>

@@ -3,6 +3,28 @@
   max-width: 258px;
   padding-right: 12px;
 
+  &__link {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
+    color: $black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #FAF6F7;
+    border-radius: 40px;
+    padding: 5px 18px;
+    text-decoration: none;
+    display: none;
+  }
+
+  &:hover {
+    .post-interesting__link {
+      display: block;
+    }
+  }
+
   &__comments{
     width: 100%;
     display: flex;
