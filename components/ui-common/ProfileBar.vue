@@ -1,17 +1,17 @@
 <template>
-  <div class="account-bar">
-    <div class="account-bar__avatar">
+  <div class="profile-bar">
+    <div class="profile-bar__avatar">
       <img src="/content/users/01.png" alt="account">
     </div>
-    <div class="account-bar__wrapper">
-      <span class="account-bar__online">online</span>
-      <span class="account-bar__name">Svetlana</span>
-      <span class="account-bar__status reference__status reference__status--expert">Expert</span>
-      <div class="account-bar__stats">
+    <div class="profile-bar__wrapper">
+      <span class="profile-bar__online">online</span>
+      <span class="profile-bar__name">Svetlana</span>
+      <span class="profile-bar__status reference__status reference__status--expert">Expert</span>
+      <div class="profile-bar__stats">
         <span>10000 Following</span>
         <span>50000 Followers</span>
       </div>
-      <EveButton icon class="account-bar__edit">
+      <EveButton icon class="profile-bar__edit">
         <template #icon>
           <img src="/icons/edit.svg" alt="edit">
         </template>

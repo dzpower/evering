@@ -1,11 +1,11 @@
 <template>
-  <div class="result-page account-page container">
+  <div class="result-page profile-page container">
     <main class="main">
       <Navbar class="result-page-navbar" />
       <div class="result-page-column">
         <AccountBar />
         <h2 class="default-h2">My purchases</h2>
-        <div class="account-page__purchases">
+        <div class="profile-page__purchases">
           <Purchase v-for="item in 4" :key="item" />
         </div>
       </div>
@@ -15,8 +15,8 @@
 
 <script>
 
-  import Navbar from '@/components/views/pages/account/Navbar';
-  import AccountBar from '@/components/ui-common/AccountBar'
+  import Navbar from '@/components/views/pages/profile/Navbar';
+  import AccountBar from '@/components/ui-common/ProfileBar'
   import Purchase from '@/components/ui-common/Purchase';
 
   export default {
