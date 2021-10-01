@@ -14,4 +14,50 @@
       }
     }
   }
+
+  &__suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px 10px;
+    margin-bottom: 30px;
+
+    .post-interesting {
+      width: 236px;
+      padding-right: 0;
+    }
+  }
+
+  &__drafts {
+
+    .draft {
+      margin-bottom: 12px;
+      &:last-child {
+        border-bottom: 0;
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  &__title-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .eve-button {
+      padding: 5px 14px;
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  &__search {
+    margin-bottom: 30px;
+  }
+
+  &__recommendations {
+
+    .post-interesting {
+      margin-bottom: 12px;
+    }
+  }
 }
