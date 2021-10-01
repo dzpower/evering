@@ -1,0 +1,36 @@
+.draft {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-bottom: 12px;
+  border-bottom: 1px solid $border-color;
+
+  &__image.default-photo {
+    width: 156px;
+    height: 112px;
+    margin-right: 16px;
+    flex-grow: unset;
+  }
+
+  &__desc {
+    margin-right: auto;
+    align-self: flex-start;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    color: $black;
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  &__btn {
+    padding: 5px 14px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
