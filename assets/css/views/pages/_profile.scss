@@ -60,4 +60,27 @@
       margin-bottom: 12px;
     }
   }
+
+  &-slider {
+    margin-bottom: 18px;
+  }
+
+  &-event {
+    margin-bottom: 32px;
+
+    &__photos {
+      display: flex;
+      gap: 12px;
+
+      .default-photo {
+        width: 157px;
+        height: 142px;
+      }
+    }
+
+    &__photo {
+      width: 493px;
+      height: 446px;
+    }
+  }
 }
