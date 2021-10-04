@@ -62,7 +62,7 @@
           </div>
 
           <div class="brand-page__albums">
-            <NewAlbum v-for="item in 3" :key="item" />
+            <BrandEvent v-for="item in 3" :key="item" />
           </div>
 
 
@@ -125,11 +125,11 @@ import EveButton from '@/components/ui-common/EveButton'
 import Article from "@/components/views/pages/brands/Article"
 import Card from '@/components/ui-common/Card'
 import Reference from '@/components/ui-common/Reference';
-import NewAlbum from '@/components/views/pages/brands/NewAlbum';
+import BrandEvent from '@/components/views/pages/brands/BrandEvent';
 
 export default {
   components: {
-    NewAlbum,
+    BrandEvent,
     Reference,
     EveButton,
     VueSlickCarousel,

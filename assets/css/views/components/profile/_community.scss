@@ -1,0 +1,55 @@
+.community {
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  &__wrapper {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: $black;
+  }
+
+  &__name {
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  &__btn {
+    align-self: flex-end;
+    margin-left: auto;
+    padding-bottom: 18px;
+  }
+
+  // Visited
+  &--visited {
+    flex-direction: column;
+  }
+
+  &--visited &__wrapper {
+    margin-left: 0;
+    margin-top: 6px;
+  }
+
+  &--visited &__name {
+    margin-bottom: 18px;
+  }
+
+  // Small
+  &--small &__avatar {
+    width: 66px;
+    height: 66px;
+  }
+
+  &--small &__name {
+    margin-bottom: 0;
+  }
+
+  &--small &__btn {
+    display: none;
+  }
+}
