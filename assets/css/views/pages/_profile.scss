@@ -59,6 +59,10 @@
     .post-interesting {
       margin-bottom: 12px;
     }
+
+    .reference {
+      margin-bottom: 24px;
+    }
   }
 
   &-slider {
@@ -81,6 +85,13 @@
     &__photo {
       width: 493px;
       height: 446px;
+    }
+  }
+
+  &__profiles {
+
+    .profile-bar {
+      margin-bottom: 20px;
     }
   }
 }

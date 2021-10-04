@@ -14,6 +14,11 @@
     align-items: flex-start;
   }
 
+  &.with-buttons &__wrapper {
+    justify-content: space-between;
+    align-self: stretch;
+  }
+
   &__avatar {
     width: 145px;
     height: 145px;
@@ -53,6 +58,13 @@
     line-height: 29px;
     color: $black;
     margin-bottom: 3px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__name &__online {
+    position: static;
+    margin-left: 12px;
   }
 
   &__status {
@@ -73,5 +85,12 @@
 
   .eve-button {
     padding: 8px 13px;
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: auto;
   }
 }

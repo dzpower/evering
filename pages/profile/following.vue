@@ -6,29 +6,44 @@
           <Navbar class="item-page-navbar" />
         </div>
         <div class="item-page__content">
-          <h2 class="default-h2 profile-page__title-btn">
-            My suggestions
-            <EveButton>Clear</EveButton>
-          </h2>
-          <div class="profile-page__suggestions">
-            <Article
+          <RouterTabs :items="tabs" />
+
+          <div class="profile-page__profiles">
+
+            <!-- ProfileBar.vue -->
+            <div
               v-for="item in 6"
               :key="item"
-            />
-          </div>
-          <h2 class="default-h2">Drafts</h2>
-          <div class="profile-page__drafts">
-            <Draft v-for="i in 5" :key="i" />
+              class="profile-bar with-buttons"
+            >
+              <div class="profile-bar__avatar">
+                <img src="/content/users/01.png" alt="account">
+              </div>
+              <div class="profile-bar__wrapper">
+                <span class="profile-bar__name">
+                  Svetlana
+                  <span class="profile-bar__online">online</span>
+                </span>
+                <span class="profile-bar__status reference__status reference__status--expert">Expert</span>
+                <div class="profile-bar__buttons">
+                  <EveButton icon class="profile-bar__edit">
+                    Write a message
+                  </EveButton>
+                  <EveButton icon class="profile-bar__edit">
+                    Cancel subscription
+                  </EveButton>
+                </div>
+
+              </div>
+            </div>
+
           </div>
         </div>
         <div class="item-page__rightcol">
-          <SearchField class="profile-page__search" placeholder="Community Search" />
+          <SearchField class="profile-page__search" placeholder="Search" />
           <h2 class="default-h2">Recommendations</h2>
           <div class="profile-page__recommendations">
-            <Article
-              v-for="item in 4"
-              :key="item"
-            />
+            <Reference v-for="item in 4" :key="item" />
           </div>
         </div>
       </div>
@@ -40,12 +55,28 @@
 <script>
 
   import Navbar from '@/components/views/pages/profile/Navbar';
-  import Article from "@/components/views/pages/brands/Article"
-  import Draft from '@/components/ui-common/Draft'
   import EveButton from '@/components/ui-common/EveButton';
   import SearchField from '@/components/ui-common/SearchField';
+  import RouterTabs from '@/components/ui-common/RouterTabs';
+  import Reference from '@/components/ui-common/Reference';
 
   export default {
-    components: {SearchField, EveButton, Navbar, Article, Draft},
+    components: {Reference, RouterTabs, SearchField, Navbar, EveButton},
+    data() {
+      return {
+        tabs: [
+          {
+            tabContent: 'Following',
+            link: `/profile/following`,
+            activeRouter: 'following'
+          },
+          {
+            tabContent: 'Followers',
+            link: `/profile/followers`,
+            activeRouter: 'followers'
+          }
+        ]
+      }
+    }
   }
 </script>
