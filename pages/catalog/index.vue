@@ -10,31 +10,31 @@
       <div class="result-page-column">
         <div class="result-page-topbar">
           <div class="result-page-tags">
-            <Tag
+            <tag
               v-for="(tag, index) in tags"
               :key="index"
               :href="tag.link"
             >
-              {{tag.name}}</Tag>
+              {{tag.name}}</tag>
           </div>
           <a href="#" class="result-page-mp-button">Search in the marketplace</a>
         </div>
         <div class="result-page-middlebar">
-          <Pagination />
+          <pagination />
           <div class="result-page-sort">
             <span class="result-page-sort__label">Sorting</span>
-            <Select />
+            <select />
           </div>
         </div>
         <div class="result-page-list">
-          <Card
+          <card
             v-for="item in 20"
             :key="item"
             :to='`${$route.path}/${item}`'
-          ></Card>
+          ></card>
         </div>
         <div class="result-page-bottombar">
-          <Pagination />
+          <pagination />
         </div>
       </div>
     </main>
@@ -43,17 +43,10 @@
 
 <script>
   import FilterItem from '@/components/views/pages/catalog/FilterItem'
-  import Card from '@/components/ui-common/Card'
-  import Tag from '@/components/ui-common/Tag'
-  import Pagination from '@/components/ui-common/Pagination'
-  import Select from '@/components/ui-common/Select'
 
   export default {
-    components: { Pagination,
-      Tag,
-      FilterItem,
-      Card,
-      Select
+    components: {
+      FilterItem
     },
     data() {
       return {

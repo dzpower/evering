@@ -31,16 +31,13 @@
         </div>
 
       </div>
-      <EveButton class="purchase__button">Go to the store</EveButton>
+      <eve-button class="purchase__button">Go to the store</eve-button>
     </div>
   </div>
 </template>
 
 <script>
-
-import EveButton from '@/components/ui-common/EveButton';
 export default {
-  name: "Purchase",
-  components: {EveButton}
+  name: "Purchase"
 }
 </script>

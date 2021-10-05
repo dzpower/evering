@@ -1,19 +1,16 @@
 <template>
   <div class="brand-event">
-    <Event />
+    <event />
     <GalleryTiles />
-    <ActionBar />
+    <action-bar />
   </div>
 </template>
 
 <script>
-
-import Event from '@/components/ui-common/Event';
-import ActionBar from '@/components/ui-common/ActionBar';
 import GalleryTiles from '@/components/ui-common/photos/GalleryTiles';
 
 export default {
   name: "BrandEvent",
-  components: {GalleryTiles, ActionBar, Event}
+  components: {GalleryTiles}
 }
 </script>

@@ -6,10 +6,8 @@
           <Navbar class="item-page-navbar" />
         </div>
         <div class="item-page__content">
-          <RouterTabs :items="tabs" />
-
+          <router-tabs :items="tabs" />
           <div class="profile-page__profiles">
-
             <!-- ProfileBar.vue -->
             <div
               v-for="item in 6"
@@ -26,12 +24,12 @@
                 </span>
                 <span class="profile-bar__status reference__status reference__status--expert">Expert</span>
                 <div class="profile-bar__buttons">
-                  <EveButton icon class="profile-bar__edit">
+                  <eve-button icon class="profile-bar__edit">
                     Write a message
-                  </EveButton>
-                  <EveButton icon class="profile-bar__edit">
+                  </eve-button>
+                  <eve-button icon class="profile-bar__edit">
                     Cancel subscription
-                  </EveButton>
+                  </eve-button>
                 </div>
 
               </div>
@@ -40,14 +38,13 @@
           </div>
         </div>
         <div class="item-page__rightcol">
-          <SearchField class="profile-page__search" placeholder="Search" />
+          <search-field  class="profile-page__search" placeholder="Search" />
           <h2 class="default-h2">Recommendations</h2>
           <div class="profile-page__recommendations">
-            <Reference v-for="item in 4" :key="item" />
+            <reference v-for="item in 4" :key="item" />
           </div>
         </div>
       </div>
-
     </main>
   </div>
 </template>
@@ -55,13 +52,9 @@
 <script>
 
   import Navbar from '@/components/views/pages/profile/Navbar';
-  import EveButton from '@/components/ui-common/EveButton';
-  import SearchField from '@/components/ui-common/SearchField';
-  import RouterTabs from '@/components/ui-common/RouterTabs';
-  import Reference from '@/components/ui-common/Reference';
 
   export default {
-    components: {Reference, RouterTabs, SearchField, Navbar, EveButton},
+    components: {Navbar},
     data() {
       return {
         tabs: [

@@ -7,7 +7,7 @@
     <div class='product-preview__body'>
       <div class='product-preview__body-combiner'>
         <span class='price'>{{ price }}</span>
-        <Rating :stars='rating'/>
+        <rating :stars='rating'/>
       </div>
       <button class='buy'>
         <img src='/icons/basket.svg' alt=''>
@@ -18,13 +18,9 @@
 </template>
 
 <script>
-import Rating from '@/components/ui-common/Rating'
 
 export default {
   name: 'ProductPreview',
-  components: {
-    Rating
-  },
   props: {
     title: {
       type: String,

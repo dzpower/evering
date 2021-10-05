@@ -9,26 +9,26 @@
       </aside>
       <div class="result-page-column">
         <div class="result-page-topbar marketplace-topbar">
-          <RouterTabs />
+          <router-tabs />
           <a href="#" class="result-page-mp-button">Open in the catalog</a>
         </div>
         <div class="result-page-tags marketplace-tags">
-          <Tag
+          <tag
             v-for="(tag, index) in tags"
             :key="index"
             :href="tag.link"
           >
-            {{tag.name}}</Tag>
+            {{tag.name}}</tag>
         </div>
 
         <h2 class="default-h2">Hot topics</h2>
         <div class="marketplace-slider">
           <vue-slick-carousel :variable-width='true' :arrows='true'>
-            <Card
+            <card
               v-for="item in 4"
               :key="item"
               :to='`${$route.path}/${item}`'
-            ></Card>
+            ></card>
             <template #prevArrow>
               <div class='custom-arrow'>
               </div>
@@ -41,10 +41,10 @@
         </div>
 
         <div class="result-page-middlebar">
-          <Pagination />
+          <pagination />
           <div class="result-page-sort">
             <span class="result-page-sort__label">Sorting</span>
-            <Select />
+            <select />
           </div>
         </div>
         <div class="result-page-list marketplace-list">
@@ -56,7 +56,7 @@
           />
         </div>
         <div class="result-page-bottombar">
-          <Pagination />
+          <pagination />
         </div>
       </div>
     </main>
@@ -65,22 +65,12 @@
 
 <script>
   import FilterItem from '@/components/views/pages/catalog/FilterItem'
-  import Card from '@/components/ui-common/Card'
-  import Tag from '@/components/ui-common/Tag'
-  import Pagination from '@/components/ui-common/Pagination'
-  import RouterTabs from '@/components/ui-common/RouterTabs'
-  import Select from '@/components/ui-common/Select'
   import ProductPreview from '@/components/views/pages/home/ProductPreview';
 
   export default {
     components: {
       ProductPreview,
-      Pagination,
-      Tag,
       FilterItem,
-      Card,
-      RouterTabs,
-      Select
     },
     data() {
       return {

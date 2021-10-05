@@ -9,7 +9,7 @@
         <div class="profile-page__community-bar community-bar">
           <h2 class="community-bar__title">Best of the best</h2>
           <span class="community-bar__subs">10000 Following</span>
-          <EveButton class="community-bar__btn">Join</EveButton>
+          <eve-button class="community-bar__btn">Join</eve-button>
         </div>
         <div class="profile-page__columns">
           <div class="profile-page__leftcol">
@@ -32,10 +32,10 @@
             <h2 class='default-h2'>References</h2>
 
             <div class="brand-page__references">
-              <Reference
+              <reference
                 :expert="true"
               />
-              <Reference
+              <reference
                 :expert="false"
               />
             </div>
@@ -57,12 +57,10 @@
 <script>
 
   import Navbar from '@/components/views/pages/profile/Navbar'
-  import EveButton from '@/components/ui-common/EveButton';
   import CommunityPost from '@/components/views/pages/profile/CommunityPost';
   import Article from '@/components/views/pages/brands/Article';
-  import Reference from '@/components/ui-common/Reference';
 
   export default {
-    components: {Reference, CommunityPost, EveButton, Navbar, Article},
+    components: { CommunityPost, Navbar, Article},
   }
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div class="product-videos">
-    <DefaultVideo
+    <default-video
       v-for="item in 5"
       :key="item"
     />
@@ -9,11 +9,8 @@
 
 <script>
 
-import DefaultVideo from '@/components/ui-common/DefaultVideo'
-
 export default {
-  name: "Videos",
-  components: {DefaultVideo}
+  name: "Videos"
 }
 </script>
 

@@ -20,26 +20,23 @@
       </vue-slick-carousel>
     </div>
     <div class="product-gallery__other">
-      <EveButton class="product-gallery__button">
+      <eve-button class="product-gallery__button">
         <strong>Go to the seller's page</strong>
-      </EveButton>
-      <VueSlickCarousel class="product-gallery__videos" :variable-width='false' :arrows="false" :dots="true">
-        <DefaultVideo
+      </eve-button>
+      <vue-slick-carousel class="product-gallery__videos" :variable-width='false' :arrows="false" :dots="true">
+        <default-video
           v-for="item in 3"
           :key="item"
-        ></DefaultVideo>
+        ></default-video>
         <template #dots></template>
-      </VueSlickCarousel>
+      </vue-slick-carousel>
     </div>
   </div>
 </template>
 
 <script>
-import EveButton from '@/components/ui-common/EveButton';
-import DefaultVideo from '@/components/ui-common/DefaultVideo';
 
 export default {
-  name: "Preview",
-  components: {EveButton, DefaultVideo},
+  name: "Preview"
 }
 </script>

@@ -11,21 +11,19 @@
         <span>10000 Following</span>
         <span>50000 Followers</span>
       </div>
-      <EveButton icon class="profile-bar__edit">
+      <eve-button icon class="profile-bar__edit">
         <template #icon>
           <img src="/icons/edit.svg" alt="edit">
         </template>
         Edit a page
-      </EveButton>
+      </eve-button>
     </div>
   </div>
 </template>
 
 <script>
 
-import EveButton from '@/components/ui-common/EveButton';
 export default {
-  name: "ProfileBar",
-  components: {EveButton}
+  name: "ProfileBar"
 }
 </script>

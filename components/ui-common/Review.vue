@@ -12,7 +12,7 @@
       <div class='review-user__name'>
         Alexandra Iks
       </div>
-      <Rating
+      <rating
         :stars='4'
       />
       <p class='review-content'>
@@ -43,12 +43,7 @@
 </template>
 
 <script>
-import Rating from '@/components/ui-common/Rating'
-
 export default {
-  name: 'Review',
-  components: {
-    Rating
-  }
+  name: 'Review'
 }
 </script>
