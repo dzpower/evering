@@ -15,11 +15,11 @@
 
 <script>
 
-  import Navbar from '@/components/views/pages/profile/Navbar';
-  import AccountBar from '@/components/ui-common/ProfileBar'
-  import Purchase from '@/components/ui-common/Purchase';
+import Navbar from '@/components/views/pages/profile/Navbar';
+import AccountBar from '@/components/ui-common/ProfileBar'
+import Purchase from '@/components/ui-common/Purchase';
 
-  export default {
-    components: {Purchase, Navbar, AccountBar},
-  }
+export default {
+  components: {Purchase, Navbar, AccountBar},
+}
 </script>

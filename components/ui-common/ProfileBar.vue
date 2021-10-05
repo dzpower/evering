@@ -25,7 +25,7 @@
 
 import EveButton from '@/components/ui-common/EveButton';
 export default {
-  name: "Account",
+  name: "ProfileBar",
   components: {EveButton}
 }
 </script>
