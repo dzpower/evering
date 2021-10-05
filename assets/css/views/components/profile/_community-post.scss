@@ -1,0 +1,21 @@
+.community-post {
+  width: 100%;
+  padding: 16px 0;
+  border-top: 1px solid $border-color;
+
+  .gallery-tiles {
+    width: 500px;
+  }
+
+  &__reviews {
+    padding-bottom: 16px;
+    padding-top: 6px;
+    .review {
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+}
