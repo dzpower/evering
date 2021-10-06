@@ -19,6 +19,7 @@ import RouterTabs from '@/components/ui-common/RouterTabs'
 import SearchField from '@/components/ui-common/SearchField'
 import Select from '@/components/ui-common/Select'
 import Tag from '@/components/ui-common/Tag'
+import Checkbox from '@/components/ui-common/Checkbox'
 
 
 const components = {
@@ -42,6 +43,7 @@ const components = {
   SearchField,
   Select,
   Tag,
+  Checkbox,
 }
 
 Object.entries(components).forEach(([name, component]) => {

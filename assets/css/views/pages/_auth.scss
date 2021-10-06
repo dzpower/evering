@@ -1,0 +1,109 @@
+.auth {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &-terms {
+    width: 100%;
+    padding-top: 17px;
+    padding-left: 22px;
+    padding-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+
+    .checkbox {
+      margin-right: 12px;
+    }
+
+    p {
+      margin: 0;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 20px;
+
+      a{
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+
+  &-alternative{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &__social,
+    &__have-account {
+      width: 100%;
+      margin-top: 16px;
+      display: flex;
+      align-items: center;
+
+      span{
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+      img {
+        width: 42px;
+        height: 42px;
+        margin-right: 12px;
+        cursor: pointer;
+      }
+    }
+
+    &__social span{
+      margin-right: 26px;
+    }
+
+    &__have-account {
+      span{
+        flex-basis: calc(50% - 16px);
+        margin-right: 0;
+      }
+
+      .eve-button {
+        flex-basis: 50%;
+        flex-grow: 1;
+      }
+    }
+  }
+
+  &-link{
+    padding-left: 16px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: $forgot-link;
+    align-self: flex-start;
+    margin: 0 0 12px;
+  }
+
+  &-place {
+    width: 100%;
+    max-width: 440px;
+    margin-top: 150px;
+
+    h2 {
+      margin: 0;
+      width: 100%;
+      text-align: center;
+      font-weight: normal;
+      font-size: 21px;
+      line-height: 30px;
+      padding-bottom: 26px;
+    }
+  }
+
+  .login,
+  .registration {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

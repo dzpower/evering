@@ -1,0 +1,44 @@
+.checkmark {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  background: $white;
+  border: 1px solid #D6C7CE;
+  box-sizing: border-box;
+  border-radius: 7px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+}
+
+.checkbox {
+  display: block;
+  width: 100%;
+  max-width: 22px;
+  position: relative;
+  cursor: pointer;
+  line-height: 1;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  input:checked ~ .checkmark {
+    background: $white url('/icons/check.svg') center center no-repeat;
+    background-size: 14px 13px;
+  }
+}
+
+
+

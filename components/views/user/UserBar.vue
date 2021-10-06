@@ -5,7 +5,7 @@
         Auth user
       </template>
       <template v-else>
-        <NuxtLink class='login-link' to='/login'>Login</NuxtLink>
+        <NuxtLink class='login-link' to='auth'>Login</NuxtLink>
       </template>
       <button class='language'>
         <img src='/icons/language.svg' alt=''>

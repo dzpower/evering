@@ -1,0 +1,21 @@
+.input-default {
+  width: 100%;
+  background: $white;
+  border: 1px solid #D6C7CE;
+  box-sizing: border-box;
+  border-radius: 40px;
+  outline: none;
+  padding: 6px 16px;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 17px;
+  color: $black;
+  margin-bottom: 12px;
+
+  &::placeholder{
+    color: $placeholder-color;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 17px;
+  }
+}
