@@ -8,7 +8,7 @@
         <div class="item-page__content">
           <h2 class="default-h2 profile-page__title-btn">
             My suggestions
-            <EveButton>Clear</EveButton>
+            <eve-button>Clear</eve-button>
           </h2>
           <div class="profile-page__suggestions">
             <Article
@@ -18,11 +18,11 @@
           </div>
           <h2 class="default-h2">Drafts</h2>
           <div class="profile-page__drafts">
-            <Draft v-for="i in 5" :key="i" />
+            <draft v-for="i in 5" :key="i" />
           </div>
         </div>
         <div class="item-page__rightcol">
-          <SearchField class="profile-page__search" placeholder="Community Search" />
+          <search-field class="profile-page__search" placeholder="Community Search" />
           <h2 class="default-h2">Recommendations</h2>
           <div class="profile-page__recommendations">
             <Article
@@ -41,11 +41,8 @@
 
   import Navbar from '@/components/views/pages/profile/Navbar';
   import Article from "@/components/views/pages/brands/Article"
-  import Draft from '@/components/ui-common/Draft'
-  import EveButton from '@/components/ui-common/EveButton';
-  import SearchField from '@/components/ui-common/SearchField';
 
   export default {
-    components: {SearchField, EveButton, Navbar, Article, Draft},
+    components: {Navbar, Article},
   }
 </script>

@@ -1,5 +1,4 @@
 <template>
-
   <div
     :class='
       getRouteName.includes("catalog")
@@ -24,12 +23,8 @@
 </template>
 
 <script>
-import UserBar from '@/components/views/user/UserBar'
 export default {
   name: 'Header',
-  components: {
-    'user-bar': UserBar
-  },
   computed: {
     getRouteName() {
       return this.$route.path

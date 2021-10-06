@@ -41,15 +41,15 @@
         </vue-slick-carousel>
       </div>
       <div class='more-interesting'>
-        <EveButton>More interesting things on Everigin</EveButton>
+        <eve-button>More interesting things on Everigin</eve-button>
       </div>
       <div class='tag-wrapper'>
-        <Tag
+        <tag
           v-for="(tag, index) in tags"
           :key="index"
           :href="tag.link"
         >
-          {{tag.name}}</Tag>
+          {{tag.name}}</tag>
       </div>
       <div class='home-products'>
         <vue-slick-carousel :variable-width='true' :arrows='true'>
@@ -70,13 +70,13 @@
         </vue-slick-carousel>
       </div>
       <div class='home-products__actions'>
-        <EveButton class="dark">
+        <eve-button class="dark">
           More offers
-        </EveButton>
-        <EveButton icon>
+        </eve-button>
+        <eve-button icon>
           <template #icon><img src='/icons/edit.svg' alt=''></template>
           Place an ad
-        </EveButton>
+        </eve-button>
       </div>
       <div class='home-categories'>
         <CategoryItem
@@ -115,17 +115,13 @@
 <script>
 import ExpertResponse from '@/components/views/pages/home/ExpertResponse'
 import PostInteresting from '@/components/views/pages/home/PostInteresting'
-import EveButton from '@/components/ui-common/EveButton'
-import Tag from '@/components/ui-common/Tag'
 import ProductPreview from '@/components/views/pages/home/ProductPreview'
 import CategoryItem from '@/components/views/pages/home/CategoryItem'
 
 export default {
   components: {
-    EveButton,
     ExpertResponse,
     PostInteresting,
-    Tag,
     ProductPreview,
     CategoryItem
   },

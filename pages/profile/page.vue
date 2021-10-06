@@ -3,11 +3,11 @@
     <main class="main">
       <Navbar class="result-page-navbar" />
       <div class="result-page-column">
-        <AccountBar />
+        <profile-bar />
 
         <h2 class="default-h2 profile-page__title-btn">
           Personal collections
-          <Select />
+          <select />
         </h2>
         <div class="result-page-slider profile-page-slider">
           <vue-slick-carousel :variable-width='true' :arrows='true'>
@@ -34,7 +34,7 @@
 
         <h2 class="default-h2 profile-page__title-btn">
           Photo
-          <Select />
+          <select />
         </h2>
         <div class="result-page-slider profile-page-slider">
           <vue-slick-carousel :variable-width='true' :arrows='true'>
@@ -58,14 +58,13 @@
             </template>
           </vue-slick-carousel>
         </div>
-
         <h2 class="default-h2 profile-page__title-btn">
           Video
-          <Select />
+          <select />
         </h2>
         <div class="result-page-slider profile-page-slider">
           <vue-slick-carousel :variable-width='true' :arrows='true'>
-            <DefaultVideo v-for="item in 5" :key="item"></DefaultVideo>
+            <default-video v-for="item in 5" :key="item"></default-video>
             <template #prevArrow>
               <div class='custom-arrow'>
               </div>
@@ -76,14 +75,10 @@
             </template>
           </vue-slick-carousel>
         </div>
-
         <div class="profile-page__events">
-
           <div class="profile-page-event">
-            <Event />
-
+            <event />
             <div class="profile-page-event__photos">
-
               <div
                 v-for="item in 3"
                 :key="item"
@@ -94,38 +89,28 @@
 
             </div>
           </div>
-
           <div class="profile-page-event">
-            <Event />
-            <Discussion />
+            <event />
+            <discussion />
           </div>
-
           <div class="profile-page-event">
-            <Event />
+            <event />
             <div
               class="default-photo profile-page-event__photo"
             >
               <img src="/content/01.png" alt="photo">
             </div>
           </div>
-
         </div>
-
       </div>
     </main>
   </div>
 </template>
 
 <script>
-
   import Navbar from '@/components/views/pages/profile/Navbar'
-  import AccountBar from '@/components/ui-common/ProfileBar'
-  import Select from '@/components/ui-common/Select';
-  import DefaultVideo from '@/components/ui-common/DefaultVideo';
-  import Event from '@/components/ui-common/Event'
-  import Discussion from '@/components/ui-common/Discussion';
 
   export default {
-    components: {Discussion, DefaultVideo, Select, Navbar, AccountBar, Event},
+    components: {Navbar},
   }
 </script>

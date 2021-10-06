@@ -1,7 +1,7 @@
 <template>
   <div class='catalog-product prod'>
     <main class='main'>
-      <RouterTabs
+      <router-tabs
         :items='tabs'
       />
       <div class='catalog-product__columns'>
@@ -57,7 +57,7 @@
 
           <div class='catalog-product__discussions'>
 
-            <Discussion
+            <discussion
               v-for='item in 3'
               :key='item'
             />
@@ -82,11 +82,8 @@
 </template>
 
 <script>
-
-import RouterTabs from '@/components/ui-common/RouterTabs'
 import Photos from '@/components/views/pages/product/Photos'
 import PostInteresting from '@/components/views/pages/home/PostInteresting'
-import Discussion from '@/components/ui-common/Discussion'
 import Preview from '@/components/views/pages/product/Preview'
 import AddCart from '@/components/views/pages/product/AddCart'
 import Videos from '@/components/views/pages/product/Videos'
@@ -96,10 +93,8 @@ export default {
     Videos,
     AddCart,
     Preview,
-    Discussion,
     PostInteresting,
-    Photos,
-    RouterTabs
+    Photos
   },
   data() {
     return {

@@ -1,7 +1,7 @@
 <template>
   <div class='catalog-product prod'>
     <main class='main'>
-      <RouterTabs
+      <router-tabs
         :items='tabs'
       />
       <div class='catalog-product__columns'>
@@ -11,12 +11,12 @@
 
           <div class='reviews-wrapper'>
             <h2 class='default-h2'>Reviews</h2>
-            <Review
+            <review
               v-for='n in 3'
               :key='n'
             />
           </div>
-          <Pagination />
+          <pagination />
         </div>
 
         <div class='catalog-product__rightcol'>
@@ -44,13 +44,13 @@
           </template>
         </vue-slick-carousel>
         <div class='home-products__actions'>
-          <EveButton class="dark">
+          <eve-button class="dark">
             More offers
-          </EveButton>
-          <EveButton icon>
+          </eve-button>
+          <eve-button icon>
             <template #icon><img src='/icons/edit.svg' alt=''></template>
             Place an ad
-          </EveButton>
+          </eve-button>
         </div>
       </div>
     </main>
@@ -58,25 +58,17 @@
 </template>
 
 <script>
-import RouterTabs from '@/components/ui-common/RouterTabs'
 import Photos from '@/components/views/pages/product/Photos'
 import Preview from '@/components/views/pages/product/Preview'
 import AddCart from '@/components/views/pages/product/AddCart'
-import Review from '@/components/ui-common/Review'
 import ProductPreview from '@/components/views/pages/home/ProductPreview'
-import Pagination from '@/components/ui-common/Pagination'
-import EveButton from '@/components/ui-common/EveButton'
 
 export default {
   components: {
     AddCart,
     Preview,
     Photos,
-    RouterTabs,
-    Review,
-    Pagination,
-    ProductPreview,
-    EveButton
+    ProductPreview
   },
   data() {
     return {

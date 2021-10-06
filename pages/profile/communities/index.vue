@@ -8,7 +8,7 @@
         <div class="item-page__content">
           <h2 class="default-h2 profile-page__title-btn">
             <span class="profile-page__subtitle">Recently visited</span>
-            <EveButton>Clear</EveButton>
+            <eve-button>Clear</eve-button>
           </h2>
           <div class="profile-page__visited">
 
@@ -31,19 +31,19 @@
             </div>
 
           </div>
-          <RouterTabs :items="tabs" />
+          <router-tabs :items="tabs" />
           <div class="profile-page__pagination">
-            <Pagination/>
+            <pagination/>
           </div>
           <div class="profile-page__communities">
             <Community v-for="item in 5" :key="item" />
           </div>
           <div class="profile-page__pagination">
-            <Pagination/>
+            <pagination/>
           </div>
         </div>
         <div class="item-page__rightcol">
-          <SearchField class="profile-page__search" placeholder="Search" />
+          <search-field class="profile-page__search" placeholder="Search" />
           <h2 class="default-h2">Recommendations</h2>
           <div class="profile-page__recommendations">
             <Community v-for="item in 4" :key="item" class="community--small" />
@@ -58,14 +58,10 @@
 <script>
 
   import Navbar from '@/components/views/pages/profile/Navbar';
-  import SearchField from '@/components/ui-common/SearchField';
-  import RouterTabs from '@/components/ui-common/RouterTabs';
-  import EveButton from '@/components/ui-common/EveButton';
   import Community from '@/components/views/pages/profile/Community';
-  import Pagination from '@/components/ui-common/Pagination';
 
   export default {
-    components: {Pagination, Community, EveButton, RouterTabs, SearchField, Navbar},
+    components: {Community, Navbar},
     data() {
       return {
         tabs: [

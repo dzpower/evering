@@ -10,41 +10,42 @@
       <div class="result-page-column">
         <div class="result-page-topbar">
           <div class="result-page-tags">
-            <Tag
+            <tag
               v-for="(tag, index) in tags"
               :key="index"
               :href="tag.link"
             >
-              {{tag.name}}</Tag>
+              {{tag.name}}
+            </tag>
           </div>
 
         </div>
         <div class="result-page-middlebar brands-middlebar">
           <div class="result-page-sort">
-            <Pagination />
+            <pagination />
             <a href="#" class="result-page-mp-button">Search in the marketplace</a>
           </div>
         </div>
 
         <h2 class="default-h2">Brands</h2>
         <div class="result-page-list">
-          <Card
+          <card
             v-for="item in 8"
             :key="item"
             :to="`${$route.path}/${item}`"
-          ></Card>
+          ></card>
         </div>
         <div class="result-page-bottombar brands-bottombar">
-          <Pagination />
+          <pagination />
         </div>
 
         <h2 class="default-h2">Manufacturers</h2>
         <div class="brands-slider">
           <vue-slick-carousel :variable-width='true' :arrows='true'>
-            <Card
+            <card
               v-for="item in 4"
               :key="item"
-            ></Card>
+            ></card>
             <template #prevArrow>
               <div class='custom-arrow'>
               </div>
@@ -59,10 +60,10 @@
         <h2 class="default-h2">Characters</h2>
         <div class="brands-slider">
           <vue-slick-carousel :variable-width='true' :arrows='true'>
-            <Card
+            <card
               v-for="item in 4"
               :key="item"
-            ></Card>
+            ></card>
             <template #prevArrow>
               <div class='custom-arrow'>
               </div>
@@ -77,10 +78,10 @@
         <h2 class="default-h2">Top 100 dolls</h2>
         <div class="brands-slider">
           <vue-slick-carousel :variable-width='true' :arrows='true'>
-            <Card
+            <card
               v-for="item in 4"
               :key="item"
-            ></Card>
+            ></card>
             <template #prevArrow>
               <div class='custom-arrow'>
               </div>
@@ -95,10 +96,10 @@
         <h2 class="default-h2">Top 100 collectors</h2>
         <div class="brands-slider">
           <vue-slick-carousel :variable-width='true' :arrows='true'>
-            <Card
+            <card
               v-for="item in 4"
               :key="item"
-            ></Card>
+            ></card>
             <template #prevArrow>
               <div class='custom-arrow'>
               </div>
@@ -117,15 +118,10 @@
 
 <script>
   import FilterItem from '@/components/views/pages/catalog/FilterItem'
-  import Card from '@/components/ui-common/Card'
-  import Tag from '@/components/ui-common/Tag'
-  import Pagination from '@/components/ui-common/Pagination'
 
   export default {
-    components: { Pagination,
-      Tag,
-      FilterItem,
-      Card
+    components: {
+      FilterItem
     },
     data() {
       return {

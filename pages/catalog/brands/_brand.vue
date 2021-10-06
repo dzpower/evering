@@ -38,18 +38,18 @@
 
             <br>
 
-            <EveButton class="default-text__size-btn">
+            <eve-button class="default-text__size-btn">
               <div class="--caret-after">Less</div>
-            </EveButton>
+            </eve-button>
           </p>
 
           <div class='brand-page__products'>
-            <VueSlickCarousel :variable-width='true' :arrows='true' :items='3'>
-              <Card
+            <vue-slick-carousel :variable-width='true' :arrows='true' :items='3'>
+              <card
                 v-for="item in 5"
                 :key="item"
                 class=""
-              ></Card>
+              ></card>
               <template #prevArrow>
                 <div class='custom-arrow'>
                 </div>
@@ -58,7 +58,7 @@
                 <div class='custom-arrow custom-arrow__next'>
                 </div>
               </template>
-            </VueSlickCarousel>
+            </vue-slick-carousel>
           </div>
 
           <div class="brand-page__albums">
@@ -71,15 +71,15 @@
         <div class='item-page__rightcol'>
 
           <div class="brand-page__top-bar">
-            <EveButton icon>
+            <eve-button icon>
               <template #icon>
                 <img src="/icons/edit.svg" alt="edit">
               </template>
               Edit a page
-            </EveButton>
-            <EveButton class="dark">
+            </eve-button>
+            <eve-button class="dark">
               Products in the marketplace
-            </EveButton>
+            </eve-button>
           </div>
 
           <h2 class='default-h2'>Article</h2>
@@ -93,10 +93,10 @@
           <h2 class='default-h2'>References</h2>
 
           <div class="brand-page__references">
-            <Reference
+            <reference
               :expert="true"
             />
-            <Reference
+            <reference
               :expert="false"
             />
           </div>
@@ -117,24 +117,13 @@
 </template>
 
 <script>
-
-import VueSlickCarousel from 'vue-slick-carousel'
-import 'vue-slick-carousel/dist/vue-slick-carousel.css'
-import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
-import EveButton from '@/components/ui-common/EveButton'
 import Article from "@/components/views/pages/brands/Article"
-import Card from '@/components/ui-common/Card'
-import Reference from '@/components/ui-common/Reference';
 import BrandEvent from '@/components/views/pages/brands/BrandEvent';
 
 export default {
   components: {
     BrandEvent,
-    Reference,
-    EveButton,
-    VueSlickCarousel,
     Article,
-    Card,
   },
   data() {
     return {
