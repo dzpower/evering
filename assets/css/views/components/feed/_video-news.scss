@@ -1,0 +1,12 @@
+.video-news {
+
+  &__videos {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    .default-video {
+      width: 246px;
+    }
+  }
+}

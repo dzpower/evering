@@ -1,0 +1,27 @@
+.article-event {
+
+  &__text {
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 30px;
+  }
+
+  &__all {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
+  }
+
+  &__image {
+    width: 100%;
+    height: 380px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

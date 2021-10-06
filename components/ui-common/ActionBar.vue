@@ -1,4 +1,4 @@
-<template>
+ <template>
   <div class="action-bar">
     <div class="action-bar__likes">
       <button>

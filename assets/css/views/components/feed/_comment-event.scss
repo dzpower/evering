@@ -1,0 +1,11 @@
+.comment-event {
+
+  &__discussion {
+    width: 100%;
+
+    .discussion__preview {
+      min-width: 245px;
+      height: 222px;
+    }
+  }
+}
