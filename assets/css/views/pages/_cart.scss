@@ -1,0 +1,31 @@
+.cart-page {
+  width: 100%;
+
+  // Columns
+  &__columns {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &__left-col {
+    width: 100%;
+    max-width: 760px;
+
+    .cart-item {
+      margin-bottom: 16px;
+
+      &:last-child {
+        margin-bottom: 0;
+        border-bottom: 0;
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  &__right-col {
+    width: 100%;
+    max-width: 350px;
+  }
+}

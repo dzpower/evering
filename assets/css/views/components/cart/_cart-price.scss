@@ -1,0 +1,74 @@
+.cart-price {
+  width: 100%;
+
+  &__title {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 23px;
+    color: $black;
+  }
+
+  &__list {
+    width: 100%;
+    list-style-type: none;
+    padding: 16px 18px 20px 18px;
+    margin: 0;
+
+    &-item {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      font-size: 16px;
+      line-height: 30px;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin-bottom: 30px;
+
+    .eve-button {
+      width: 100%;
+
+      &:first-child {
+        font-weight: bold;
+        margin-bottom: 24px;
+      }
+
+      &:last-child {
+        font-weight: 500;
+      }
+    }
+  }
+
+  &__payments {
+    display: flex;
+    align-items: center;
+    margin: 14px 0;
+  }
+
+  &__payment {
+    width: 42px;
+    margin-right: 8px;
+  }
+
+  &__payment-text {
+    display: flex;
+    align-items: center;
+    margin-bottom: 14px;
+    font-size: 16px;
+    line-height: 30px;
+    color: $black;
+
+    a {
+      color: #389EBE;
+      text-decoration: none;
+    }
+
+    img {
+      margin-right: 14px;
+    }
+  }
+}
