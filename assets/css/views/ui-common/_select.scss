@@ -1,12 +1,16 @@
 .default-select {
-  background: none;
   border: none;
   outline: none;
   font-weight: normal;
   font-size: 12px;
   line-height: 17px;
   color: $black;
-  padding-left: 12px;
+  padding: 0 12px;
+  background-image: url("static/icons/caret.svg");
+  background-repeat: no-repeat;
+  background-size: 7px;
+  background-position: center right;
+  appearance: none;
 
   option {
     border: none;
