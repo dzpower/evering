@@ -1,0 +1,33 @@
+.feed-page {
+  width: 100%;
+
+  .feed-filter {
+    width: 100%;
+    max-width: 133px;
+  }
+
+  &__posts {
+    margin-top: 12px;
+    .news-item {
+      margin-bottom: 24px;
+
+      &:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+    }
+  }
+
+  .result-page-sort {
+    margin-top: 16px;
+    margin-bottom: 34px;
+  }
+
+  &__articles {
+
+    .post-interesting {
+      margin-bottom: 16px;
+    }
+  }
+}

@@ -42,3 +42,50 @@
 
 
 
+.default-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 23px;
+  color: $black;
+  cursor: pointer;
+
+
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  &__decor {
+    display: flex;
+    align-items: center;
+    background: #F3EFF0;
+    border: 1px solid #D2C5CC;
+    box-sizing: border-box;
+    border-radius: 9px;
+    width: 20px;
+    height: 10px;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: '';
+      border-radius: 100%;
+      display: block;
+      width: 14px;
+      height: 14px;
+      background: #D2C5CC;
+      left: -5px;
+      transition: 0.2s left ease-in, 0.2s background-color;
+    }
+  }
+
+  input:checked ~ &__decor::before {
+    left: calc(100% - 9px);
+    background: #66BCD7;
+    transition: 0.2s left ease-out;
+  }
+
+}

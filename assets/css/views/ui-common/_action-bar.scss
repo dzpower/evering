@@ -4,6 +4,20 @@
   padding-top: 14px;
   padding-bottom: 10px;
 
+  &__comments-count {
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 26px;
+    color: $black;
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 16px;
+      margin-right: 8px;
+    }
+  }
+
   &__comments {
     font-weight: normal;
     font-size: 12px;
@@ -46,4 +60,19 @@
     }
   }
 
+  &--full &__likes {
+    margin-right: 0;
+  }
+
+  &--full {
+    gap: 27px;
+  }
+
+  .eve-button {
+    padding: 6px 14px;
+
+    img {
+      margin-right: 5px;
+    }
+  }
 }

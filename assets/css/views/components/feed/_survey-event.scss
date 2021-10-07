@@ -1,0 +1,51 @@
+.survey-event {
+
+  &__survey {
+    width: 100%;
+  }
+}
+
+.survey {
+  border: 1px solid #D6C7CE;
+  box-sizing: border-box;
+  border-radius: 7px;
+  padding-top: 30px;
+  padding-bottom: 44px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  &__title {
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 36px;
+    color: $black;
+    margin-bottom: 7px;
+  }
+
+  &__type {
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 17px;
+    margin-bottom: 26px;
+  }
+
+  &__form {
+    width: 100%;
+    max-width: 567px;
+    margin-bottom: 30px;
+
+    .radio-button {
+      margin-bottom: 14px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  & &__submit {
+    padding: 6px 17px;
+    font-weight: bold;
+  }
+}
