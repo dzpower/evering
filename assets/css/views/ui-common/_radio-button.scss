@@ -1,0 +1,29 @@
+.radio-button {
+  display: flex;
+  align-items: center;
+  padding: 8px 17px;
+  justify-content: space-between;
+
+  input[type="radio"] {
+    display: none;
+  }
+
+  background: #FAF6F7;
+  border-radius: 7px;
+
+  &__decor {
+    width: 28px;
+    height: 28px;
+    display: block;
+    background: $white;
+    border: 1px solid #D5C8CF;
+    box-sizing: border-box;
+    border-radius: 7px;
+  }
+
+  input[type="radio"]:checked ~ &__decor {
+    background: url(static/icons/radio-btn.svg) no-repeat;
+    background-size: 23px 23px;
+    background-position: 2px;
+  }
+}

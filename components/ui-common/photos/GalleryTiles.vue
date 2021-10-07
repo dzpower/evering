@@ -1,7 +1,7 @@
 <template>
   <div class="gallery-tiles">
     <div
-      v-for="item in 3"
+      v-for="item in count"
       :key="item"
       class="gallery-tiles__item"
     >
@@ -12,6 +12,12 @@
 
 <script>
 export default {
-  name: "GalleryTiles"
+  name: "GalleryTiles",
+  props: {
+    count: {
+      type: Number,
+      default: 3,
+    }
+  }
 }
 </script>
