@@ -21,7 +21,7 @@
 
     </div>
 
-    <!-- Action Bar -->
+    <!-- ActionBar.vue -->
     <div class="action-bar action-bar--full">
       <div class="action-bar__likes">
         <button>
