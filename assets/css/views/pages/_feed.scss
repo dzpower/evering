@@ -105,3 +105,44 @@
     line-height: 20px;
   }
 }
+
+.video-feed {
+
+  .result-page-tags {
+    margin-bottom: 26px;
+  }
+
+  &__head {
+    display: flex;
+    align-items: center;
+    margin-bottom: 7px;
+
+    .result-page-sort {
+      margin-left: auto;
+    }
+
+    .search-field {
+      margin-left: 36px;
+    }
+  }
+
+  &__videos {
+    display: flex;
+    gap: 40px 12px;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+
+    .video-item {
+      width: 246px;
+    }
+  }
+
+  .default-h2 strong {
+    font-weight: 500;
+  }
+
+  .feed-filter {
+    max-width: 136px;
+    margin-bottom: 60px;
+  }
+}
