@@ -1,0 +1,20 @@
+.error-page {
+  width: 100%;
+  display: flex;
+  max-width: 670px;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items: flex-start;
+
+  img{
+    width: 100%;
+  }
+
+  .eve-button {
+    width: auto;
+
+    &:last-child {
+      align-self: flex-end;
+    }
+  }
+}

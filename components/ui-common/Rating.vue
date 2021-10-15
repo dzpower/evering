@@ -2,7 +2,7 @@
   <div class='rating'>
     <img
       v-for='star in stars'
-      :key='star'
+      :key='star + "star-active"'
       src='/icons/star.svg'
      alt=''>
     <img
