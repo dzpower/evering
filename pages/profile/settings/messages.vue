@@ -6,20 +6,16 @@
           <Navbar class="item-page-navbar" />
         </div>
         <div class="item-page__content">
-          <h2 class="default-h2 bordered">Basic information</h2>
+          <h2 class="default-h2 bordered">Messages</h2>
 
-          <form class="settings-page__radio-buttons">
-            <RadioGroup
-              v-for="i in 10"
-              :key="i"
-              title="Photo albums"
-            />
-
-            <eve-button>Save</eve-button>
+          <form class="settings-page__checkboxes">
+            <CheckboxFilter>Community Messages</CheckboxFilter>
+            <CheckboxFilter>Push Notifications</CheckboxFilter>
           </form>
         </div>
         <div class="item-page__rightcol">
           <CommunityInfo />
+          <SettingsNav />
         </div>
       </div>
     </main>
@@ -30,10 +26,11 @@
 
 import Navbar from '@/components/views/pages/profile/Navbar';
 import CommunityInfo from '@/components/views/pages/settings/CommunityInfo';
-import RadioGroup from '@/components/views/pages/settings/RadioGroup';
+import CheckboxFilter from '@/components/ui-common/CheckboxFilter';
+import SettingsNav from '@/components/views/pages/settings/SettingsNav';
 
 export default {
-  components: {RadioGroup, CommunityInfo, Navbar},
+  components: {SettingsNav, CheckboxFilter, CommunityInfo, Navbar},
   data: () => {
     return {
       links: [

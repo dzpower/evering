@@ -6,15 +6,27 @@
           <Navbar class="item-page-navbar" />
         </div>
         <div class="item-page__content">
-          <h2 class="default-h2 bordered">Messages</h2>
+          <h2 class="default-h2 bordered">Conversations</h2>
 
           <form class="settings-page__checkboxes">
-            <CheckboxFilter>Community Messages</CheckboxFilter>
-            <CheckboxFilter>Push Notifications</CheckboxFilter>
+            <CheckboxFilter>Show on page</CheckboxFilter>
           </form>
+          <p class="notice">Conversations provide an opportunity for community members to actively discuss important topics</p>
+
+          <div class="settings-page__sub-title">
+            Community Conversations
+          </div>
+
+          <div class="settings-page__add-button">
+            <button class="eve-button">
+              <img src="/icons/plus.svg" alt="add">
+            </button>
+            <span>Add a Conversation</span>
+          </div>
         </div>
         <div class="item-page__rightcol">
           <CommunityInfo />
+          <SettingsNav />
         </div>
       </div>
     </main>
@@ -26,9 +38,10 @@
 import Navbar from '@/components/views/pages/profile/Navbar';
 import CommunityInfo from '@/components/views/pages/settings/CommunityInfo';
 import CheckboxFilter from '@/components/ui-common/CheckboxFilter';
+import SettingsNav from '@/components/views/pages/settings/SettingsNav';
 
 export default {
-  components: {CheckboxFilter, CommunityInfo, Navbar},
+  components: {SettingsNav, CheckboxFilter, CommunityInfo, Navbar},
   data: () => {
     return {
       links: [

@@ -1,0 +1,34 @@
+.radio-group {
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  &__name {
+    width: 100%;
+    max-width: 110px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: right;
+    margin-right: 30px;
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+  }
+
+  &__button.radio-button {
+    padding: 0;
+    background: none;
+    justify-content: flex-start;
+    flex-direction: row-reverse;
+    margin-right: 40px;
+    font-size: 14px;
+    line-height: 20px;
+
+    .radio-button__decor {
+      margin-right: 10px;
+    }
+  }
+}

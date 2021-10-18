@@ -14,4 +14,18 @@
   .eve-input {
     width: 82%;
   }
+
+  .default-text {
+    padding-left: 15px;
+    margin-left: calc(12% + 38px);
+    display: inline-block;
+    font-size: 16px;
+    line-height: 23px;
+    padding-bottom: 6px;
+
+    a {
+      font-weight: 500;
+      text-decoration: none;
+    }
+  }
 }

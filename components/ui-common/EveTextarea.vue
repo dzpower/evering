@@ -1,10 +1,10 @@
 <template>
-  <input class="eve-input" />
+  <textarea resize="none" class="eve-input"></textarea>
 </template>
 
 <script>
 
 export default {
-  name: "EveInput"
+  name: "EveTextarea"
 }
 </script>

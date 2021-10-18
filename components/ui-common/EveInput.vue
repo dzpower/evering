@@ -1,13 +1,10 @@
 <template>
-$END$
+  <input class="eve-input" />
 </template>
 
 <script>
+
 export default {
-name: "EveInput."
+  name: "EveInput"
 }
 </script>
-
-<style scoped>
-
-</style>

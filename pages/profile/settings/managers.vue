@@ -6,15 +6,18 @@
           <Navbar class="item-page-navbar" />
         </div>
         <div class="item-page__content">
-          <h2 class="default-h2 bordered">Messages</h2>
+          <h2 class="default-h2 bordered">Managers</h2>
 
-          <form class="settings-page__checkboxes">
-            <CheckboxFilter>Community Messages</CheckboxFilter>
-            <CheckboxFilter>Push Notifications</CheckboxFilter>
+          <form class="settings-page__managers">
+            <Manager
+              v-for="i in 3"
+              :key="i"
+            />
           </form>
         </div>
         <div class="item-page__rightcol">
           <CommunityInfo />
+          <SettingsNav />
         </div>
       </div>
     </main>
@@ -25,10 +28,11 @@
 
 import Navbar from '@/components/views/pages/profile/Navbar';
 import CommunityInfo from '@/components/views/pages/settings/CommunityInfo';
-import CheckboxFilter from '@/components/ui-common/CheckboxFilter';
+import Manager from '@/components/views/pages/settings/Manager';
+import SettingsNav from '@/components/views/pages/settings/SettingsNav';
 
 export default {
-  components: {CheckboxFilter, CommunityInfo, Navbar},
+  components: {SettingsNav, Manager, CommunityInfo, Navbar},
   data: () => {
     return {
       links: [

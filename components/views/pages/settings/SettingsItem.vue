@@ -1,23 +1,22 @@
 <template>
-  <label class="settings-label">
-    <span class="settings-label__body">
-      <slot></slot>
+  <label class="settings-item">
+    <span class="settings-item__title">
+      {{title}}
     </span>
-    <EveInput class="settings-input__field" type="text"/>
+    <slot></slot>
   </label>
 </template>
 
 <script>
 
-import EveInput from '@/components/ui-common/EveInput';
 export default {
-  name: "SettingsLabel",
-  components: {EveInput},
+  name: "SettingsItem",
+  components: {},
   props: {
     title: {
       type: String,
       default: ''
-    }
+    },
   }
 }
 </script>
