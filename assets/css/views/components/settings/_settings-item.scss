@@ -1,0 +1,17 @@
+.settings-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  &__title {
+    font-size: 14px;
+    line-height: 20px;
+    width: 12%;
+    margin-right: 38px;
+    text-align: right;
+  }
+
+  .eve-input {
+    width: 82%;
+  }
+}
