@@ -1,0 +1,159 @@
+.settings-page {
+  width: 100%;
+
+  .item-page__rightcol {
+    width: 17%;
+  }
+
+  .item-page__content {
+    width: 62%;
+  }
+
+  .default-h2 {
+    padding-bottom: 10px;
+    font-weight: 500;
+
+    &.bordered {
+      border-bottom: 1px solid $border-color;
+    }
+  }
+
+  &__links-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px 12px;
+
+    .settings-card {
+      max-width: calc((100% - 24px) / 3);
+    }
+  }
+
+  &__form {
+    padding-top: 30px;
+    width: 100%;
+    max-width: 616px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .settings-item {
+      width: 100%;
+      margin-bottom: 16px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .eve-button {
+      font-size: 14px;
+      line-height: 20px;
+      padding: 4px 20px;
+      margin-top: 32px;
+    }
+  }
+
+  &__radio-buttons {
+    padding-top: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .radio-group {
+      margin-bottom: 16px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .eve-button {
+      font-size: 14px;
+      line-height: 20px;
+      padding: 4px 20px;
+      margin-top: 80px;
+    }
+  }
+
+  .settings-button {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    padding: 0 15px;
+  }
+
+  &__checkboxes {
+    width: 100%;
+    max-width: 215px;
+    padding-top: 30px;
+
+    .default-checkbox {
+      margin-bottom: 10px;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 20px;
+      text-transform: uppercase;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .notice {
+    font-size: 12px;
+    line-height: 17px;
+    margin-bottom: 30px;
+  }
+
+  &__sub-title {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  &__add-button {
+    display: flex;
+    align-items: center;
+
+    span {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 20px;
+      text-transform: capitalize;
+    }
+
+    .eve-button {
+      height: 26px;
+      width: 26px;
+      padding: 0;
+      margin-right: 9px;
+
+      img {
+        width: 8px;
+        height: 8px;
+        margin: 0;
+      }
+    }
+  }
+
+  &__managers {
+    padding-top: 18px;
+    width: 100%;
+    max-width: 430px;
+
+    .manager {
+      margin-bottom: 22px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

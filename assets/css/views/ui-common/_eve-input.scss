@@ -1,0 +1,16 @@
+.eve-input {
+  outline: none;
+  padding: 10px 15px;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 23px;
+  background: transparent;
+  border: 1px solid #D5C8CF;
+  box-sizing: border-box;
+  border-radius: 7px;
+}
+
+textarea.eve-input {
+  height: 132px;
+  resize: none;
+}

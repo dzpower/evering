@@ -1,0 +1,20 @@
+.settings-card {
+  width: 100%;
+  max-width: 247px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+
+  &__preview {
+    height: 160px;
+    margin-bottom: 4px;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 21px;
+    line-height: 30px;
+    text-transform: uppercase;
+  }
+}
