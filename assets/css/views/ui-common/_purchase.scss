@@ -4,9 +4,25 @@
   padding-bottom: 12px;
   border-bottom: 1px solid $border-color;
 
+  @media screen and (max-width: $tablet) {
+    flex-direction: column;
+    position: relative;
+    padding-bottom: 24px;
+  }
+
   &__image {
     width: 24%;
     height: 222px;
+
+    @media screen and (max-width: $tablet) {
+      width: 246px;
+      margin-bottom: 20px;
+    }
+
+    @media screen and (max-width: $mobile) {
+      width: 48%;
+      height: 129px;
+    }
   }
 
   &__wrapper {
@@ -15,6 +31,12 @@
     padding-left: 12px;
     display: flex;
     align-items: center;
+
+    @media screen and (max-width: $tablet) {
+      padding-left: 0;
+      width: 100%;
+      position: static;
+    }
   }
 
   &__info {
@@ -22,6 +44,11 @@
     align-items: flex-start;
     width: 100%;
     justify-content: space-between;
+
+    @media screen and (max-width: $tablet) {
+      flex-wrap: wrap;
+      gap: 30px 0;
+    }
   }
 
   &__button.eve-button {
@@ -30,6 +57,12 @@
     padding: 5px 10px;
     font-size: 14px;
     line-height: 20px;
+
+    @media screen and (max-width: $tablet) {
+      bottom: auto;
+      top: 0;
+      right: 0;
+    }
   }
 
   &__item {
@@ -37,6 +70,14 @@
     font-size: 14px;
     line-height: 20px;
     color: $black;
+
+    @media screen and (max-width: $tablet) {
+      width: 33.3%;
+    }
+
+    @media screen and (max-width: $mobile) {
+      width: 50%;
+    }
 
     &-head {
       margin-bottom: 12px;

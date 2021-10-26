@@ -4,6 +4,28 @@
   .feed-filter {
     width: 100%;
     max-width: 133px;
+    margin-bottom: 60px;
+
+    @media screen and (max-width: $tablet) {
+      max-width: none;
+      margin-bottom: 0;
+      width: auto;
+    }
+  }
+
+  .result-page__aside, .item-page__leftcol {
+
+    @media screen and (max-width: $tablet) {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  .item-page__rightcol {
+
+    @media screen and (max-width: $tablet) {
+      margin-top: 34px;
+    }
   }
 
   &__posts {
@@ -22,6 +44,9 @@
   .result-page-sort {
     margin-top: 16px;
     margin-bottom: 34px;
+    @media screen and (max-width: $tablet) {
+      margin: 0;
+    }
   }
 
   &__articles {
@@ -36,6 +61,27 @@
 
   .result-page-filter {
     padding-right: 30px;
+
+    @media screen and (max-width: $tablet) {
+      padding-right: 0;
+    }
+  }
+
+  .item-page__leftcol {
+
+    @media screen and (max-width: $tablet) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+  }
+
+  .item-page__rightcol {
+
+    @media screen and (max-width: $tablet) {
+      margin-top: 34px;
+    }
   }
 
   &__tags {
@@ -43,10 +89,15 @@
     align-items: center;
     gap: 12px;
     margin-bottom: 24px;
+
+    @media screen and (max-width: $tablet) {
+      flex-wrap: wrap;
+    }
   }
 
   &__title {
     margin-bottom: 16px;
+    padding-bottom: 0;
   }
 
   &__text {
@@ -60,6 +111,10 @@
 
   &__photo {
     margin-bottom: 32px;
+
+    @media screen and (max-width: $mobile) {
+      margin-bottom: 12px;
+    }
 
     &:last-child {
       margin-bottom: 0;
@@ -78,6 +133,10 @@
       padding-bottom: 0;
       margin-top: 40px;
 
+      @media screen and (max-width: $mobile) {
+        margin-top: 24px;
+      }
+
       &:first-child {
         margin-top: 0;
       }
@@ -90,6 +149,10 @@
 
   .search-field {
     margin-bottom: 24px;
+
+    @media screen and (max-width: $tablet) {
+      margin-bottom: 0;
+    }
   }
 
   &__cats {
@@ -117,6 +180,12 @@
     align-items: center;
     margin-bottom: 7px;
 
+    @media screen and (max-width: $tablet) {
+      .default-h2 {
+        padding-bottom: 0;
+      }
+    }
+
     .result-page-sort {
       margin-left: auto;
     }
@@ -132,17 +201,20 @@
     flex-wrap: wrap;
     margin-bottom: 60px;
 
+    @media screen and (max-width: $tablet) {
+      margin-bottom: 44px;
+    }
+
     .video-item {
       width: 246px;
+
+      @media screen and (max-width: $tablet) {
+        width: calc((100% - 12px) / 2);
+      }
     }
   }
 
   .default-h2 strong {
     font-weight: 500;
-  }
-
-  .feed-filter {
-    max-width: 136px;
-    margin-bottom: 60px;
   }
 }

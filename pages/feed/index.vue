@@ -2,7 +2,7 @@
   <div class='item-page feed-page prod'>
     <main class='main'>
       <div class='item-page__columns'>
-        <div class="default-photo item-page__leftcol">
+        <div class="item-page__leftcol">
           <FeedFilter />
         </div>
         <div class='item-page__content'>
@@ -19,8 +19,8 @@
         </div>
 
         <div class='item-page__rightcol'>
-          <search-field placeholder="search in the news" />
-          <div class="result-page-sort">
+          <search-field v-if="$device.isDesktop" placeholder="search in the news" />
+          <div v-if="$device.isDesktop" class="result-page-sort">
             <span class="result-page-sort__label">Sorting</span>
             <Select />
           </div>

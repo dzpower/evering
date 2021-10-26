@@ -3,6 +3,10 @@
 
   &-middlebar {
     margin-bottom: 0;
+
+    @media screen and (max-width: $mobile) {
+      margin-bottom: 16px;
+    }
   }
 
   &-bottombar {
@@ -14,10 +18,6 @@
 
     &:last-child {
       margin-bottom: 0;
-    }
-
-    .card {
-      padding-right: 12px;
     }
   }
 }

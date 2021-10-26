@@ -5,6 +5,10 @@
     width: 100%;
     height: 178px;
     margin-bottom: 9px;
+
+    @media screen and (max-width: $tablet) {
+      height: 104px;
+    }
   }
 
   &__bottom-bar {

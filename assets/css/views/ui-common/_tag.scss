@@ -8,4 +8,11 @@
   line-height: 20px;
   text-align: center;
   color: $black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media screen and (max-width: $mobile) {
+    padding: 6px 18px;
+  }
 }

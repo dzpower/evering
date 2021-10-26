@@ -1,12 +1,10 @@
 <template>
   <div class="result-page catalog container">
     <main class="main">
-      <aside class="result-page-filter">
-        <FilterItem
-          v-for="item in 5"
-          :key="item"
-        ></FilterItem>
-      </aside>
+      <div class="result-page__aside">
+        <FilterBar />
+        <a v-if="$device.isMobileOrTablet" href="#" class="result-page-mp-button">Search in the marketplace</a>
+      </div>
       <div class="result-page-column">
         <div class="result-page-topbar">
           <div class="result-page-tags">
@@ -17,13 +15,13 @@
             >
               {{tag.name}}</tag>
           </div>
-          <a href="#" class="result-page-mp-button">Search in the marketplace</a>
+          <a v-if="$device.isDesktop" href="#" class="result-page-mp-button">Search in the marketplace</a>
         </div>
         <div class="result-page-middlebar">
           <pagination />
           <div class="result-page-sort">
             <span class="result-page-sort__label">Sorting</span>
-            <select />
+            <Select />
           </div>
         </div>
         <div class="result-page-list">
@@ -42,11 +40,13 @@
 </template>
 
 <script>
-  import FilterItem from '@/components/views/pages/catalog/FilterItem'
+  import FilterBar from '@/components/ui-common/FilterBar';
+  import Select from '@/components/ui-common/Select';
 
   export default {
     components: {
-      FilterItem
+      Select,
+      FilterBar,
     },
     data() {
       return {

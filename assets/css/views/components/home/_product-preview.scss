@@ -1,8 +1,5 @@
 .product-preview{
   width: 100%;
-  max-width: 258px;
-  padding-right: 12px;
-
   figure{
     width: 100%;
     display: inline-flex;
@@ -13,6 +10,10 @@
       object-fit: cover;
       overflow: hidden;
       border-radius: 7px;
+
+      @media screen and (max-width: $mobile) {
+        height: 153px;
+      }
     }
   }
 

@@ -1,7 +1,9 @@
 <template>
   <div class="result-page profile-page container">
     <main class="main">
-      <Navbar class="result-page-navbar" />
+      <div class="result-page__aside">
+        <Navbar class="result-page-navbar" />
+      </div>
       <div class="result-page-column">
         <profile-bar />
         <h2 class="default-h2">My purchases</h2>

@@ -1,3 +1,7 @@
+html, body {
+  overflow-x: hidden;
+}
+
 .container{
   width: 100%;
 }
@@ -31,12 +35,32 @@
   max-width: 1280px;
   margin: 0 auto;
   padding-top: 16px;
+
+  @media screen and (max-width: $tablet) {
+    padding-top: 12px;
+  }
 }
 
 .wrapper {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
+}
+
+.main, .wrapper {
+
+  @media screen and (max-width: $laptop) {
+    max-width: 1024px;
+  }
+
+  @media screen and (max-width: $tablet) {
+    max-width: 640px;
+  }
+
+  @media screen and (max-width: $mobile) {
+    padding: 0 12px;
+    max-width: none;
+  }
 }
 
 // Catalog, MarketPlace, Brands
@@ -47,16 +71,29 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+
+    @media screen and (max-width: $tablet) {
+      flex-direction: column;
+    }
   }
 
   &-column {
-    width: 100%;
-    max-width: 1020px;
+    width: 80%;
+
+    @media screen and (max-width: $tablet) {
+      width: 100%;
+    }
   }
 
-  &-navbar {
-    width: 100%;
-    max-width: 250px;
+  &__aside {
+    width: 20%;
+
+    @media screen and (max-width: $tablet) {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      margin-bottom: 14px;
+    }
   }
 
   // Bar
@@ -65,6 +102,24 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 30px;
+
+    @media screen and (max-width: $mobile) {
+      margin-bottom: 0;
+    }
+  }
+
+  // Sort Select
+  &-sort {
+    display: flex;
+    align-items: center;
+
+    &__label {
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 17px;
+      color: $black;
+      margin-right: 24px;
+    }
   }
 
   &-middlebar {
@@ -74,13 +129,40 @@
     position: relative;
     margin-bottom: 16px;
 
+    @media screen and (max-width: $tablet) {
+      flex-wrap: wrap;
+    }
+
+    .result-page-sort {
+
+      @media screen and (max-width: $tablet) {
+        width: 100%;
+        margin-top: 20px;
+      }
+    }
+
+    @media screen and (max-width: $mobile) {
+      justify-content: center;
+    }
+
     .pagination {
       position: absolute;
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
-    }
 
+      @media screen and (max-width: $mobile) {
+        position: static;
+        transform: none;
+      }
+    }
+  }
+
+  .pagination {
+
+    @media screen and (max-width: $mobile) {
+      width: 100%;
+    }
   }
 
   &-bottombar {
@@ -97,23 +179,27 @@
     gap: 30px 1.33%;
     margin-bottom: 16px;
 
+    @media screen and (max-width: $tablet) {
+      gap: 30px 12px;
+    }
+
     .card, .product-preview {
       width: 24%;
       padding-right: 0;
+
+      @media screen and (max-width: $tablet) {
+        width: calc((100% - 12px) / 2);
+      }
     }
   }
 
   // Filter
   &-filter {
     width: 100%;
-    max-width: 217px;
+    padding-right: 30px;
 
-    .filter-item {
-      margin-bottom: 10px;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
+    @media screen and (max-width: $tablet) {
+      padding-right: 0;
     }
   }
 
@@ -122,6 +208,12 @@
     display: flex;
     align-items: center;
     gap: 12px;
+    flex-wrap: wrap;
+
+    @media screen and (max-width: $mobile) {
+      gap: 8px;
+      margin-bottom: 17px;
+    }
   }
 
   &-mp-button {
@@ -142,30 +234,11 @@
     padding: 6px 14px;
   }
 
-  // Sort Select
-  &-sort {
-    display: flex;
-    align-items: center;
-
-    &__label {
-      font-weight: 500;
-      font-size: 12px;
-      line-height: 17px;
-      color: $black;
-      margin-right: 24px;
-    }
-  }
-
   &-slider {
     margin-bottom: 36px;
 
     &:last-child {
       margin-bottom: 0;
-    }
-
-    .card, .default-video {
-      padding-right: 12px;
-      max-width: 258px;
     }
   }
 }
@@ -192,11 +265,19 @@
 
   &__leftcol, &__rightcol {
     width: 21%;
+
+    @media screen and (max-width: $tablet) {
+      width: 100%;
+    }
   }
 
   &__content {
     height: auto;
     width: 58%;
+
+    @media screen and (max-width: $tablet) {
+      width: 100%;
+    }
   }
 
   &__columns {
@@ -204,15 +285,16 @@
     display: flex;
     align-items: flex-start;
     gap: 0 12px;
+
+    @media screen and (max-width: $tablet) {
+      gap: 0;
+      flex-direction: column;
+    }
   }
 
   // Articles
   &__articles {
     margin-bottom: 12px;
-
-    .post-interesting {
-      max-width: 251px;
-    }
 
     .custom-arrow {
       top: 30%;
@@ -239,20 +321,6 @@
       height: 222px;
     }
   }
-
-  // Discussions
-  &__discussions {
-
-    .discussion {
-      width: 100%;
-      margin-bottom: 20px;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
-
 
   .add-cart {
     margin-bottom: 24px;
