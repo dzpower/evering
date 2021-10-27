@@ -17,33 +17,11 @@
 
       </form>
 
-      <eve-button class="dark survey__submit">Vote</eve-button>
+      <eve-button v-if="$device.isDesktopOrTablet" class="dark survey__submit">Vote</eve-button>
 
     </div>
 
-    <!-- ActionBar.vue -->
-    <div class="action-bar action-bar--full">
-      <div class="action-bar__likes">
-        <button>
-          <img src="/icons/like-active.svg" alt="like">
-        </button>
-        <span>5345</span>
-      </div>
-      <eve-button icon>
-        Like
-        <template #icon>
-          <img src="/icons/like.svg" alt="like">
-        </template>
-      </eve-button>
-      <div class="action-bar__comments-count">
-        <img src="/icons/comments.svg" alt="like">
-        176 comments
-      </div>
-      <button class="action-bar__comments">
-        COMMENTS
-        <img src="/icons/plus.svg" alt="plus">
-      </button>
-    </div>
+    <ActionBar like-button comment-count/>
   </div>
 </template>
 
@@ -52,8 +30,9 @@
 import NewsHead from '@/components/views/pages/feed/news/NewsHead';
 import EveButton from '@/components/ui-common/EveButton';
 import RadioButton from '@/components/ui-common/RadioButton';
+import ActionBar from '@/components/ui-common/ActionBar';
 export default {
   name: "SurveyEvent",
-  components: {RadioButton, EveButton, NewsHead}
+  components: {ActionBar, RadioButton, EveButton, NewsHead}
 }
 </script>

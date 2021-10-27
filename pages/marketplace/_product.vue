@@ -1,13 +1,17 @@
 <template>
-  <div class='catalog-product prod'>
+  <div class='item-page catalog-product'>
     <main class='main'>
       <router-tabs
         :items='tabs'
       />
-      <div class='catalog-product__columns'>
-        <Photos />
-        <div class='catalog-product__content'>
+      <div class='item-page__columns catalog-product__columns'>
+        <div class="item-page__leftcol">
+          <Photos v-if="$device.isDesktop" />
+        </div>
+        <div class='item-page__content'>
           <Preview></Preview>
+
+          <AddCart v-if="$device.isMobileOrTablet" />
 
           <div class='reviews-wrapper'>
             <h2 class='default-h2'>Reviews</h2>
@@ -19,30 +23,22 @@
           <pagination />
         </div>
 
-        <div class='catalog-product__rightcol'>
-          <AddCart />
+        <div class='item-page__rightcol'>
+          <AddCart v-if="$device.isDesktop" />
         </div>
       </div>
       <div class='similars-products'>
         <h2 class='default-h2'>
           Similar products
         </h2>
-        <vue-slick-carousel :variable-width='true' :arrows='true'>
+        <Slider>
           <ProductPreview
             v-for='item in 10'
             :key='item'
             :rating='4'
             :price='12222'
           />
-          <template #prevArrow>
-            <div class='custom-arrow'>
-            </div>
-          </template>
-          <template #nextArrow>
-            <div class='custom-arrow custom-arrow__next'>
-            </div>
-          </template>
-        </vue-slick-carousel>
+        </Slider>
         <div class='home-products__actions'>
           <eve-button class="dark">
             More offers
@@ -62,13 +58,15 @@ import Photos from '@/components/views/pages/product/Photos'
 import Preview from '@/components/views/pages/product/Preview'
 import AddCart from '@/components/views/pages/product/AddCart'
 import ProductPreview from '@/components/views/pages/home/ProductPreview'
+import Slider from '@/components/ui-common/Slider';
 
 export default {
   components: {
     AddCart,
     Preview,
     Photos,
-    ProductPreview
+    ProductPreview,
+    Slider
   },
   data() {
     return {

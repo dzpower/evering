@@ -1,5 +1,3 @@
-
-
 .footer {
   width: 100%;
 
@@ -13,6 +11,10 @@
     padding: 0;
     text-decoration: underline;
     margin-left: 36px;
+
+    @media screen and (max-width: $tablet) {
+      margin-left: 0;
+    }
   }
 
   &-copyright {
@@ -31,6 +33,11 @@
     .wrapper {
       display: flex;
       justify-content: space-around;
+
+      @media screen and (max-width: $mobile) {
+        flex-direction: column;
+        align-items: center;
+      }
     }
 
     &__item {
@@ -41,6 +48,16 @@
       display: flex;
       align-items: center;
       cursor: pointer;
+
+      @media screen and (max-width: $mobile) {
+        font-size: 15px;
+        line-height: 23px;
+        margin-bottom: 23px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
       &::after {
         content: "";
         display: flex;
@@ -59,9 +76,18 @@
     background: $blueberry;
     padding: 25px 0;
 
+    @media screen and (max-width: $tablet) {
+      padding: 55px 0;
+    }
+
     .wrapper {
       display: flex;
       align-items: center;
+
+      @media screen and (max-width: $tablet) {
+        flex-wrap: wrap;
+        gap: 36px 0;
+      }
     }
   }
 
@@ -86,5 +112,19 @@
       line-height: 20px;
       color: $white;
     }
+  }
+
+  // Adaptive Bottom Footer
+  button.footer-link,
+  .footer-country {
+    width: 33.33%;
+    display: flex;
+    justify-content: center;
+  }
+
+  a.footer-link,
+  .footer-copyright {
+    width: 50%;
+    text-align: center;
   }
 }

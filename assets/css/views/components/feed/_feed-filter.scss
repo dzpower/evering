@@ -4,6 +4,10 @@
   &__item {
     margin-bottom: 10px;
 
+    @media screen and (max-width: $tablet) {
+      width: 137px;
+    }
+
     &:last-child {
       margin-bottom: 0;
     }

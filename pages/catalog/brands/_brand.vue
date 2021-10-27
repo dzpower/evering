@@ -2,11 +2,22 @@
   <div class='item-page brand-page prod'>
     <main class='main'>
       <div class='item-page__columns'>
-        <div class="default-photo item-page__leftcol">
+        <div v-if="$device.isMobileOrTablet" class="brand-page__top-bar">
+          <eve-button icon>
+            <template #icon>
+              <img src="/icons/edit.svg" alt="edit">
+            </template>
+            Edit a page
+          </eve-button>
+          <eve-button class="dark">
+            Products in the marketplace
+          </eve-button>
+        </div>
+        <div class="default-photo item-page__leftcol brand-page__photo">
           <img src='/content/01.png' alt='user photo'>
         </div>
         <div class='item-page__content'>
-          <h2 class='default-h2'>
+          <h2 v-if="$device.isDesktop" class='default-h2'>
             <strong>Barbie</strong>
           </h2>
           <p class='default-text'>
@@ -44,21 +55,13 @@
           </p>
 
           <div class='brand-page__products'>
-            <vue-slick-carousel :variable-width='true' :arrows='true' :items='3'>
+            <Slider :slides="3" :rows="$device.isMobileOrTablet ? 2 : 1">
               <card
                 v-for="item in 5"
                 :key="item"
                 class=""
               ></card>
-              <template #prevArrow>
-                <div class='custom-arrow'>
-                </div>
-              </template>
-              <template #nextArrow>
-                <div class='custom-arrow custom-arrow__next'>
-                </div>
-              </template>
-            </vue-slick-carousel>
+            </Slider>
           </div>
 
           <div class="brand-page__albums">
@@ -70,7 +73,7 @@
 
         <div class='item-page__rightcol'>
 
-          <div class="brand-page__top-bar">
+          <div v-if="$device.isDesktop" class="brand-page__top-bar">
             <eve-button icon>
               <template #icon>
                 <img src="/icons/edit.svg" alt="edit">
@@ -119,11 +122,13 @@
 <script>
 import Article from "@/components/views/pages/brands/Article"
 import BrandEvent from '@/components/views/pages/brands/BrandEvent';
+import Slider from '@/components/ui-common/Slider';
 
 export default {
   components: {
     BrandEvent,
     Article,
+    Slider
   },
   data() {
     return {

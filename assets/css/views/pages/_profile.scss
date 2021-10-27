@@ -4,13 +4,26 @@
     margin-bottom: 8px;
   }
 
+  .result-page__aside {
+
+    @media screen and (max-width: $tablet) {
+      margin-bottom: 0;
+      justify-content: flex-end;
+    }
+  }
+
   &__purchases {
 
     .purchase {
       margin-bottom: 12px;
 
+      @media screen and (max-width: $tablet) {
+        margin-bottom: 30px;
+      }
+
       &:last-child {
         border-bottom: none;
+        margin-bottom: 0;
       }
     }
   }
@@ -80,15 +93,29 @@
       display: flex;
       gap: 12px;
 
+      @media screen and (max-width: $mobile) {
+        gap: 7px;
+      }
+
       .default-photo {
         width: 157px;
         height: 142px;
+
+        @media screen and (max-width: $mobile) {
+          width: calc((100% - 14px) / 3);
+          height: 85px;
+        }
       }
     }
 
     &__photo {
       width: 493px;
       height: 446px;
+
+      @media screen and (max-width: $mobile) {
+        width: auto;
+        height: auto;
+      }
     }
   }
 

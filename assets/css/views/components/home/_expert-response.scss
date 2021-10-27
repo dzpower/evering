@@ -3,7 +3,13 @@
   max-width: 258px;
   min-height: 233px;
   overflow: hidden;
-  padding-right: 12px;
+
+  @media screen and (max-width: $tablet) {
+    max-width: none;
+  }
+  @media screen and (max-width: $mobile) {
+    min-height: auto;
+  }
 
   figure {
     width: 100%;
@@ -16,6 +22,14 @@
       overflow: hidden;
       object-fit: cover;
       line-height: 1;
+
+      @media screen and (max-width: $tablet) {
+        width: 100%;
+      }
+
+      @media screen and (max-width: $mobile) {
+        height: 138px;
+      }
     }
 
     figcaption{
@@ -56,6 +70,18 @@
 
         p{
           margin-top: 7px;
+        }
+      }
+    }
+  }
+
+  &__slider {
+
+    .slick-slide {
+
+      &:first-child {
+        @media screen and (max-width: $tablet) {
+          display: none !important;
         }
       }
     }

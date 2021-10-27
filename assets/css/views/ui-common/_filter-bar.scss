@@ -1,0 +1,74 @@
+.result-page-filter {
+  position: relative;
+
+  .filter-item {
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__wrapper {
+
+    @media screen and (max-width: $tablet) {
+      display: none;
+      position: absolute;
+      top: 0;
+      background: #fff;
+      padding: 34px 46px 20px 46px;
+      border: 1px solid #D6C7CE;
+      border-radius: 7px;
+      width: 640px;
+      z-index: 20;
+
+      &::before {
+        content: "Parameters";
+        font-size: 14px;
+        line-height: 20px;
+        position: absolute;
+        top: 5px;
+        left: 13px;
+      }
+    }
+
+    @media screen and (max-width: $mobile) {
+      width: 93.5vw;
+    }
+
+    &.active {
+      display: block;
+    }
+  }
+
+  &__open {
+    display: none;
+    align-items: center;
+    padding: 5px 13px;
+    background: #fff;
+    border: 1px solid #D6C7CE;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 20px;
+
+    @media screen and (max-width: $tablet) {
+      display: inline-flex;
+    }
+
+    &::after {
+      margin-left: 10px;
+    }
+  }
+
+  &__close {
+    display: none;
+    position: absolute;
+    right: 10px;
+    top: 6px;
+
+    @media screen and (max-width: $tablet) {
+      display: block;
+    }
+  }
+}

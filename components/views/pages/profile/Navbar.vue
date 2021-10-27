@@ -1,5 +1,5 @@
 <template>
-  <nav class='profile-page-navbar'>
+  <Bar class="profile-page-navbar">
     <NuxtLink
       v-for='(link, index) in links'
       :key='index'
@@ -7,13 +7,15 @@
       :to='link.to'>
       {{ link.title }}
     </NuxtLink>
-  </nav>
+  </Bar>
 </template>
 
 <script>
 
+import Bar from '@/components/ui-common/Bar';
 export default {
   name: "Navbar",
+  components: {Bar},
   data() {
     return {
       links: [
@@ -53,7 +55,7 @@ export default {
           title: 'Settings',
           to: '/profile/settings'
         }
-      ]
+      ],
     }
   },
   computed: {

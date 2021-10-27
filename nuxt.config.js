@@ -30,7 +30,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '~plugins/global-components'
+    '~plugins/global-components',
+    '~plugins/custom-flag.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -45,6 +46,10 @@ export default {
     '@nuxtjs/device',
   ],
 
+  device: {
+    refreshOnResize: true
+  },
+
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
@@ -56,5 +61,9 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+
+  server: {
+    host: '0.0.0.0'
   }
 }

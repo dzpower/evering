@@ -1,13 +1,19 @@
 <template>
-  <div class='catalog-product prod'>
+  <div class='item-page catalog-product container'>
     <main class='main'>
       <router-tabs
         :items='tabs'
       />
-      <div class='catalog-product__columns'>
-        <Photos />
-        <div class='catalog-product__content'>
+      <div class='item-page__columns'>
+        <div class="item-page__leftcol">
+          <Photos v-if="$device.isDesktop" />
+        </div>
+        <div class='item-page__content catalog-product__content'>
           <Preview></Preview>
+
+          <AddCart v-if="$device.isMobileOrTablet" />
+
+
           <p class='default-text'>
             Since the first release of the doll, the manufacturer has relied on quality: professional fashion designer
             Charlotte Johnson develops outfits for it, which later became legendary and recognizable; artist Betty Lou
@@ -22,21 +28,12 @@
           </p>
           <h2 class='default-h2'>Popular articles</h2>
           <div class='catalog-product__articles'>
-            <vue-slick-carousel :variable-width='true' :arrows='true' :items='3'>
+            <Slider :slides="3">
               <post-interesting
-                v-for='i in 3'
+                v-for='i in 6'
                 :key='i'
               />
-              <template #prevArrow>
-                <div class='custom-arrow'>
-                </div>
-              </template>
-              <template #nextArrow>
-                <div class='custom-arrow custom-arrow__next'>
-                </div>
-              </template>
-            </vue-slick-carousel>
-
+            </Slider>
           </div>
 
           <h2 class='default-h2'>The best photos of buyers</h2>
@@ -66,9 +63,9 @@
 
         </div>
 
-        <div class='catalog-product__rightcol'>
+        <div class='item-page__rightcol'>
 
-          <AddCart />
+          <AddCart v-if="$device.isDesktop" />
 
           <h2 class='default-h2'>Video</h2>
 
@@ -87,6 +84,7 @@ import PostInteresting from '@/components/views/pages/home/PostInteresting'
 import Preview from '@/components/views/pages/product/Preview'
 import AddCart from '@/components/views/pages/product/AddCart'
 import Videos from '@/components/views/pages/product/Videos'
+import Slider from '@/components/ui-common/Slider';
 
 export default {
   components: {
@@ -94,7 +92,8 @@ export default {
     AddCart,
     Preview,
     PostInteresting,
-    Photos
+    Photos,
+    Slider
   },
   data() {
     return {

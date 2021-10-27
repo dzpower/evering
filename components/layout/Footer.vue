@@ -17,7 +17,6 @@
         </button>
         <button class="footer-link footer-lang">English(US)</button>
         <button class="footer-link footer-currency">$(USD)</button>
-        <button class="footer-link footer-currency">$(USD)</button>
 
         <span class="footer-link footer-copyright">© Everigin</span>
 

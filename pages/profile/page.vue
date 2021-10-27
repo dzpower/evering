@@ -1,16 +1,18 @@
 <template>
   <div class="result-page profile-page container">
     <main class="main">
-      <Navbar class="result-page-navbar" />
+      <div class="result-page__aside">
+        <Navbar class="result-page-navbar" />
+      </div>
       <div class="result-page-column">
         <profile-bar />
 
         <h2 class="default-h2 profile-page__title-btn">
           Personal collections
-          <select />
+          <Select />
         </h2>
         <div class="result-page-slider profile-page-slider">
-          <vue-slick-carousel :variable-width='true' :arrows='true'>
+          <Slider :rows="2">
             <div
               v-for="item in 8"
               :key="item"
@@ -21,23 +23,15 @@
                 <button class="default-photo__like"></button>
               </div>
             </div>
-            <template #prevArrow>
-              <div class='custom-arrow'>
-              </div>
-            </template>
-            <template #nextArrow>
-              <div class='custom-arrow custom-arrow__next'>
-              </div>
-            </template>
-          </vue-slick-carousel>
+          </Slider>
         </div>
 
         <h2 class="default-h2 profile-page__title-btn">
           Photo
-          <select />
+          <Select />
         </h2>
         <div class="result-page-slider profile-page-slider">
-          <vue-slick-carousel :variable-width='true' :arrows='true'>
+          <Slider :rows="2">
             <div
               v-for="item in 8"
               :key="item"
@@ -48,32 +42,16 @@
                 <button class="default-photo__like"></button>
               </div>
             </div>
-            <template #prevArrow>
-              <div class='custom-arrow'>
-              </div>
-            </template>
-            <template #nextArrow>
-              <div class='custom-arrow custom-arrow__next'>
-              </div>
-            </template>
-          </vue-slick-carousel>
+          </Slider>
         </div>
         <h2 class="default-h2 profile-page__title-btn">
           Video
-          <select />
+          <Select />
         </h2>
         <div class="result-page-slider profile-page-slider">
-          <vue-slick-carousel :variable-width='true' :arrows='true'>
-            <default-video v-for="item in 5" :key="item"></default-video>
-            <template #prevArrow>
-              <div class='custom-arrow'>
-              </div>
-            </template>
-            <template #nextArrow>
-              <div class='custom-arrow custom-arrow__next'>
-              </div>
-            </template>
-          </vue-slick-carousel>
+          <Slider :rows="2">
+            <default-video v-for="i in 5" :key="i"></default-video>
+          </Slider>
         </div>
         <div class="profile-page__events">
           <div class="profile-page-event">
@@ -109,8 +87,10 @@
 
 <script>
   import Navbar from '@/components/views/pages/profile/Navbar'
+  import Slider from '@/components/ui-common/Slider';
+  import Select from '@/components/ui-common/Select';
 
   export default {
-    components: {Navbar},
+    components: {Select, Slider, Navbar},
   }
 </script>
