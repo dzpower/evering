@@ -1,6 +1,6 @@
 <template>
   <label class="checkbox">
-    <input type="checkbox" :checked='value' @input='onInput($event.target.checked)'>
+    <input :type="type" :checked='value' @input='onInput($event.target.checked)'>
     <span class="checkmark"></span>
   </label>
 </template>
@@ -13,6 +13,10 @@ export default {
       type: Boolean,
       default: false,
       required: true
+    },
+    type: {
+      type: String,
+      default: 'checkbox'
     }
   },
   methods: {

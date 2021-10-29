@@ -6,8 +6,10 @@
           <Navbar class="item-page-navbar" />
         </div>
         <div class="item-page__content">
-          <h2 class="default-h2">Community Settings</h2>
-          <div class="settings-page__links-group">
+          <h2 class="default-h2">
+            Community Settings
+          </h2>
+          <div v-if="$device.isDesktopOrTablet" class="settings-page__links-group">
             <SettingsCard
               v-for="i in 9"
               :key="i"
@@ -16,9 +18,10 @@
               :href="links[i - 1].href"
             />
           </div>
+          <SettingsNav v-if="$device.isMobile" append />
         </div>
         <div class="item-page__rightcol">
-          <CommunityInfo with-button />
+          <CommunityInfo v-if="$device.isDesktop" with-button />
         </div>
       </div>
     </main>
@@ -30,9 +33,10 @@
 import Navbar from '@/components/views/pages/profile/Navbar';
 import CommunityInfo from '@/components/views/pages/settings/CommunityInfo';
 import SettingsCard from '@/components/views/pages/settings/SettingsCard';
+import SettingsNav from '@/components/views/pages/settings/SettingsNav';
 
 export default {
-  components: {SettingsCard, CommunityInfo, Navbar},
+  components: {SettingsNav, SettingsCard, CommunityInfo, Navbar},
   data: () => {
     return {
       links: [

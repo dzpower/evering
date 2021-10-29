@@ -4,6 +4,7 @@
       v-for="link in links"
       :key="link.title"
       :to="link.href"
+      :append="append"
       class="settings-nav-item"
     >
       <img src="/icons/comments.svg" alt="comments" class="settings-nav-item__icon">
@@ -16,6 +17,12 @@
 
 export default {
   name: "SettingsNav",
+  props: {
+    append: {
+      type: Boolean,
+      default: false,
+    }
+  },
   data: () => {
     return {
       links: [
