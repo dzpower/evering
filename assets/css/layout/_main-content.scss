@@ -34,11 +34,7 @@ html, body {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  padding-top: 16px;
-
-  @media screen and (max-width: $tablet) {
-    padding-top: 12px;
-  }
+  padding-top: 16px !important;
 }
 
 .wrapper {
