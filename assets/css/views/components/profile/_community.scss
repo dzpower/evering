@@ -3,6 +3,14 @@
   display: flex;
   align-items: center;
 
+  &__avatar.profile-bar__avatar {
+
+    @media screen and (max-width: $tablet) {
+      width: 140px;
+      height: 140px;
+    }
+  }
+
   &__wrapper {
     margin-left: 20px;
     display: flex;
@@ -17,6 +25,10 @@
   &__name {
     font-weight: bold;
     margin-bottom: 20px;
+
+    @media screen and (max-width: $tablet) {
+      margin-bottom: 10px;
+    }
   }
 
   &__btn {

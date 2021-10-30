@@ -8,30 +8,13 @@
         <div class="item-page__content">
           <h2 class="default-h2 profile-page__title-btn">
             <span class="profile-page__subtitle">Recently visited</span>
-            <eve-button>Clear</eve-button>
+            <eve-button v-if="$device.isDesktop">Clear</eve-button>
           </h2>
           <div class="profile-page__visited">
-
-            <!-- Community.vue -->
-            <div class="community community--visited">
-              <div class="community__avatar profile-bar__avatar">
-                <img src="/content/users/01.png" alt="image" />
-              </div>
-              <div class="community__wrapper">
-                <span class="community__name">Community Name</span>
-              </div>
-            </div>
-            <div class="community community--visited">
-              <div class="community__avatar profile-bar__avatar">
-                <img src="/content/users/01.png" alt="image" />
-              </div>
-              <div class="community__wrapper">
-                <span class="community__name">Community Name</span>
-              </div>
-            </div>
-
+            <Community visited />
+            <Community visited />
           </div>
-          <router-tabs :items="tabs" />
+          <router-tabs v-if="$device.isDesktop" :items="tabs" />
           <div class="profile-page__pagination">
             <pagination/>
           </div>
@@ -42,7 +25,7 @@
             <pagination/>
           </div>
         </div>
-        <div class="item-page__rightcol">
+        <div v-if="$device.isDesktop" class="item-page__rightcol">
           <search-field class="profile-page__search" placeholder="Search" />
           <h2 class="default-h2">Recommendations</h2>
           <div class="profile-page__recommendations">
