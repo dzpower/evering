@@ -3,18 +3,47 @@
 
   .item-page__rightcol {
     width: 17%;
+
+    @media screen and (max-width: $tablet) {
+      width: 100%;
+    }
+  }
+
+  .item-page__leftcol {
+
+    @media screen and (max-width: $tablet) {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+    }
   }
 
   .item-page__content {
     width: 62%;
+
+    @media screen and (max-width: $tablet) {
+      width: 100%;
+    }
   }
 
   .default-h2 {
     padding-bottom: 10px;
     font-weight: 500;
 
+    @media screen and (max-width: $mobile) {
+      text-align: center;
+    }
+
     &.bordered {
       border-bottom: 1px solid $border-color;
+
+      @media screen and (max-width: $mobile) {
+        border: none;
+        padding-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
     }
   }
 
@@ -36,6 +65,10 @@
     flex-direction: column;
     align-items: center;
 
+    @media screen and (max-width: $mobile) {
+      padding-top: 0;
+    }
+
     .settings-item {
       width: 100%;
       margin-bottom: 16px;
@@ -50,6 +83,10 @@
       line-height: 20px;
       padding: 4px 20px;
       margin-top: 32px;
+
+      @media screen and (max-width: $mobile) {
+        margin-top: 14px;
+      }
     }
   }
 
@@ -59,6 +96,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @media screen and (max-width: $mobile) {
+      padding-top: 0;
+    }
 
     .radio-group {
       margin-bottom: 16px;
@@ -91,6 +132,15 @@
     max-width: 215px;
     padding-top: 30px;
 
+    @media screen and (max-width: $mobile) {
+      max-width: none;
+      padding-top: 0;
+
+      &:last-child {
+        padding-bottom: 200px;
+      }
+    }
+
     .default-checkbox {
       margin-bottom: 10px;
       font-weight: 500;
@@ -122,6 +172,10 @@
     display: flex;
     align-items: center;
 
+    @media screen and (max-width: $mobile) {
+      margin-bottom: 100px;
+    }
+
     span {
       font-weight: 500;
       font-size: 14px;
@@ -147,6 +201,10 @@
     padding-top: 18px;
     width: 100%;
     max-width: 430px;
+
+    @media screen and (max-width: $mobile) {
+      padding-top: 0;
+    }
 
     .manager {
       margin-bottom: 22px;

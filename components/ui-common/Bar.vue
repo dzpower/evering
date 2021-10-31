@@ -6,10 +6,10 @@
       </slot>
     </div>
     <div class="bar__wrapper">
-      <slot></slot>
       <div class="bar__close" @click="handleClick">
         <img src="/icons/close.svg" alt="close">
       </div>
+      <slot></slot>
     </div>
   </nav>
 </template>

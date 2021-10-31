@@ -4,6 +4,14 @@
   flex-direction: column;
   margin-top: 30px;
 
+  @media screen and (max-width: $mobile) {
+    width: max-content;
+    align-items: flex-start;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   &-item {
     text-decoration: none;
     display: flex;

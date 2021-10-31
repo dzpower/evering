@@ -6,7 +6,12 @@
           <Navbar class="item-page-navbar" />
         </div>
         <div class="item-page__content">
-          <h2 class="default-h2 bordered">Managers</h2>
+          <h2 class="default-h2 bordered">
+            <NuxtLink v-if="$device.isMobile" class="default-h2__back" to="/profile/settings">
+              <img src="/icons/slider-arrows.svg" alt="back button">
+            </NuxtLink>
+            Managers
+          </h2>
 
           <form class="settings-page__managers">
             <Manager
@@ -15,7 +20,7 @@
             />
           </form>
         </div>
-        <div class="item-page__rightcol">
+        <div v-if="$device.isDesktop" class="item-page__rightcol">
           <CommunityInfo />
           <SettingsNav />
         </div>
