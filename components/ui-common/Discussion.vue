@@ -8,7 +8,7 @@
         <img src="/content/users/01.png" alt="user avatar">
       </div>
       <div class="discussion__author">
-        <div class="discussion__row">
+        <div class="discussion__row discussion__name-row">
           <span class="discussion__author-name">Hapirica Dronova Christina</span>
           <span class="discussion__date">1 year ago</span>
         </div>

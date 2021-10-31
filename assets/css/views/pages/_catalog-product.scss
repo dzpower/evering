@@ -22,14 +22,7 @@
     margin-bottom: 20px;
   }
 
-  .product-photos, &__rightcol {
-    width: 21%;
-  }
-
   &__content {
-    height: auto;
-    width: 58%;
-
     .default-text {
       padding-top: 12px;
       border-top: 1px solid $border-color;
@@ -37,33 +30,9 @@
     }
   }
 
-  &__columns {
-    width: 100%;
-    display: flex;
-    align-items: flex-start;
-    gap: 0 12px;
-  }
-
   // Articles
   &__articles {
     margin-bottom: 12px;
-
-    .post-interesting {
-      max-width: 251px;
-    }
-
-    .custom-arrow {
-      top: 30%;
-    }
-
-    .slick-prev {
-      left: 7px;
-      z-index: 20;
-    }
-
-    .slick-next {
-      right: 7px;
-    }
   }
 
   // User Photos
@@ -80,6 +49,10 @@
 
   // Discussions
   &__discussions {
+
+    @media screen and (max-width: $tablet) {
+      margin-bottom: 30px;
+    }
 
     .discussion {
       width: 100%;

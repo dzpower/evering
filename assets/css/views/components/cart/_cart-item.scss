@@ -5,10 +5,20 @@
   justify-content: space-between;
   padding-bottom: 16px;
   border-bottom: 1px solid $border-color;
+  position: relative;
+
+  @media screen and (max-width: $mobile) {
+    flex-wrap: wrap;
+  }
 
   &__image {
     width: 32%;
     height: 222px;
+
+    @media screen and (max-width: $mobile) {
+      width: 48%;
+      height: 130px;
+    }
   }
 
   &__wrapper {
@@ -16,12 +26,21 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    @media screen and (max-width: $mobile) {
+      width: 100%;
+    }
   }
 
   &__info {
     display: flex;
     width: 100%;
     justify-content: space-between;
+
+    @media screen and (max-width: $mobile) {
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
 
     &-item {
       display: flex;
@@ -31,6 +50,17 @@
       font-size: 16px;
       line-height: 23px;
       color: $black;
+      @media screen and (max-width: $mobile) {
+        width: 50%;
+      }
+
+      &:first-child {
+
+        @media screen and (max-width: $mobile) {
+          width: 100%;
+          margin-bottom: 14px;
+        }
+      }
 
       strong {
         font-weight: bold;
@@ -71,8 +101,18 @@
     border: none;
     padding: 0;
 
+    @media screen and (max-width: $mobile) {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
     img {
       width: 25px;
+
+      @media screen and (max-width: $mobile) {
+        width: 20px;
+      }
     }
   }
 
@@ -86,5 +126,11 @@
     background-position: center right 10px;
     max-width: 72px;
     width: 100%;
+
+    @media screen and (max-width: $mobile) {
+      position: absolute;
+      top: 0;
+      left: calc(48% + 16px);
+    }
   }
 }

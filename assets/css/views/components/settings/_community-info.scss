@@ -1,0 +1,35 @@
+.community-info {
+  width: 100%;
+
+  &.centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 21px;
+    line-height: 30px;
+    margin: 0 0 2px;
+  }
+
+  &__followers {
+    display: inline-block;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 13px;
+  }
+
+  &.centered &__followers {
+    margin-bottom: 0;
+  }
+
+  &__goto.eve-button {
+    padding: 3px 17px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+  }
+}

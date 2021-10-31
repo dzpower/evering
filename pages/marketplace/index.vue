@@ -1,15 +1,15 @@
 <template>
   <div class="result-page marketplace container">
     <main class="main">
-      <aside class="result-page-filter">
-        <FilterItem
-          v-for="item in 5"
-          :key="item"
-        ></FilterItem>
-      </aside>
+      <div class="result-page__aside marketplace__aside">
+        <FilterBar />
+        <a v-if="$device.isMobileOrTablet" href="#" class="result-page-mp-button">Open in the catalog</a>
+      </div>
       <div class="result-page-column">
-        <div class="result-page-topbar marketplace-topbar">
-          <router-tabs />
+        <div v-if="$device.isDesktop" class="result-page-topbar marketplace-topbar">
+          <router-tabs
+            :items='tabs'
+          />
           <a href="#" class="result-page-mp-button">Open in the catalog</a>
         </div>
         <div class="result-page-tags marketplace-tags">
@@ -23,28 +23,20 @@
 
         <h2 class="default-h2">Hot topics</h2>
         <div class="marketplace-slider">
-          <vue-slick-carousel :variable-width='true' :arrows='true'>
+          <Slider>
             <card
-              v-for="item in 4"
+              v-for="item in 8"
               :key="item"
               :to='`${$route.path}/${item}`'
             ></card>
-            <template #prevArrow>
-              <div class='custom-arrow'>
-              </div>
-            </template>
-            <template #nextArrow>
-              <div class='custom-arrow custom-arrow__next'>
-              </div>
-            </template>
-          </vue-slick-carousel>
+          </Slider>
         </div>
 
-        <div class="result-page-middlebar">
+        <div class="result-page-middlebar marketplace__middlebar">
           <pagination />
           <div class="result-page-sort">
             <span class="result-page-sort__label">Sorting</span>
-            <select />
+            <Select />
           </div>
         </div>
         <div class="result-page-list marketplace-list">
@@ -64,13 +56,17 @@
 </template>
 
 <script>
-  import FilterItem from '@/components/views/pages/catalog/FilterItem'
   import ProductPreview from '@/components/views/pages/home/ProductPreview';
+  import FilterBar from '@/components/ui-common/FilterBar';
+  import Select from '@/components/ui-common/Select';
+  import Slider from '@/components/ui-common/Slider';
 
   export default {
     components: {
+      Slider,
+      Select,
+      FilterBar,
       ProductPreview,
-      FilterItem,
     },
     data() {
       return {
@@ -94,6 +90,33 @@
           {
             name: 'Recommendations',
             link: '#'
+          },
+        ],
+        tabs: [
+          {
+            tabContent: 'Marketplace',
+            link: `/`,
+            activeRouter: 'marketplace'
+          },
+          {
+            tabContent: 'All products',
+            link: `/marketplace/all`,
+            activeRouter: 'all'
+          },
+          {
+            tabContent: 'Purchases',
+            link: `/marketplace/purchases`,
+            activeRouter: 'purchases'
+          },
+          {
+            tabContent: 'Basket',
+            link: `/marketplace/basket`,
+            activeRouter: 'basket'
+          },
+          {
+            tabContent: 'Buyer\'s Settings',
+            link: `/marketplace/settings`,
+            activeRouter: 'settings'
           },
         ]
       }

@@ -1,6 +1,16 @@
 .user-bar{
   margin-left: auto;
 
+  &__badge{
+    width: 18px;
+    margin-right: 16px;
+    margin-top: 4px;
+
+    img {
+      width: 100%;
+    }
+  }
+
   &__items{
     display: flex;
     justify-content: flex-end;
@@ -34,4 +44,5 @@
       }
     }
   }
+
 }

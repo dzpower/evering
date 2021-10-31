@@ -6,6 +6,13 @@
     .discussion__preview {
       min-width: 245px;
       height: 222px;
+
+      @media screen and (max-width: $mobile) {
+        max-width: none;
+        width: 100%;
+        min-width: auto;
+        height: auto;
+      }
     }
   }
 }

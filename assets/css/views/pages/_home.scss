@@ -8,6 +8,23 @@
       padding-top: 32px;
       display: flex;
       gap: 40px;
+
+      @media screen and (max-width: $mobile) {
+        gap: 0;
+        justify-content: space-between;
+        padding-top: 24px;
+
+        .eve-button {
+          background: #fff !important;
+          border: 1px solid #D6C7CE;
+          box-sizing: border-box;
+          border-radius: 40px;
+          color: $black !important;
+          font-size: 14px;
+          line-height: 20px;
+          padding: 6px 16px;
+        }
+      }
     }
   }
 
@@ -18,11 +35,30 @@
     gap: 12px;
     justify-content: center;
     flex-wrap: wrap;
+
+    @media screen and (max-width: $tablet) {
+
+      .category-item {
+        max-width: calc((100% - 12px) / 2);
+      }
+    }
+
+    @media screen and (max-width: $mobile) {
+      padding-top: 16px;
+
+      .category-item {
+        max-width: 100%;
+      }
+    }
   }
 
   &-favourite{
     width: 100%;
     padding-top: 32px;
+
+    @media screen and (max-width: $mobile) {
+      padding-top: 24px;
+    }
   }
 
   .experts-responses {
@@ -31,12 +67,32 @@
 
   .most-interesting{
     padding-top: 34px;
+
+    @media screen and (max-width: $mobile) {
+      padding-top: 24px;
+    }
   }
 
   .more-interesting{
     padding-top: 29px;
     padding-bottom: 28px;
     width: 100%;
+
+    .eve-button {
+      padding: 5px 13px;
+    }
+
+    @media screen and (max-width: $mobile) {
+      padding-top: 16px;
+      padding-bottom: 16px;
+      display: flex;
+      justify-content: center;
+
+      .eve-button {
+        border: 1px solid $border-color;
+        background: #fff;
+      }
+    }
   }
 
   .tag-wrapper{
@@ -45,6 +101,10 @@
     justify-content: space-between;
     gap: 12px;
     padding-bottom: 29px;
+
+    @media screen and (max-width: $mobile) {
+      padding-bottom: 16px;
+    }
 
     .default-tag{
       flex-basis: 20%;

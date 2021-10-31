@@ -3,11 +3,20 @@
   margin-top: 90px;
   margin-bottom: 45px;
 
+  @media screen and (max-width: $mobile) {
+    margin-top: 42px;
+    margin-bottom: 32px;
+  }
+
   &__inner {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 0;
+
+    @media screen and (max-width: $mobile) {
+      padding: 0 12px;
+    }
   }
 
   &__title {
@@ -17,6 +26,9 @@
     line-height: 20px;
     color: $black;
     margin-bottom: 8px;
+    @media screen and (max-width: $mobile) {
+      text-align: left;
+    }
   }
 
   &__form {
@@ -25,6 +37,12 @@
     width: 100%;
     max-width: 470px;
     justify-content: space-between;
+
+    @media screen and (max-width: $mobile) {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 9px;
+    }
   }
 
   &__submit {
@@ -38,6 +56,10 @@
     border-radius: 40px;
     border: none;
     height: 30px;
+
+    @media screen and (max-width: $mobile) {
+      margin-top: 14px;
+    }
   }
 }
 
@@ -51,4 +73,5 @@
   padding: 0 16px;
   max-width: 360px;
   outline: none;
+
 }

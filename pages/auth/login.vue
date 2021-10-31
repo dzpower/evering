@@ -11,7 +11,7 @@
       placeholder='Password *'
       required
       class='input-default'/>
-    <NuxtLink class='auth-link' to='#'>Forgot your password?</NuxtLink>
+    <NuxtLink class='auth-link' to='/auth/forgot'>Forgot your password?</NuxtLink>
     <eve-button square>Enter</eve-button>
     <div class='auth-alternative'>
       <div class='auth-alternative__social'>

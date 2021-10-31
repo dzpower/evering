@@ -6,12 +6,22 @@
   border-bottom: 1px solid $border-color;
   padding-bottom: 20px;
 
+  @media screen and (max-width: $mobile) {
+    padding-bottom: 64px;
+    position: relative;
+  }
+
   &__wrapper {
     padding-top: 25px;
     padding-left: 22px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
+    @media screen and (max-width: $mobile) {
+      padding-left: 27px;
+      padding-top: 17px;
+    }
   }
 
   &.with-buttons &__wrapper {
@@ -22,6 +32,11 @@
   &__avatar {
     width: 145px;
     height: 145px;
+
+    @media screen and (max-width: $mobile) {
+      width: 114px;
+      height: 114px;
+    }
 
     img {
       width: 100%;
@@ -60,6 +75,9 @@
     margin-bottom: 3px;
     display: flex;
     align-items: center;
+    @media screen and (max-width: $mobile) {
+      margin-bottom: 0;
+    }
   }
 
   &__name &__online {
@@ -69,6 +87,10 @@
 
   &__status {
     margin-bottom: 16px;
+
+    @media screen and (max-width: $mobile) {
+      margin-bottom: 6px;
+    }
   }
 
   &__stats {
@@ -78,13 +100,14 @@
     color: $black;
     margin-bottom: 4px;
 
+    @media screen and (max-width: $mobile) {
+      display: flex;
+      flex-direction: column;
+    }
+
     span:first-child {
       margin-right: 20px;
     }
-  }
-
-  .eve-button {
-    padding: 8px 13px;
   }
 
   &__buttons {
@@ -92,5 +115,16 @@
     align-items: center;
     gap: 20px;
     margin-top: auto;
+  }
+
+  &__edit.eve-button {
+    padding: 8px 13px;
+    font-weight: bold;
+
+    @media screen and (max-width: $mobile) {
+      position: absolute;
+      bottom: 24px;
+      left: 0;
+    }
   }
 }

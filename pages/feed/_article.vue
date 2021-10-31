@@ -2,12 +2,10 @@
   <div class='item-page article-page prod'>
     <main class='main'>
       <div class='item-page__columns'>
-        <aside class="result-page-filter">
-          <FilterItem
-            v-for="item in 5"
-            :key="item"
-          ></FilterItem>
-        </aside>
+        <div class="item-page__leftcol">
+          <FilterBar />
+          <search-field v-if="$device.isMobileOrTablet" placeholder="search in the news" />
+        </div>
         <div class='item-page__content'>
           <div class="article-page__tags">
             <tag
@@ -48,13 +46,13 @@
               </button>
               <span>5345</span>
             </div>
-            <eve-button icon>
+            <eve-button v-if="$device.isDesktopOrTablet" icon>
               Like
               <template #icon>
                 <img src="/icons/like.svg" alt="like">
               </template>
             </eve-button>
-            <div class="action-bar__comments-count">
+            <div class="action-bar__comments-count" >
               <img src="/icons/comments.svg" alt="like">
               176 comments
             </div>
@@ -74,7 +72,7 @@
         </div>
 
         <div class='item-page__rightcol'>
-          <search-field placeholder="search in the news" />
+          <search-field v-if="$device.isDesktop" placeholder="search in the news" />
 
           <div class="article-page__cats">
             <NuxtLink to="#" class="eve-button article-page__category">Barbie</NuxtLink>
@@ -108,16 +106,16 @@
 
 import SearchField from '@/components/ui-common/SearchField';
 import Article from "@/components/views/pages/brands/Article"
-import FilterItem from '@/components/views/pages/catalog/FilterItem';
 import NewsHead from '@/components/views/pages/feed/news/NewsHead';
 import Review from '@/components/ui-common/Review';
 import Pagination from '@/components/ui-common/Pagination';
+import FilterBar from '@/components/ui-common/FilterBar';
 export default {
   components: {
+    FilterBar,
     Pagination,
     Review,
     NewsHead,
-    FilterItem,
     SearchField,
     Article
   },

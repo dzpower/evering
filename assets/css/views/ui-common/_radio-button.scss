@@ -4,6 +4,11 @@
   padding: 8px 17px;
   justify-content: space-between;
 
+  @media screen and (max-width: $mobile) {
+    padding: 12px;
+    justify-content: center;
+  }
+
   input[type="radio"] {
     display: none;
   }
@@ -19,6 +24,10 @@
     border: 1px solid #D5C8CF;
     box-sizing: border-box;
     border-radius: 7px;
+
+    @media screen and (max-width: $mobile) {
+      display: none;
+    }
   }
 
   input[type="radio"]:checked ~ &__decor {

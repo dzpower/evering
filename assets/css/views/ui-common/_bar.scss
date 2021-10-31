@@ -1,0 +1,45 @@
+.bar {
+  position: relative;
+
+  &__wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (max-width: $tablet) {
+      display: none;
+      padding: 30px;
+      background: #fff;
+      border: 1px solid #D6C7CE;
+      border-radius: 7px;
+      position: absolute;
+      z-index: 20;
+      width: auto;
+      top: -2px;
+      right: -2px;
+    }
+  }
+
+  &.active &__wrapper {
+    display: flex;
+  }
+
+  &__open {
+    display: none;
+
+    @media screen and (max-width: $tablet) {
+      display: block;
+    }
+  }
+
+  &__close {
+    display: none;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+
+    @media screen and (max-width: $tablet) {
+      display: block;
+    }
+  }
+}

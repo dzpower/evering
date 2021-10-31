@@ -1,0 +1,33 @@
+.settings-nav {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+
+  @media screen and (max-width: $mobile) {
+    width: max-content;
+    align-items: flex-start;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &-item {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin-bottom: 14px;
+
+    &__icon {
+      width: 20px;
+      margin-right: 14px;
+    }
+
+    &__title {
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+  }
+}

@@ -1,8 +1,19 @@
 .brand-page {
   width: 100%;
 
+  &__photo {
+
+    @media screen and (max-width: $tablet) {
+      margin-bottom: 20px;
+    }
+  }
+
   .default-text {
     margin-bottom: 72px;
+
+    @media screen and (max-width: $mobile) {
+      margin-bottom: 20px;
+    }
   }
 
   &__top-bar {
@@ -11,10 +22,22 @@
     align-items: flex-start;
     margin-bottom: 700px;
 
+    @media screen and (max-width: $tablet) {
+      width: 100%;
+      margin-bottom: 20px;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
     .eve-button  {
       max-width: none;
       padding: 7px 15px;
       margin-bottom: 14px;
+
+      @media screen and (max-width: $tablet) {
+        margin-bottom: 0;
+      }
 
       &:last-child {
         margin-bottom: 0;
@@ -25,10 +48,32 @@
   &__articles {
     margin-bottom: 30px;
 
+    @media screen and (max-width: $tablet) {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    @media screen and (max-width: $mobile) {
+      gap: 15px;
+    }
+
+
     .post-interesting {
       margin-bottom: 16px;
       max-width: none;
       padding-right: 0;
+
+      @media screen and (max-width: $tablet) {
+        max-width: none;
+        width: calc((100% - 12px) / 2);
+        margin-bottom: 0;
+      }
+
+      @media screen and (max-width: $mobile) {
+        width: 100%;
+      }
+
       &:last-child {
         margin-bottom: 0;
       }
@@ -37,9 +82,9 @@
 
   &__products {
     margin-bottom: 10px;
-    .card {
-      max-width: 250px;
-      padding-right: 12px;
+
+    @media screen and (max-width: $mobile) {
+      margin-bottom: 38px;
     }
   }
 

@@ -14,10 +14,11 @@ import Footer from '@/components/layout/Footer'
 import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 
-  export default {
-    components: {
-      'header-component': Header,
-      'footer-component': Footer
-    }
-  }
+export default {
+  name: "default",
+  components: {
+    'header-component': Header,
+    'footer-component': Footer
+  },
+}
 </script>

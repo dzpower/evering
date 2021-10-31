@@ -1,0 +1,20 @@
+.errors-have {
+  animation: .6s tremor;
+}
+@-webkit-keyframes tremor {
+  0% {
+    transform: translateX(-2%);
+  }
+  25% {
+    transform: translateX(+2%);
+  }
+  50% {
+    transform: translateX(-2%);
+  }
+  75% {
+    transform: translateX(+2%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

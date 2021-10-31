@@ -1,0 +1,54 @@
+.settings-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  @media screen and (max-width: $mobile) {
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  &__title {
+    font-size: 14px;
+    line-height: 20px;
+    width: 12%;
+    margin-right: 38px;
+    text-align: right;
+
+    @media screen and (max-width: $mobile) {
+      text-align: left;
+      font-weight: bold;
+      width: 105px;
+      margin-bottom: 6px;
+      margin-right: 0;
+    }
+  }
+
+  .eve-input {
+    width: 82%;
+
+    @media screen and (max-width: $mobile) {
+      width: 100%;
+    }
+  }
+
+  .default-text {
+    padding-left: 15px;
+    margin-left: calc(12% + 38px);
+    display: inline-block;
+    font-size: 16px;
+    line-height: 23px;
+    padding-bottom: 6px;
+
+    @media screen and (max-width: $mobile) {
+      margin-left: 0;
+      padding: 0;
+    }
+
+    a {
+      font-weight: 500;
+      text-decoration: none;
+    }
+  }
+}
