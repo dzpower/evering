@@ -12,7 +12,7 @@
           <Select />
         </h2>
         <div class="result-page-slider profile-page-slider">
-          <Slider :rows="2">
+          <Slider>
             <div
               v-for="item in 8"
               :key="item"
@@ -31,7 +31,7 @@
           <Select />
         </h2>
         <div class="result-page-slider profile-page-slider">
-          <Slider :rows="2">
+          <Slider>
             <div
               v-for="item in 8"
               :key="item"
@@ -49,7 +49,7 @@
           <Select />
         </h2>
         <div class="result-page-slider profile-page-slider">
-          <Slider :rows="2">
+          <Slider>
             <default-video v-for="i in 5" :key="i"></default-video>
           </Slider>
         </div>

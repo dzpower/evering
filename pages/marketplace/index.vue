@@ -32,24 +32,21 @@
           </Slider>
         </div>
 
-        <div class="result-page-middlebar marketplace__middlebar">
-          <pagination />
-          <div class="result-page-sort">
-            <span class="result-page-sort__label">Sorting</span>
-            <Select />
-          </div>
-        </div>
-        <div class="result-page-list marketplace-list">
+        <Items>
           <ProductPreview
             v-for='item in 20'
             :key='item'
             :rating='4'
             :price='12222'
           />
-        </div>
-        <div class="result-page-bottombar">
-          <pagination />
-        </div>
+          <template #element>
+            <div class="result-page-sort">
+              <span class="result-page-sort__label">Sorting</span>
+              <Select />
+            </div>
+          </template>
+        </Items>
+
       </div>
     </main>
   </div>
@@ -60,9 +57,11 @@
   import FilterBar from '@/components/ui-common/FilterBar';
   import Select from '@/components/ui-common/Select';
   import Slider from '@/components/ui-common/Slider';
+  import Items from '@/components/ui-common/Items';
 
   export default {
     components: {
+      Items,
       Slider,
       Select,
       FilterBar,

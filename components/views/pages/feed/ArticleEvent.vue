@@ -17,7 +17,7 @@
     <div class="article-event__image default-photo">
       <img src="/content/01.png" alt="">
     </div>
-    <ActionBar like-button comment-count/>
+    <ActionBar like-bar like-button comment-count/>
   </div>
 </template>
 

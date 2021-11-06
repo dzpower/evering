@@ -21,7 +21,7 @@
 
     </div>
 
-    <ActionBar like-button comment-count/>
+    <ActionBar like-bar like-button comment-count/>
   </div>
 </template>
 

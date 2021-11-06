@@ -1,21 +1,28 @@
 <template>
   <div class="custom-slider-wrapper">
+    <!-- Destroy slider in tablet, mobile -->
     <vue-slick-carousel
-      ref="carousel"
+      v-if="$device.isDesktop"
       class="custom-slider"
       v-bind="init"
       :variable-width="variableWidth"
       :arrows="true"
     >
       <slot />
-      <!-- Desktop Navigation -->
-      <template v-if="$device.isDesktop" #prevArrow>
+      <template #prevArrow>
         <div class='custom-arrow custom-arrow__prev'></div>
       </template>
-      <template v-if="$device.isDesktop" #nextArrow>
+      <template #nextArrow>
         <div class='custom-arrow custom-arrow__next'></div>
       </template>
     </vue-slick-carousel>
+
+    <!-- Body -->
+    <div v-if="$device.isMobileOrTablet" class="custom-slider__body">
+      <slot />
+    </div>
+
+    <!-- Pagination -->
     <div v-if="$device.isMobileOrTablet" class="custom-slider__navigation">
       <div class="custom-slider__slide-info">
         1 - 8 из 105
@@ -23,13 +30,11 @@
       <div class="custom-slider__buttons">
         <div
           class="custom-slider__button custom-slider__prev --caret-before"
-          @click="prevSlide"
         >
           Previous
         </div>
         <div
           class="custom-slider__button custom-slider__next --caret-after"
-          @click="nextSlide"
         >
           Next
         </div>
@@ -45,8 +50,6 @@ export default {
   props: {
     slides: { type: Number, default: 4 },
     variableWidth: { type: Boolean, default: false },
-    tabletSlides: { type: Number, default: 2 },
-    initialSlide: { type: Number, default: 0 },
     rows: {type: Number, default: 1}
   },
   computed: {
@@ -66,38 +69,10 @@ export default {
         // Auto Width
         variableWidth: this.variableWidth,
 
-        // Initial Slide
-        initialSlide: this.initialSlide,
-
         // Rows
         rows: this.rows,
-
-        responsive: [
-          // Desktop Breakpoint
-          {
-            breakpoint: 1340,
-            settings: {
-              slidesToShow: this.slides,
-            }
-          },
-          // Tablet Breakpoint
-          {
-            breakpoint: 1024,
-            settings: {
-              slidesToShow: this.tabletSlides,
-            },
-          },
-        ]
       }
     }
-  },
-  methods: {
-    nextSlide() {
-      this.$refs.carousel.next()
-    },
-    prevSlide() {
-      this.$refs.carousel.prev()
-    },
   },
 }
 </script>

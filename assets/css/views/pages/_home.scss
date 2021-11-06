@@ -104,6 +104,9 @@
 
     @media screen and (max-width: $mobile) {
       padding-bottom: 16px;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      white-space: nowrap;
     }
 
     .default-tag{

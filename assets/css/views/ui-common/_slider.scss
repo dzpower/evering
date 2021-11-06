@@ -1,6 +1,24 @@
 .custom-slider {
   width: 100%;
 
+  &__body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px 12px;
+
+    .post-interesting,
+    .default-video,
+    .card,
+    .expert-response,
+    .product-preview {
+      width: calc((100% - 24px) / 3);
+
+      @media screen and (max-width: $mobile) {
+        width: calc((100% - 12px) / 2);
+      }
+    }
+  }
+
   .slick-list {
     margin: -6px !important;
 

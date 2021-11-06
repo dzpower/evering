@@ -2,6 +2,17 @@
   width: 100%;
   padding-right: 42px;
 
+  @media screen and (max-width: $laptop) {
+    padding: 13px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #493842;
+    border-radius: 7px 7px 0 0;
+    z-index: 999;
+  }
+
   &__head {
     display: flex;
     align-items: center;
@@ -44,6 +55,14 @@
     }
   }
 
+  &__links {
+    @media screen and (max-width: $laptop) {
+      display: flex;
+      gap: 38px;
+      justify-content: center;
+    }
+  }
+
   &__link {
     font-weight: 500;
     font-size: 12px;
@@ -53,6 +72,16 @@
     align-items: center;
     text-decoration: none;
     margin-bottom: 14px;
+
+    @media screen and (max-width: $laptop) {
+      margin-bottom: 0;
+    }
+
+    span {
+      @media screen and (max-width: $laptop) {
+        display: none;
+      }
+    }
 
     &:last-child {
       margin-bottom: 0;
@@ -66,6 +95,12 @@
       background-image: url(static/icons/comment.svg);
       background-size: 100% 100%;
       margin-right: 7px;
+
+      @media screen and (max-width: $laptop) {
+        margin-right: 0;
+        width: 20px;
+        height: 19px;
+      }
     }
   }
 }

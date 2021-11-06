@@ -3,7 +3,7 @@
     <main class="main">
       <div class="result-page__aside">
         <FeedFilter />
-<!--        <VideoFeedFilter />-->
+        <VideoFeedFilter />
       </div>
       <div class="result-page-column">
         <div class="result-page-tags">
@@ -53,11 +53,11 @@ import FeedFilter from '@/components/views/pages/feed/FeedFilter';
 import Select from '@/components/ui-common/Select';
 import SearchField from '@/components/ui-common/SearchField';
 import VideoItem from '@/components/views/pages/feed/VideoItem';
-// import VideoFeedFilter from '@/components/views/pages/feed/VideoFeedFilter';
+import VideoFeedFilter from '@/components/views/pages/feed/VideoFeedFilter';
 
 export default {
   components: {
-    // VideoFeedFilter,
+    VideoFeedFilter,
     VideoItem,
     SearchField,
     Select,

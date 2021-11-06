@@ -2,7 +2,9 @@
   <div class='auth'>
     <header-component login-page />
     <div class='auth-place'>
-      <Nuxt />
+      <main class="main">
+        <Nuxt />
+      </main>
     </div>
   </div>
 </template>

@@ -1,12 +1,20 @@
 .add-cart {
   width: 100%;
 
+  @media screen and (max-width: $mobile) {
+    padding: 0 20px;
+  }
+
   &__row {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     gap: 10px;
     margin-bottom: 12px;
+
+    @media screen and (max-width: $mobile) {
+      justify-content: flex-start;
+    }
   }
 
   & &__button {
@@ -29,6 +37,10 @@
 
   &__mp {
     margin-top: 22px;
+
+    @media screen and (max-width: $mobile) {
+      margin-top: 16px;
+    }
   }
 
   & &__edit {

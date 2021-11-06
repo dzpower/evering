@@ -1,12 +1,12 @@
 <template>
   <div class="video-feed-filter">
-    <div class="video-feed-filter__head">
+    <div v-if="$device.isDesktop" class="video-feed-filter__head">
       <span class="video-feed-filter__title">
         Subscriptions
       </span>
       <Select />
     </div>
-    <div class="video-feed-filter__cats">
+    <div v-if="$device.isDesktop" class="video-feed-filter__cats">
       <div class="video-feed-filter__category">
         <img src="/content/users/01.png" alt="">
         <span>Dolls</span>
@@ -18,16 +18,16 @@
     </div>
     <div class="video-feed-filter__links">
       <NuxtLink to="#" class="video-feed-filter__link">
-        View History
+        <span>View History</span>
       </NuxtLink>
       <NuxtLink to="#" class="video-feed-filter__link">
-        Your videos
+        <span>Your videos</span>
       </NuxtLink>
       <NuxtLink to="#" class="video-feed-filter__link">
-        Liked
+        <span>Liked</span>
       </NuxtLink>
       <NuxtLink to="#" class="video-feed-filter__link">
-        Channels
+        <span>Channels</span>
       </NuxtLink>
     </div>
   </div>

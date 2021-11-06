@@ -17,23 +17,21 @@
           </div>
           <a v-if="$device.isDesktop" href="#" class="result-page-mp-button">Search in the marketplace</a>
         </div>
-        <div class="result-page-middlebar">
-          <pagination />
-          <div class="result-page-sort">
-            <span class="result-page-sort__label">Sorting</span>
-            <Select />
-          </div>
-        </div>
-        <div class="result-page-list">
+
+        <Items>
           <card
             v-for="item in 20"
             :key="item"
             :to='`${$route.path}/${item}`'
           ></card>
-        </div>
-        <div class="result-page-bottombar">
-          <pagination />
-        </div>
+          <template #element>
+            <div class="result-page-sort">
+              <span class="result-page-sort__label">Sorting</span>
+              <Select />
+            </div>
+          </template>
+        </Items>
+
       </div>
     </main>
   </div>
@@ -41,11 +39,13 @@
 
 <script>
   import FilterBar from '@/components/ui-common/FilterBar';
-  import Select from '@/components/ui-common/Select';
+  // import Select from '@/components/ui-common/Select';
+  import Items from '@/components/ui-common/Items'
 
   export default {
     components: {
-      Select,
+      Items,
+      // Select,
       FilterBar,
     },
     data() {
