@@ -16,24 +16,18 @@
             </tag>
           </div>
         </div>
-        <div class="result-page-middlebar brands-middlebar">
-          <div class="result-page-sort">
-            <pagination />
-            <a v-if="$device.isDesktop" href="#" class="result-page-mp-button">Search in the marketplace</a>
-          </div>
-        </div>
 
-        <h2 class="default-h2">Brands</h2>
-        <div class="result-page-list">
+        <Items title="Brands">
           <card
             v-for="item in 8"
             :key="item"
             :to="`${$route.path}/${item}`"
           ></card>
-        </div>
-        <div class="result-page-bottombar brands-bottombar">
-          <pagination />
-        </div>
+          <template #element>
+            <a v-if="$device.isDesktop" href="#" class="result-page-mp-button">Search in the marketplace</a>
+          </template>
+        </Items>
+
 
         <h2 class="default-h2">Manufacturers</h2>
         <div class="brands-slider">
@@ -83,9 +77,11 @@
 <script>
   import Slider from '@/components/ui-common/Slider';
   import FilterBar from '@/components/ui-common/FilterBar';
+  import Items from '@/components/ui-common/Items';
 
   export default {
     components: {
+      Items,
       FilterBar,
       Slider,
     },

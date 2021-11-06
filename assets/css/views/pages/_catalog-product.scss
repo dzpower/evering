@@ -33,6 +33,10 @@
   // Articles
   &__articles {
     margin-bottom: 12px;
+
+    @media screen and (max-width: $tablet) {
+      margin-bottom: 20px;
+    }
   }
 
   // User Photos
@@ -44,6 +48,10 @@
     .default-photo {
       flex-grow: 1;
       height: 222px;
+
+      @media screen and (max-width: $mobile) {
+        height: 153px;
+      }
     }
   }
 
@@ -66,6 +74,35 @@
 
   .add-cart {
     margin-bottom: 24px;
+  }
+
+  .product-description {
+    margin-top: 114px;
+    margin-bottom: 34px;
+
+    @media screen and (max-width: $tablet) {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &__sellers {
+    margin-bottom: 22px;
+
+    .seller {
+      margin-bottom: 14px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &-title {
+
+      @media screen and (max-width: $tablet) {
+        margin-top: 36px;
+      }
+    }
   }
 }
 

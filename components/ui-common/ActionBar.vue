@@ -1,6 +1,6 @@
  <template>
    <div class="action-bar action-bar--full">
-     <div class="action-bar__likes">
+     <div v-if="likeBar" class="action-bar__likes">
        <button>
          <img src="/icons/like-active.svg" alt="like">
        </button>
@@ -12,7 +12,7 @@
          <img src="/icons/like.svg" alt="like">
        </template>
      </eve-button>
-     <div v-if="likeButton" class="action-bar__comments-count">
+     <div v-if="commentCount" class="action-bar__comments-count">
        <img src="/icons/comments.svg" alt="like">
        176 comments
      </div>
@@ -28,6 +28,10 @@
 export default {
   name: "ActionBar",
   props: {
+    likeBar: {
+      type: Boolean,
+      default: false,
+    },
     likeButton: {
       type: Boolean,
       default: false,
@@ -35,7 +39,7 @@ export default {
     commentCount: {
       type: Boolean,
       default: false,
-    }
+    },
   }
 }
 </script>

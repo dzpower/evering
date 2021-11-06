@@ -9,10 +9,15 @@
           <Photos v-if="$device.isDesktop" />
         </div>
         <div class='item-page__content catalog-product__content'>
-          <Preview></Preview>
+          <Preview>
+            <template #body>
+              <eve-button class="product-gallery__button">
+                <strong>Go to the seller's page</strong>
+              </eve-button>
+            </template>
+          </Preview>
 
           <AddCart v-if="$device.isMobileOrTablet" />
-
 
           <p class='default-text'>
             Since the first release of the doll, the manufacturer has relied on quality: professional fashion designer
@@ -65,7 +70,7 @@
 
         <div class='item-page__rightcol'>
 
-          <AddCart v-if="$device.isDesktop" />
+          <AddCart v-if="$device.isDesktop" edit-button />
 
           <h2 class='default-h2'>Video</h2>
 

@@ -1,0 +1,32 @@
+.seller {
+  position: relative;
+  background: #fff;
+  border: 1px solid #D2C5CC;
+  box-sizing: border-box;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  width: 100%;
+
+  &__title {
+    font-size: 16px;
+    line-height: 23px;
+    margin-bottom: 3px;
+  }
+
+  &__price {
+    font-size: 20px;
+    line-height: 29px;
+  }
+
+  .eve-button {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    position: absolute;
+    right: 14px;
+    bottom: 15px;
+    padding: 5px 10px;
+  }
+}

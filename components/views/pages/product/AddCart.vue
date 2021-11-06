@@ -22,7 +22,7 @@
     <eve-button class="dark add-cart__button add-cart__mp">
       Products in the marketplace
     </eve-button>
-    <eve-button icon class="add-cart__edit">
+    <eve-button v-if="editButton" icon class="add-cart__edit">
       <template #icon>
         <img src="/icons/edit.svg" alt="edit">
       </template>
@@ -34,5 +34,11 @@
 <script>
 export default {
   name: "AddCart",
+  props: {
+    editButton: {
+      type: Boolean,
+      default: false,
+    }
+  }
 }
 </script>

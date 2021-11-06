@@ -6,6 +6,23 @@
   padding-bottom: 17px;
   display: flex;
   align-items: center;
+  position: relative;
+
+  @media screen and (max-width: $laptop) {
+    max-width: 1024px;
+  }
+
+  @media screen and (max-width: $tablet) {
+    max-width: 640px;
+    margin-bottom: 44px;
+  }
+
+  @media screen and (max-width: $mobile) {
+    padding-left: 12px;
+    padding-right: 12px;
+    max-width: none;
+    flex-wrap: wrap;
+  }
 
   &-container {
     background: $header-bg;
@@ -24,6 +41,10 @@
     max-width: 112px;
     margin-right: 114px;
 
+    @media screen and (max-width: $mobile) {
+      max-width: 99px;
+    }
+
     img {
       width: 100%;
     }
@@ -40,12 +61,29 @@
     background-size: 22px;
     border-radius: 40px;
     outline: none;
+
+    @media screen and (max-width: $tablet) {
+      position: absolute;
+      bottom: -44px;
+      width: 640px;
+      max-width: none;
+    }
+
+    @media screen and (max-width: $mobile) {
+      width: calc(100vw - 24px);
+    }
   }
 
   .main-nav {
     margin-left: 49px;
     display: flex;
     align-items: center;
+
+    @media screen and (max-width: $mobile) {
+      order: 1;
+      width: 100%;
+      padding-top: 14px;
+    }
 
     a {
       font-weight: normal;
@@ -66,6 +104,12 @@
       &.active {
         font-weight: bold;
       }
+    }
+  }
+
+  &-search {
+    @media screen and (max-width: $tablet) {
+      width: 100%;
     }
   }
 }

@@ -2,7 +2,7 @@
   <div class="photo-news news-item">
     <NewsHead />
     <GalleryTiles class="photo-news__gallery" :count="5" />
-    <ActionBar like-button comment-count/>
+    <ActionBar like-bar like-button comment-count/>
   </div>
 </template>
 

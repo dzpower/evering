@@ -5,29 +5,11 @@
     </div>
     <div class="popup__content">
       <div class="popup__header">
-        <!-- ActionBar.vue -->
-        <div class="action-bar action-bar--full">
-          <div class="action-bar__likes">
-            <button>
-              <img src="/icons/like-active.svg" alt="like">
-            </button>
-            <span>5345</span>
-          </div>
-          <eve-button icon>
-            Like
-            <template #icon>
-              <img src="/icons/like.svg" alt="like">
-            </template>
-          </eve-button>
-          <div class="action-bar__comments-count">
-            <img src="/icons/comments.svg" alt="like">
-            176 comments
-          </div>
-          <button class="action-bar__comments">
-            COMMENTS
-            <img src="/icons/plus.svg" alt="plus">
-          </button>
-        </div>
+        <ActionBar
+          like-bar
+          :comment-count="$device.isDesktop"
+          :like-button="$device.isDesktop"
+        />
       </div>
       <div class="popup__body">
         <!-- Discussion.vue -->
@@ -70,8 +52,9 @@
 
 <script>
 
+import ActionBar from '@/components/ui-common/ActionBar';
 export default {
   name: "Popup",
-  components: {}
+  components: {ActionBar}
 }
 </script>

@@ -82,10 +82,6 @@
 
   &__products {
     margin-bottom: 10px;
-
-    @media screen and (max-width: $mobile) {
-      margin-bottom: 38px;
-    }
   }
 
   &__references {

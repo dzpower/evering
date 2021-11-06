@@ -9,9 +9,23 @@
           <Photos v-if="$device.isDesktop" />
         </div>
         <div class='item-page__content'>
-          <Preview></Preview>
+          <Preview>
+            <template #body>
+                <div class="product-info">
+                  <span class='product-info__title'>Pullip Alice</span>
+                  <div class="product-info__price">1580 $</div>
+                  <rating :stars='rating'/>
+                </div>
+            </template>
+          </Preview>
 
           <AddCart v-if="$device.isMobileOrTablet" />
+
+          <p v-if="$device.isMobileOrTablet" class="product-description default-text">
+            Since the first release of the doll, the manufacturer has relied on quality: professional fashion designer Charlotte Johnson develops outfits for it, which later became legendary and recognizable; artist Betty Lou Mabey creates the first promotional photos and a literary image of Barbie for catalogs and the future magazine "Barbie Magazine".
+          </p>
+
+          <ActionBar comment-count />
 
           <div class='reviews-wrapper'>
             <h2 class='default-h2'>Reviews</h2>
@@ -25,6 +39,24 @@
 
         <div class='item-page__rightcol'>
           <AddCart v-if="$device.isDesktop" />
+          <!-- Text -->
+          <p v-if="$device.isDesktop" class="product-description default-text">
+            Since the first release of the doll, the manufacturer has relied on quality: professional fashion designer Charlotte Johnson develops outfits for it, which later became legendary and recognizable; artist Betty Lou Mabey creates the first promotional photos and a literary image of Barbie for catalogs and the future magazine "Barbie Magazine".
+          </p>
+
+          <h2 class="default-h2 catalog-product__sellers-title">Other sellers</h2>
+          <div class="catalog-product__sellers">
+            <Seller
+              v-for="i in 3"
+              :key="i"
+            />
+          </div>
+
+          <h2 class="default-h2">Amateur photo</h2>
+          <div class="default-photo">
+            <img src="/content/01.png" alt="">
+          </div>
+
         </div>
       </div>
       <div class='similars-products'>
@@ -59,9 +91,13 @@ import Preview from '@/components/views/pages/product/Preview'
 import AddCart from '@/components/views/pages/product/AddCart'
 import ProductPreview from '@/components/views/pages/home/ProductPreview'
 import Slider from '@/components/ui-common/Slider';
+import Seller from '@/components/ui-common/Seller';
+import ActionBar from '@/components/ui-common/ActionBar';
 
 export default {
   components: {
+    ActionBar,
+    Seller,
     AddCart,
     Preview,
     Photos,
