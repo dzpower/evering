@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header-component />
+    <header-component/>
     <bread-crumbs />
     <Nuxt />
     <email-subscribe />
@@ -15,10 +15,16 @@ import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 
 export default {
-  name: "default",
+  name: "Default",
   components: {
     'header-component': Header,
     'footer-component': Footer
   },
+  created() {
+    this.$store.dispatch('content/fetchMenu')
+    this.$store.dispatch('content/fetchContent')
+    this.$store.dispatch('content/fetchTest')
+    this.$store.dispatch('news/fetchNews')
+  }
 }
 </script>

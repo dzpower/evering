@@ -6,7 +6,7 @@ export default {
   head: {
     title: 'evening',
     htmlAttrs: {
-      lang: 'en'
+    
     },
     meta: [
       { charset: 'utf-8' },
@@ -31,7 +31,8 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     '~plugins/global-components',
-    '~plugins/custom-flag.js'
+    '~plugins/custom-flag.js',
+    '~plugins/axios.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -54,15 +55,22 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/toast'
   ],
 
-  // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseUrl: 'https://kukli.promositetest.ru'
+  },
+
+  toast: {
+    position: 'top-center',
+    duration: 4000,
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   },
-
+  
   server: {
     host: '0.0.0.0'
   }

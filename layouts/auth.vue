@@ -18,7 +18,7 @@ export default {
     'header-component': Header
   },
   middleware ({ store, redirect }) {
-    return store.getters['user/getUserAuthorized'] ? redirect('/') : true
+    return store.getters['users/getUserAuthorized'] ? redirect('/') : true
   },
 }
 </script>

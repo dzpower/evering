@@ -1,15 +1,23 @@
 const state = () => ({
-  uid: '',
-  name: '',
-  email: '',
-  picture: ''
+    uid: '',
+    name: '',
+    editable: '',
+    picture: '',
 })
 
 const actions = {
+  async signUp({commit}, body) {
+    await this.$axios.$post('users/signup', body, {}).then(response => {
+      return response
+    }).catch(error => {
+      return error
+    })
+  },
   putUser({commit}, user) {
     commit('SET_USER', user)
     this.$router.push('/')
-  }
+  },
+
 }
 
 const mutations = {

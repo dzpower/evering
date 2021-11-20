@@ -1,7 +1,7 @@
 <template>
   <form
     class='registration'
-    @submit.prevent='userAuth'
+    @submit.prevent='userSignUp'
   >
     <h2>Create an account on Everigin</h2>
     <input
@@ -20,6 +20,12 @@
       v-model='user.password'
       type='password'
       placeholder='Password *'
+      required
+      class='input-default' />
+    <input
+      v-model='user.password_confirm'
+      type='password'
+      placeholder='Password confirm *'
       required
       class='input-default' />
     <div
@@ -68,29 +74,30 @@ export default {
         name: 'Dima',
         email: 'dima@user.com',
         password: 'password',
+        password_confirm: 'password',
         terms: false
       },
-      result: {
-        uid: 'A8INZfL7CETiHrTi/287Pp3v4wOnIs7gpSNJXgEDxww1wHnPN/SQEWdkh/ZoslJ+prCfr6v0bEbY8jXrwUws+g==',
-        name: 'Ivan',
-        email: 'dima@user.com',
-        picture: '/user.png'
-      }
     }
   },
   computed: {},
   methods: {
-    ...mapActions('user', [
-      'putUser'
+    ...mapActions('users', [
+      'signUp',
     ]),
-    userAuth() {
+    userSignUp() {
+      const body = {
+        "email": this.user.email,
+        "name": this.user.name,
+        "password": this.user.password,
+        "password_confirm": this.user.password_confirm
+      }
       this.errors = !this.user.terms
       if (this.errors) {
         setTimeout(() => {
           this.errors = !this.errors
         }, 600)
       } else {
-        this.putUser(this.result)
+        this.signUp(body)
       }
     }
   }

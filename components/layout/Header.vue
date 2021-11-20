@@ -17,12 +17,17 @@
         class='search'
       >
       <nav
-        v-if='!loginPage'
+        v-if='!loginPage && getTopMenu'
         class='main-nav'
       >
-        <NuxtLink :class='getRouteName.includes("catalog") ? "active" : ""' to='/catalog'>Catalog</NuxtLink>
-        <NuxtLink :class='getRouteName.includes("community") ? "active" : ""' to='#'>Community</NuxtLink>
-        <NuxtLink :class='getRouteName.includes("marketplace") ? "active" : ""' to='/marketplace'>Marketplace</NuxtLink>
+        <NuxtLink
+          v-for="(itemTopMenu, index) in getTopMenu"
+          :key="index + itemTopMenu"
+          :class='getRouteName.includes(itemTopMenu.name.toLowerCase()) ? "active" : ""'
+          :to='itemTopMenu.url_full.slice(0, -1)'
+        >
+          {{ itemTopMenu.name }}
+        </NuxtLink>
       </nav>
       <user-bar v-if='!loginPage'/>
     </header>
@@ -46,6 +51,9 @@ export default {
   computed: {
     getRouteName() {
       return this.$route.path
+    },
+    getTopMenu() {
+      return this.$store.getters['content/getMenu']?.top ? this.$store.getters['content/getMenu']?.top.flat().splice(1, 3) : []
     }
   }
 }

@@ -24,7 +24,7 @@ import { mapGetters } from 'vuex'
 export default {
   name: 'UserBar',
   computed: {
-    ...mapGetters('user', [
+    ...mapGetters('users', [
       'getUserAuthorized'
     ])
   }
