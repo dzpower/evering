@@ -4,6 +4,22 @@
   .reviews-wrapper{
     width: 100%;
     padding-top: 32px;
+
+    .default-h2 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 6px;
+      border-bottom: 1px solid $border-color;
+    }
+
+    .action-bar {
+      margin-bottom: 10px;
+    }
+
+    @media screen and (max-width: $tablet) {
+      padding-bottom: 30px;
+    }
   }
 
   .default-photo {
@@ -22,7 +38,23 @@
     margin-bottom: 20px;
   }
 
+  .item-page__rightcol {
+
+    @media screen and (max-width: $tablet) {
+      width: 25%;
+    }
+  }
+
   &__content {
+
+    @media screen and (max-width: $tablet) {
+      width: calc(75% - 12px);
+    }
+
+    @media screen and (max-width: $mobile) {
+      width: 100%;
+    }
+
     .default-text {
       padding-top: 12px;
       border-top: 1px solid $border-color;

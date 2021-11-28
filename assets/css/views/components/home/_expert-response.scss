@@ -62,6 +62,10 @@
 
       img{
         height: 233px;
+
+        @media screen and (max-width: $tablet) {
+          width: 243px;
+        }
       }
 
       figcaption{
@@ -82,7 +86,7 @@
     .expert-response {
 
       &:first-child {
-        @media screen and (max-width: $tablet) {
+        @media screen and (max-width: $mobile) {
           display: none !important;
         }
       }

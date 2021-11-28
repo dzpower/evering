@@ -11,7 +11,7 @@
 
   &__wrapper {
 
-    @media screen and (max-width: $tablet) {
+    @media screen and (max-width: $mobile) {
       display: none;
       position: absolute;
       top: 0;
@@ -52,7 +52,7 @@
     font-size: 14px;
     line-height: 20px;
 
-    @media screen and (max-width: $tablet) {
+    @media screen and (max-width: $mobile) {
       display: inline-flex;
     }
 
@@ -67,7 +67,7 @@
     right: 10px;
     top: 6px;
 
-    @media screen and (max-width: $tablet) {
+    @media screen and (max-width: $mobile) {
       display: block;
     }
   }

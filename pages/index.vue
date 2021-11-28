@@ -7,8 +7,8 @@
         </h2>
         <Slider
           class="expert-response__slider"
-          :variable-width='!$device.isMobileOrTablet'
-          :initial-slide="$device.isMobileOrTablet ? 1 : 0">
+          :variable-width='!$device.isMobile'
+          :initial-slide="$device.isMobile ? 1 : 0">
           <ExpertResponse
             v-for='item in 15'
             :key='item'
@@ -20,7 +20,7 @@
       </div>
       <div class='most-interesting'>
         <h2 class='default-h2'>The most interesting thing on Everigin</h2>
-        <Slider :slides="5">
+        <Slider :slides="5" :slides-on-tablet="4">
           <PostInteresting
             v-for='i in 20'
             :key='i'
@@ -39,7 +39,7 @@
           {{tag.name}}</tag>
       </div>
       <div class='home-products'>
-        <Slider :slides="5" :rows="$device.isMobileOrTablet ? 2 : 1">
+        <Slider :slides="5" :slides-on-tablet="4" :rows="$device.isMobile ? 2 : 1">
           <ProductPreview
             v-for='item in 10'
             :key='item'
@@ -70,7 +70,7 @@
         <h2 class='default-h2'>
           Favourite brands
         </h2>
-        <Slider :slides="5" :rows="$device.isMobileOrTablet ? 3 : 1">
+        <Slider :slides="5" :slides-on-tablet="4" :rows="$device.isMobile ? 3 : 1">
           <ProductPreview
             v-for='item in 10'
             :key='item'

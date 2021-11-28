@@ -5,7 +5,10 @@
         <h2 class='default-h2'>
           Expert responses
         </h2>
-        <vue-slick-carousel :variable-width='true' :arrows='true'>
+        <Slider
+          class="expert-response__slider"
+          :variable-width='!$device.isMobile'
+          :initial-slide="$device.isMobile ? 1 : 0">
           <ExpertResponse
             v-for='item in 15'
             :key='item'
@@ -13,32 +16,16 @@
             :title='item === 1 ? "Tips from puppet experts" : "New article"'
             :content='item === 1 ? "Hello, everyone. Today I want to tell you a little bit about my creative process, how to create images and collections, and share tips" : "Overview of the wizard"'
           />
-          <template #prevArrow>
-            <div class='custom-arrow'>
-            </div>
-          </template>
-          <template #nextArrow>
-            <div class='custom-arrow custom-arrow__next'>
-            </div>
-          </template>
-        </vue-slick-carousel>
+        </Slider>
       </div>
       <div class='most-interesting'>
         <h2 class='default-h2'>The most interesting thing on Everigin</h2>
-        <vue-slick-carousel :variable-width='true' :arrows='true'>
+        <Slider :slides="5" :slides-on-tablet="4">
           <PostInteresting
-            v-for='i in 10'
+            v-for='i in 20'
             :key='i'
           />
-          <template #prevArrow>
-            <div class='custom-arrow'>
-            </div>
-          </template>
-          <template #nextArrow>
-            <div class='custom-arrow custom-arrow__next'>
-            </div>
-          </template>
-        </vue-slick-carousel>
+        </Slider>
       </div>
       <div class='more-interesting'>
         <eve-button>More interesting things on Everigin</eve-button>
@@ -52,22 +39,14 @@
           {{tag.name}}</tag>
       </div>
       <div class='home-products'>
-        <vue-slick-carousel :variable-width='true' :arrows='true'>
+        <Slider :slides="5" :slides-on-tablet="4" :rows="$device.isMobile ? 2 : 1">
           <ProductPreview
             v-for='item in 10'
             :key='item'
             :rating='4'
             :price='12222'
           />
-          <template #prevArrow>
-            <div class='custom-arrow'>
-            </div>
-          </template>
-          <template #nextArrow>
-            <div class='custom-arrow custom-arrow__next'>
-            </div>
-          </template>
-        </vue-slick-carousel>
+        </Slider>
       </div>
       <div class='home-products__actions'>
         <eve-button class="dark">
@@ -91,29 +70,20 @@
         <h2 class='default-h2'>
           Favourite brands
         </h2>
-        <vue-slick-carousel :variable-width='true' :arrows='true'>
+        <Slider :slides="5" :slides-on-tablet="4" :rows="$device.isMobile ? 3 : 1">
           <ProductPreview
             v-for='item in 10'
             :key='item'
             :rating='4'
             :price='12222'
           />
-          <template #prevArrow>
-            <div class='custom-arrow'>
-            </div>
-          </template>
-          <template #nextArrow>
-            <div class='custom-arrow custom-arrow__next'>
-            </div>
-          </template>
-        </vue-slick-carousel>
+        </Slider>
       </div>
     </main>
     <div class="backdrop"></div>
     <Popup />
   </div>
 </template>
-
 <script>
 import ExpertResponse from '@/components/views/pages/home/ExpertResponse'
 import PostInteresting from '@/components/views/pages/home/PostInteresting'

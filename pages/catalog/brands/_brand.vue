@@ -2,22 +2,24 @@
   <div class='item-page brand-page prod'>
     <main class='main'>
       <div class='item-page__columns'>
-        <div v-if="$device.isMobileOrTablet" class="brand-page__top-bar">
-          <eve-button icon>
-            <template #icon>
-              <img src="/icons/edit.svg" alt="edit">
-            </template>
-            Edit a page
-          </eve-button>
-          <eve-button class="dark">
-            Products in the marketplace
-          </eve-button>
+        <div class="item-page__leftcol brand-page__leftcol">
+          <div v-if="$device.isMobile" class="brand-page__top-bar">
+            <eve-button icon>
+              <template #icon>
+                <img src="/icons/edit.svg" alt="edit">
+              </template>
+              Edit a page
+            </eve-button>
+            <eve-button class="dark">
+              Products in the marketplace
+            </eve-button>
+          </div>
+          <div class="default-photo brand-page__photo">
+            <img src='/content/01.png' alt='user photo'>
+          </div>
         </div>
-        <div class="default-photo item-page__leftcol brand-page__photo">
-          <img src='/content/01.png' alt='user photo'>
-        </div>
-        <div class='item-page__content'>
-          <h2 v-if="$device.isDesktop" class='default-h2'>
+        <div class='item-page__content brand-page__content'>
+          <h2 v-if="$device.isDesktopOrTablet" class='default-h2'>
             <strong>Barbie</strong>
           </h2>
           <p class='default-text'>
@@ -55,7 +57,7 @@
           </p>
 
           <div class='brand-page__products'>
-            <Slider :slides="3" :rows="$device.isMobileOrTablet ? 2 : 1">
+            <Slider :slides="3" :rows="$device.isMobile ? 2 : 1">
               <card
                 v-for="item in 5"
                 :key="item"
@@ -70,10 +72,9 @@
 
 
         </div>
+        <div class='item-page__rightcol brand-page__rightcol'>
 
-        <div class='item-page__rightcol'>
-
-          <div v-if="$device.isDesktop" class="brand-page__top-bar">
+          <div v-if="$device.isDesktopOrTablet" class="brand-page__top-bar dt-pd-tp">
             <eve-button icon>
               <template #icon>
                 <img src="/icons/edit.svg" alt="edit">
@@ -113,7 +114,6 @@
           </div>
 
         </div>
-
       </div>
     </main>
   </div>

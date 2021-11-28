@@ -3,14 +3,14 @@
     <main class="main">
       <div class="result-page__aside marketplace__aside">
         <FilterBar />
-        <a v-if="$device.isMobileOrTablet" href="#" class="result-page-mp-button">Open in the catalog</a>
+        <a v-if="$device.isMobile" href="#" class="result-page-mp-button">Open in the catalog</a>
       </div>
       <div class="result-page-column">
-        <div v-if="$device.isDesktop" class="result-page-topbar marketplace-topbar">
+        <div v-if="$device.isDesktopOrTablet" class="result-page-topbar marketplace-topbar">
           <router-tabs
             :items='tabs'
           />
-          <a href="#" class="result-page-mp-button">Open in the catalog</a>
+          <a v-if="$device.isDesktop" href="#" class="result-page-mp-button">Open in the catalog</a>
         </div>
         <div class="result-page-tags marketplace-tags">
           <tag
@@ -19,8 +19,8 @@
             :href="tag.link"
           >
             {{tag.name}}</tag>
+          <a v-if="$device.isTablet" href="#" class="result-page-mp-button">Open in the catalog</a>
         </div>
-
         <h2 class="default-h2">Hot topics</h2>
         <div class="marketplace-slider">
           <Slider>
@@ -31,7 +31,6 @@
             ></card>
           </Slider>
         </div>
-
         <Items>
           <ProductPreview
             v-for='item in 20'
@@ -46,7 +45,6 @@
             </div>
           </template>
         </Items>
-
       </div>
     </main>
   </div>

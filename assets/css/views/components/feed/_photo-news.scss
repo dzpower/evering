@@ -2,5 +2,9 @@
 
   & &__gallery {
     width: 675px;
+
+    @media screen and (max-width: $tablet) {
+      width: 100%;
+    }
   }
 }

@@ -5,8 +5,8 @@
         :items='tabs'
       />
       <div class='item-page__columns'>
-        <div class="item-page__leftcol">
-          <Photos v-if="$device.isDesktop" />
+        <div v-if="$device.isDesktop" class="item-page__leftcol">
+          <Photos />
         </div>
         <div class='item-page__content catalog-product__content'>
           <Preview>
@@ -17,7 +17,7 @@
             </template>
           </Preview>
 
-          <AddCart v-if="$device.isMobileOrTablet" />
+          <AddCart v-if="$device.isMobile" />
 
           <p class='default-text'>
             Since the first release of the doll, the manufacturer has relied on quality: professional fashion designer
@@ -67,17 +67,15 @@
           </div>
 
         </div>
-
         <div class='item-page__rightcol'>
 
-          <AddCart v-if="$device.isDesktop" edit-button />
+          <AddCart v-if="$device.isDesktopOrTablet" edit-button />
 
           <h2 class='default-h2'>Video</h2>
 
           <Videos />
 
         </div>
-
       </div>
     </main>
   </div>

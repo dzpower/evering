@@ -5,6 +5,7 @@
   justify-content: flex-start;
   padding-bottom: 12px;
   border-bottom: 1px solid $border-color;
+  position: relative;
 
   &__image.default-photo {
     width: 156px;
@@ -32,5 +33,11 @@
     padding: 5px 14px;
     font-size: 14px;
     line-height: 20px;
+
+    @media screen and (max-width: $tablet) {
+      position: absolute;
+      bottom: 12px;
+      left: 168px;
+    }
   }
 }

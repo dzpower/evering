@@ -9,6 +9,9 @@
     @media screen and (max-width: $tablet) {
       display: flex;
       margin-bottom: 0;
+    }
+
+    @media screen and (max-width: $mobile) {
       justify-content: flex-end;
     }
   }
@@ -36,8 +39,16 @@
     margin-bottom: 30px;
 
     .post-interesting {
-      width: 236px;
+      width: calc( (100% - 20px) / 3 );
       padding-right: 0;
+
+      @media screen and (max-width: $tablet) {
+        width: calc( (100% - 10px) / 2 );
+      }
+
+      @media screen and (max-width: $mobile) {
+        width: 100%;
+      }
     }
   }
 
@@ -85,6 +96,11 @@
 
   &-slider {
     margin-bottom: 18px;
+  }
+
+  &__events {
+    padding-top: 30px;
+    border-top: 1px solid $border-color;
   }
 
   &-event {
@@ -137,7 +153,7 @@
       width: auto;
       margin-right: 40px;
 
-      @media screen and (max-width: $tablet) {
+      @media screen and (max-width: $mobile) {
         width: 50%;
         margin-right: 0;
       }
@@ -156,16 +172,12 @@
   }
 
   &__communities {
+    margin-top: 30px;
 
     .community {
       padding-bottom: 24px;
       border-bottom: 1px solid $border-color;
       margin-bottom: 24px;
-
-      @media screen and (max-width: $tablet) {
-        border-bottom: none;
-        padding-bottom: 0;
-      }
 
       &:last-child {
         margin-bottom: 0;

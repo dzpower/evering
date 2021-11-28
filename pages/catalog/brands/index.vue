@@ -16,7 +16,6 @@
             </tag>
           </div>
         </div>
-
         <Items title="Brands">
           <card
             v-for="item in 8"
@@ -27,7 +26,6 @@
             <a v-if="$device.isDesktop" href="#" class="result-page-mp-button">Search in the marketplace</a>
           </template>
         </Items>
-
 
         <h2 class="default-h2">Manufacturers</h2>
         <div class="brands-slider">

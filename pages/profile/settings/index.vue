@@ -20,8 +20,8 @@
           </div>
           <SettingsNav v-if="$device.isMobile" append />
         </div>
-        <div class="item-page__rightcol">
-          <CommunityInfo v-if="$device.isDesktop" with-button />
+        <div v-if="$device.isDesktop" class="item-page__rightcol">
+          <CommunityInfo  with-button />
         </div>
       </div>
     </main>

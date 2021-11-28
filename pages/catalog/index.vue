@@ -3,7 +3,7 @@
     <main class="main">
       <div class="result-page__aside">
         <FilterBar />
-        <a v-if="$device.isMobileOrTablet" href="#" class="result-page-mp-button">Search in the marketplace</a>
+        <a v-if="$device.isMobile" href="#" class="result-page-mp-button">Search in the marketplace</a>
       </div>
       <div class="result-page-column">
         <div class="result-page-topbar">
@@ -15,7 +15,7 @@
             >
               {{tag.name}}</tag>
           </div>
-          <a v-if="$device.isDesktop" href="#" class="result-page-mp-button">Search in the marketplace</a>
+          <a v-if="$device.isDesktopOrTablet" href="#" class="result-page-mp-button">Search in the marketplace</a>
         </div>
 
         <Items>

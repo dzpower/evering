@@ -8,10 +8,43 @@
     }
   }
 
+  .item-page__columns {
+
+    @media screen and (max-width: $tablet) {
+      position: relative;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__content {
+    width: 58%;
+
+    @media screen and (max-width: $tablet) {
+      width: 77%;
+    }
+
+    @media screen and (max-width: $mobile) {
+      width: 100%;
+    }
+  }
+
+  &__rightcol {
+
+    @media screen and (max-width: $tablet) {
+      width: calc(77% + 6px);
+      margin-left: auto;
+    }
+
+    @media screen and (max-width: $mobile) {
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+
   .default-text {
     margin-bottom: 72px;
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: $tablet) {
       margin-bottom: 20px;
     }
   }
@@ -105,6 +138,17 @@
       &:last-child {
         margin-bottom: 0;
       }
+    }
+  }
+
+  .dt-pd-tp {
+
+    @media screen and (max-width: $tablet) {
+      position: absolute;
+      right: 0;
+      top: 0;
+      justify-content: flex-end;
+      gap: 16px;
     }
   }
 }

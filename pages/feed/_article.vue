@@ -4,7 +4,7 @@
       <div class='item-page__columns'>
         <div class="item-page__leftcol">
           <FilterBar />
-          <search-field v-if="$device.isMobileOrTablet" placeholder="search in the news" />
+          <search-field v-if="$device.isMobile" placeholder="search in the news" />
         </div>
         <div class='item-page__content'>
           <div class="article-page__tags">
@@ -63,16 +63,18 @@
           </div>
 
           <div class="article-page__comments">
-            <review
-              v-for="item in 3"
-              :key="item"
-            />
-            <Pagination />
+            <div class="reviews-items">
+              <review
+                v-for="item in 3"
+                :key="item"
+              />
+              <pagination />
+            </div>
           </div>
         </div>
 
         <div class='item-page__rightcol'>
-          <search-field v-if="$device.isDesktop" placeholder="search in the news" />
+          <search-field v-if="$device.isDesktopOrTablet" placeholder="search in the news" />
 
           <div class="article-page__cats">
             <NuxtLink to="#" class="eve-button article-page__category">Barbie</NuxtLink>

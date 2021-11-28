@@ -1,8 +1,8 @@
 <template>
   <div class="custom-slider-wrapper">
-    <!-- Destroy slider in tablet, mobile -->
+    <!-- Destroy slider in mobile -->
     <vue-slick-carousel
-      v-if="$device.isDesktop"
+      v-if="$device.isDesktopOrTablet"
       class="custom-slider"
       v-bind="init"
       :variable-width="variableWidth"
@@ -18,12 +18,12 @@
     </vue-slick-carousel>
 
     <!-- Body -->
-    <div v-if="$device.isMobileOrTablet" class="custom-slider__body">
+    <div v-if="$device.isMobile" class="custom-slider__body">
       <slot />
     </div>
 
     <!-- Pagination -->
-    <div v-if="$device.isMobileOrTablet" class="custom-slider__navigation">
+    <div v-if="$device.isMobile" class="custom-slider__navigation">
       <div class="custom-slider__slide-info">
         1 - 8 из 105
       </div>
@@ -49,8 +49,9 @@ export default {
   name: "Slider",
   props: {
     slides: { type: Number, default: 4 },
+    slidesOnTablet: {type: Number, default: 3},
     variableWidth: { type: Boolean, default: false },
-    rows: {type: Number, default: 1}
+    rows: {type: Number, default: 1},
   },
   computed: {
     init () {
@@ -62,7 +63,7 @@ export default {
         speed: 500,
 
         // Slides
-        slidesToShow: this.slides,
+        slidesToShow: this.$device.isTablet ? this.slidesOnTablet : this.slides,
 
         slidesToScroll: 1,
 

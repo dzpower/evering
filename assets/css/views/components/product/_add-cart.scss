@@ -20,6 +20,10 @@
   & &__button {
     font-weight: bold;
     padding: 6px 13px;
+
+    @media screen and (max-width: $tablet) {
+      padding: 6px 10px;
+    }
   }
 
   &__result {
