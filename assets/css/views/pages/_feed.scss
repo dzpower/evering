@@ -15,16 +15,40 @@
 
   .result-page__aside, .item-page__leftcol {
 
-    @media screen and (max-width: $tablet) {
+    @media screen and (max-width: $mobile) {
       display: flex;
       justify-content: flex-end;
     }
   }
 
+  .item-page__columns {
+
+    @media screen and (max-width: 900px) {
+      flex-wrap: wrap;
+    }
+  }
+
   .item-page__rightcol {
 
-    @media screen and (max-width: $tablet) {
+    @media screen and (max-width: 900px) {
+      width: calc(77% + 6px) !important;
+      margin-left: auto;
+    }
+
+    @media screen and (max-width: $mobile) {
+      width: 100% !important;
       margin-top: 34px;
+    }
+  }
+
+  .item-page__content {
+
+    @media screen and (max-width: 900px) {
+      width: 77% !important;
+    }
+
+    @media screen and (max-width: $mobile) {
+      width: 100% !important;
     }
   }
 
@@ -44,7 +68,7 @@
   .result-page-sort {
     margin-top: 16px;
     margin-bottom: 34px;
-    @media screen and (max-width: $tablet) {
+    @media screen and (max-width: $mobile) {
       margin: 0;
     }
   }
@@ -67,6 +91,17 @@
     }
   }
 
+  .item-page__content {
+
+    @media screen and (max-width: $tablet) {
+      width: 51%;
+    }
+
+    @media screen and (max-width: $mobile) {
+      width: 100%;
+    }
+  }
+
   .item-page__leftcol {
 
     @media screen and (max-width: $tablet) {
@@ -75,12 +110,21 @@
       justify-content: space-between;
       margin-bottom: 14px;
     }
+
+    @media screen and (max-width: $mobile) {
+      width: 100%;
+    }
   }
 
   .item-page__rightcol {
 
     @media screen and (max-width: $tablet) {
-      margin-top: 34px;
+      width: 24% !important;
+    }
+
+    @media screen and (max-width: $mobile) {
+      width: 100% !important;
+      margin-top: 32px;
     }
   }
 
@@ -128,29 +172,12 @@
 
   &__comments {
     padding-top: 16px;
-
-    .review {
-      padding-bottom: 0;
-      margin-top: 40px;
-
-      @media screen and (max-width: $mobile) {
-        margin-top: 24px;
-      }
-
-      &:first-child {
-        margin-top: 0;
-      }
-    }
-
-    .pagination {
-      margin-top: 28px;
-    }
   }
 
   .search-field {
     margin-bottom: 24px;
 
-    @media screen and (max-width: $tablet) {
+    @media screen and (max-width: $mobile) {
       margin-bottom: 0;
     }
   }

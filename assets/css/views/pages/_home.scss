@@ -37,17 +37,20 @@
     flex-wrap: wrap;
 
     @media screen and (max-width: $tablet) {
-
+      flex: 1;
+      flex-wrap: nowrap;
       .category-item {
-        max-width: calc((100% - 12px) / 2);
+        width: auto;
       }
     }
 
     @media screen and (max-width: $mobile) {
       padding-top: 16px;
+      flex-wrap: wrap;
 
       .category-item {
         max-width: 100%;
+        width: 100%;
       }
     }
   }
@@ -63,6 +66,25 @@
 
   .experts-responses {
     width: 100%;
+
+    .slick-slide {
+
+      .expert-response {
+
+        @media screen and (max-width: $tablet) {
+          width: 22.5vw !important;
+        }
+      }
+
+      &:first-child .expert-response {
+
+        @media screen and (max-width: $tablet) {
+          width: 45.5vw !important;
+        }
+      }
+    }
+
+
   }
 
   .most-interesting{

@@ -3,10 +3,15 @@
   display: flex;
   padding-bottom: 12px;
   border-bottom: 1px solid $border-color;
+  position: relative;
 
   @media screen and (max-width: $tablet) {
+    align-items: flex-start;
+    padding-bottom: 32px;
+  }
+
+  @media screen and (max-width: $mobile) {
     flex-direction: column;
-    position: relative;
     padding-bottom: 24px;
   }
 
@@ -15,13 +20,16 @@
     height: 222px;
 
     @media screen and (max-width: $tablet) {
-      width: 246px;
+      width: 216px;
+      height: 195px;
+    }
+
+    @media screen and (max-width: $mobile) {
       margin-bottom: 20px;
     }
 
     @media screen and (max-width: $mobile) {
       width: 48%;
-      height: 129px;
     }
   }
 
@@ -33,9 +41,12 @@
     align-items: center;
 
     @media screen and (max-width: $tablet) {
+      position: static;
+    }
+
+    @media screen and (max-width: $mobile) {
       padding-left: 0;
       width: 100%;
-      position: static;
     }
   }
 
@@ -59,8 +70,14 @@
     line-height: 20px;
 
     @media screen and (max-width: $tablet) {
+      bottom: 15px;
+      left: 0;
+    }
+
+    @media screen and (max-width: $mobile) {
       bottom: auto;
       top: 0;
+      left: auto;
       right: 0;
     }
   }
@@ -72,10 +89,6 @@
     color: $black;
 
     @media screen and (max-width: $tablet) {
-      width: 33.3%;
-    }
-
-    @media screen and (max-width: $mobile) {
       width: 50%;
     }
 

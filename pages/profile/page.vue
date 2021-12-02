@@ -25,7 +25,6 @@
             </div>
           </Slider>
         </div>
-
         <h2 class="default-h2 profile-page__title-btn">
           Photo
           <Select />
@@ -53,6 +52,7 @@
             <default-video v-for="i in 5" :key="i"></default-video>
           </Slider>
         </div>
+
         <div class="profile-page__events">
           <div class="profile-page-event">
             <event />

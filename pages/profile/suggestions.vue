@@ -22,7 +22,7 @@
           </div>
         </div>
         <div class="item-page__rightcol">
-          <search-field class="profile-page__search" placeholder="Community Search" />
+          <search-field v-if="$device.isDesktopOrTablet" class="profile-page__search" placeholder="Community Search" />
           <h2 class="default-h2">Recommendations</h2>
           <div class="profile-page__recommendations">
             <Article

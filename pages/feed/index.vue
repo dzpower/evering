@@ -19,8 +19,8 @@
         </div>
 
         <div class='item-page__rightcol'>
-          <search-field v-if="$device.isDesktop" placeholder="search in the news" />
-          <div v-if="$device.isDesktop" class="result-page-sort">
+          <search-field v-if="$device.isDesktopOrTablet" placeholder="search in the news" />
+          <div v-if="$device.isDesktopOrTablet" class="result-page-sort">
             <span class="result-page-sort__label">Sorting</span>
             <Select />
           </div>

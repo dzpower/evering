@@ -1,7 +1,8 @@
 .default-video {
   width: 100%;
-  height: 179px;
+  //height: 179px;
   position: relative;
+  aspect-ratio: 1.3 / 1;
 
   &__play {
     position: absolute;

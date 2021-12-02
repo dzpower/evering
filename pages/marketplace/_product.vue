@@ -5,10 +5,10 @@
         :items='tabs'
       />
       <div class='item-page__columns catalog-product__columns'>
-        <div class="item-page__leftcol">
-          <Photos v-if="$device.isDesktop" />
+        <div v-if="$device.isDesktop" class="item-page__leftcol">
+          <Photos />
         </div>
-        <div class='item-page__content'>
+        <div class='item-page__content catalog-product__content'>
           <Preview>
             <template #body>
                 <div class="product-info">
@@ -19,26 +19,31 @@
             </template>
           </Preview>
 
-          <AddCart v-if="$device.isMobileOrTablet" />
+          <AddCart v-if="$device.isMobile" />
 
           <p v-if="$device.isMobileOrTablet" class="product-description default-text">
             Since the first release of the doll, the manufacturer has relied on quality: professional fashion designer Charlotte Johnson develops outfits for it, which later became legendary and recognizable; artist Betty Lou Mabey creates the first promotional photos and a literary image of Barbie for catalogs and the future magazine "Barbie Magazine".
           </p>
 
-          <ActionBar comment-count />
-
           <div class='reviews-wrapper'>
-            <h2 class='default-h2'>Reviews</h2>
-            <review
-              v-for='n in 3'
-              :key='n'
-            />
+            <h2 class='default-h2 '>
+              Reviews
+              <Select />
+            </h2>
+            <ActionBar comment-count />
+            <div class="reviews-items">
+              <review
+                v-for='n in 3'
+                :key='n'
+              />
+              <pagination />
+            </div>
+
           </div>
-          <pagination />
         </div>
 
         <div class='item-page__rightcol'>
-          <AddCart v-if="$device.isDesktop" />
+          <AddCart v-if="$device.isDesktopOrTablet" />
           <!-- Text -->
           <p v-if="$device.isDesktop" class="product-description default-text">
             Since the first release of the doll, the manufacturer has relied on quality: professional fashion designer Charlotte Johnson develops outfits for it, which later became legendary and recognizable; artist Betty Lou Mabey creates the first promotional photos and a literary image of Barbie for catalogs and the future magazine "Barbie Magazine".
@@ -93,9 +98,13 @@ import ProductPreview from '@/components/views/pages/home/ProductPreview'
 import Slider from '@/components/ui-common/Slider';
 import Seller from '@/components/ui-common/Seller';
 import ActionBar from '@/components/ui-common/ActionBar';
+import Select from '@/components/ui-common/Select';
+import Pagination from '@/components/ui-common/Pagination';
 
 export default {
   components: {
+    Pagination,
+    Select,
     ActionBar,
     Seller,
     AddCart,

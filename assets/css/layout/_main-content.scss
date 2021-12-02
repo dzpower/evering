@@ -66,7 +66,7 @@ html, body {
   }
 
   @media screen and (max-width: $tablet) {
-    max-width: 640px;
+    max-width: 93%;
   }
 
   @media screen and (max-width: $mobile) {
@@ -84,7 +84,7 @@ html, body {
     align-items: flex-start;
     justify-content: space-between;
 
-    @media screen and (max-width: $tablet) {
+    @media screen and (max-width: $mobile) {
       flex-direction: column;
     }
   }
@@ -93,6 +93,10 @@ html, body {
     width: 80%;
 
     @media screen and (max-width: $tablet) {
+      width: 75%;
+    }
+
+    @media screen and (max-width: $mobile) {
       width: 100%;
     }
   }
@@ -101,6 +105,10 @@ html, body {
     width: 20%;
 
     @media screen and (max-width: $tablet) {
+      width: 25%;
+    }
+
+    @media screen and (max-width: $mobile) {
       width: 100%;
       display: flex;
       align-items: center;
@@ -134,77 +142,6 @@ html, body {
     }
   }
 
-  &-middlebar {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    position: relative;
-    margin-bottom: 16px;
-
-    @media screen and (max-width: $tablet) {
-      flex-wrap: wrap;
-    }
-
-    .result-page-sort {
-
-      @media screen and (max-width: $tablet) {
-        width: 100%;
-        margin-top: 20px;
-      }
-    }
-
-    @media screen and (max-width: $mobile) {
-      justify-content: center;
-    }
-
-    .pagination {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-
-      @media screen and (max-width: $mobile) {
-        position: static;
-        transform: none;
-      }
-    }
-  }
-
-  .pagination {
-
-    @media screen and (max-width: $mobile) {
-      width: 100%;
-    }
-  }
-
-  &-bottombar {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-  // List of Result
-  &-list {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px 1.33%;
-    margin-bottom: 16px;
-
-    @media screen and (max-width: $tablet) {
-      gap: 30px 12px;
-    }
-
-    .card, .product-preview {
-      width: 24%;
-      padding-right: 0;
-
-      @media screen and (max-width: $tablet) {
-        width: calc((100% - 12px) / 2);
-      }
-    }
-  }
-
   // Filter
   &-filter {
     width: 100%;
@@ -212,6 +149,10 @@ html, body {
 
     @media screen and (max-width: $tablet) {
       padding-right: 0;
+    }
+
+    @media screen and (max-width: $tablet) {
+      padding-right: 24px;
     }
   }
 
@@ -244,6 +185,7 @@ html, body {
     width: 100%;
     text-decoration: none;
     padding: 6px 14px;
+    white-space: nowrap;
   }
 
   &-slider {
@@ -278,8 +220,8 @@ html, body {
   &__leftcol, &__rightcol {
     width: 21%;
 
-    @media screen and (max-width: $tablet) {
-      width: 100%;
+    @media screen and (max-width: $mobile) {
+      width: 100% !important;
     }
   }
 
@@ -287,7 +229,7 @@ html, body {
     height: auto;
     width: 58%;
 
-    @media screen and (max-width: $tablet) {
+    @media screen and (max-width: $mobile) {
       width: 100%;
     }
   }
@@ -298,7 +240,7 @@ html, body {
     align-items: flex-start;
     gap: 0 12px;
 
-    @media screen and (max-width: $tablet) {
+    @media screen and (max-width: $mobile) {
       gap: 0;
       flex-direction: column;
     }
@@ -336,6 +278,19 @@ html, body {
 
   .add-cart {
     margin-bottom: 24px;
+  }
+}
+
+.reviews-items {
+
+  .review {
+    margin-top: 24px;
+  }
+  .pagination {
+
+    @media screen and (max-width: $tablet) {
+      margin-top: 50px;
+    }
   }
 }
 

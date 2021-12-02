@@ -6,14 +6,15 @@
 
     img{
       width: 100%;
-      height: 222px;
+      //height: 222px;
       object-fit: cover;
       overflow: hidden;
       border-radius: 7px;
+      aspect-ratio: 1 / 1;
 
-      @media screen and (max-width: $mobile) {
-        height: 153px;
-      }
+      //@media screen and (max-width: $mobile) {
+      //  height: 153px;
+      //}
     }
   }
 
