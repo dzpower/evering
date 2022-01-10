@@ -22,9 +22,9 @@
       >
         <NuxtLink
           v-for="(itemTopMenu, index) in getTopMenu"
-          :key="index + itemTopMenu"
-          :class='getRouteName.includes(itemTopMenu.name.toLowerCase()) ? "active" : ""'
-          :to='itemTopMenu.url_full.slice(0, -1)'
+          :key="index"
+          :class='getRouteName.includes(itemTopMenu.name) ? "active" : ""'
+          :to='itemTopMenu.url_full'
         >
           {{ itemTopMenu.name }}
         </NuxtLink>
@@ -53,7 +53,7 @@ export default {
       return this.$route.path
     },
     getTopMenu() {
-      return this.$store.getters['content/getMenu']?.top ? this.$store.getters['content/getMenu']?.top.flat().splice(1, 3) : []
+      return this.$store.getters['content/getMenu']?.top ? this.$store.getters['content/getMenu']?.top[1] : []
     }
   }
 }

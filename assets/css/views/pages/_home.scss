@@ -31,14 +31,8 @@
   &-categories {
     width: 100%;
     padding-top: 32px;
-    display: flex;
-    gap: 12px;
-    justify-content: center;
-    flex-wrap: wrap;
 
     @media screen and (max-width: $tablet) {
-      flex: 1;
-      flex-wrap: nowrap;
       .category-item {
         width: auto;
       }
@@ -46,7 +40,6 @@
 
     @media screen and (max-width: $mobile) {
       padding-top: 16px;
-      flex-wrap: wrap;
 
       .category-item {
         max-width: 100%;
@@ -66,25 +59,6 @@
 
   .experts-responses {
     width: 100%;
-
-    .slick-slide {
-
-      .expert-response {
-
-        @media screen and (max-width: $tablet) {
-          width: 22.5vw !important;
-        }
-      }
-
-      &:first-child .expert-response {
-
-        @media screen and (max-width: $tablet) {
-          width: 45.5vw !important;
-        }
-      }
-    }
-
-
   }
 
   .most-interesting{
@@ -137,23 +111,41 @@
   }
 }
 
-.custom-arrow.slick-arrow{
-  background: transparent url('/icons/slider-arrows.svg') center no-repeat !important;
-  background-size: 100% !important;
-  width: 15px;
-  height: 15px;
+.owl-carousel .owl-nav .owl-next{
+  transform: rotate(180deg);
+}
 
-  &::before{
-    display: none;
-  }
+.owl-carousel .owl-nav{
+  background: transparent;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  padding-top: 0;
+  margin-top: 0 !important;
+  pointer-events: none;
+  top: 35%;
+  left: 0;
 
-  &.custom-arrow__next{
-    transform: rotate(180deg);
-    right: 15px;
-  }
+  .owl-prev,
+  .owl-next {
+    background: transparent url('/icons/slider-arrows.svg') center no-repeat !important;
+    background-size: 100% !important;
+    width: 15px;
+    height: 15px;
+    opacity: .8;
+    margin-right: 8px !important;
+    margin-left: 8px !important;
+    pointer-events: auto;
 
-  &.slick-prev{
-    left: 7px;
-    z-index: 10;
+    span {
+      display: none;
+    }
+
+    &:hover{
+      background: transparent url('/icons/slider-arrows.svg') center no-repeat !important;
+      background-size: 100% !important;
+      opacity: 1;
+    }
   }
 }

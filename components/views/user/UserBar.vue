@@ -7,6 +7,7 @@
           <NuxtLink class='user-bar__badge' to='#'><img src='/icons/mag.svg' alt=''></NuxtLink>
           <NuxtLink class='user-bar__badge' to='#'><img src='/icons/not-user.svg' alt=''></NuxtLink>
           <NuxtLink class='user-bar__badge' to='#'><img src='/icons/basket.svg' alt=''></NuxtLink>
+          <div class='user-bar__badge' @click='$store.dispatch("users/logout")'><img src='/icons/logout.svg' alt=''></div>
       </template>
       <template v-else>
         <NuxtLink class='login-link' to='/auth/login'>Login</NuxtLink>

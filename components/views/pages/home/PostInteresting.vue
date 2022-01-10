@@ -1,9 +1,9 @@
 <template>
-  <div class='post-interesting'>
+  <div @click.stop='$router.push(`feed/${item.id}`)' class='post-interesting' v-if='item'>
       <figure>
-        <img src='/post-img.png' alt=''>
+        <img :src='getPicture' alt=''>
         <figcaption>
-          How to get to the exhibition
+          {{ item.name }}
         </figcaption>
       </figure>
     <div class='post-interesting__body'>
@@ -22,6 +22,18 @@
 
 <script>
 export default {
-  name: 'PostInteresting'
+  name: 'PostInteresting',
+  props: {
+    item: {
+      type: Object,
+      default: () => {}
+    }
+  },
+  computed: {
+    getPicture() {
+      const picture = this.item.picture ? JSON.parse(this.item.picture) : 'try more'
+      return `https://kukli.promositetest.ru${picture[0].small.webp}`
+    },
+  }
 }
 </script>

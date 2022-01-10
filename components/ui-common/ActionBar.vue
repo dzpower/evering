@@ -14,7 +14,7 @@
      </eve-button>
      <div v-if="commentCount" class="action-bar__comments-count">
        <img src="/icons/comments.svg" alt="like">
-       176 comments
+       176
      </div>
      <button class="action-bar__comments">
        COMMENTS

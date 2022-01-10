@@ -1,32 +1,75 @@
 const state = () => ({
-    uid: '',
-    name: '',
-    editable: '',
-    picture: '',
+  name: '',
+  editable: false,
+  picture: '',
+  uid: ''
 })
 
 const actions = {
-  async signUp({commit}, body) {
+  async signUp({ dispatch }, body) {
     await this.$axios.$post('users/signup', body, {}).then(response => {
-      return response
+      if (response.status) {
+        dispatch('putUser', response.result)
+      } else {
+        this.$toast.error('Incorrect data!')
+      }
     }).catch(error => {
-      return error
+      throw new Error(error)
     })
   },
-  putUser({commit}, user) {
+  async signIn({ dispatch }, body) {
+    await this.$axios.$post('users/signin', body, {}).then(response => {
+      if (response.status) {
+        dispatch('putUser', response.result)
+      } else {
+        this.$toast.error('Incorrect data!')
+      }
+    })
+    .catch(error => {
+      throw new Error(error)
+    })
+  },
+  async logout({ commit, dispatch, state }) {
+    await this.$axios.$get('users/logout', { params: {
+      uid: state.uid
+    }}).then(response => {
+      if (response.status) {
+        dispatch('destroy')
+      }
+    })
+      .catch(error => {
+        throw new Error(error)
+      })
+  },
+  putUser({ commit }, user) {
     commit('SET_USER', user)
     this.$router.push('/')
   },
-
+  setToken({ commit }, token) {
+    commit('SET_TOKEN', token)
+  },
+  destroy({ commit }) {
+    localStorage.clear()
+    commit('DESTROY_USER')
+    this.$router.push('/')
+  }
 }
 
 const mutations = {
   SET_USER(state, user) {
     state.name = user.name
-    state.email = user.email
     state.picture = user.picture
-    state.uid = JSON.parse(JSON.stringify(user.uid))
-    localStorage.setItem('uid', JSON.stringify(state.uid))
+    state.uid = user.uid
+    localStorage.setItem('uid', JSON.stringify(user.uid))
+  },
+  DESTROY_USER(state) {
+    state.name = ''
+    state.picture = ''
+    state.uid = ''
+    state.editable = false
+  },
+  SET_TOKEN(state, token) {
+    state.uid = token
   }
 }
 

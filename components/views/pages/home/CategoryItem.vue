@@ -1,22 +1,28 @@
 <template>
-  <NuxtLink class='category-item' :to='to'>
+  <div v-if='item' class='category-item' @click.stop='$router.push(`community/${item.id}`)'>
     <figure>
-      <img src='/brand.png' alt=''>
+      <img :src='getPicture' alt=''>
       <figcaption>
-        <slot>Category</slot>
+        {{ item.name }}
       </figcaption>
     </figure>
-  </NuxtLink>
+  </div>
 </template>
 
 <script>
 export default {
   name: 'CategoryItem',
   props: {
-    to: {
-      type: String,
-      default: '#'
+    item: {
+      type: Object,
+      default: () => {}
     }
+  },
+  computed: {
+    getPicture() {
+      const picture = this.item.picture ? JSON.parse(this.item.picture) : ''
+      return `https://kukli.promositetest.ru${picture[0].big.webp}`
+    },
   }
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <form class="registration" @submit.prevent="userSignUp">
+  <form class="registration" @submit.prevent="signUp">
     <h2>Create an account on Everigin</h2>
     <input
       v-model="user.name"
@@ -57,38 +57,35 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
-
 export default {
   layout: 'auth',
   data() {
     return {
       errors: false,
       user: {
-        name: 'Dima',
-        email: 'dima@user.com',
-        password: 'password',
-        password_confirm: 'password',
+        name: '',
+        email: '',
+        password: '',
+        password_confirm: '',
         terms: false,
       },
     }
   },
-  computed: {},
   methods: {
-    ...mapActions('users', ['signUp']),
-    userSignUp() {
-      const formData = new FormData()
-      formData.append('email', this.user.email)
-      formData.append('name', this.user.name)
-      formData.append('password', this.user.password)
-      formData.append('password_confirm', this.user.password_confirm)
+    signUp() {
+      const body = {
+        email: this.user.email,
+        password: this.user.password,
+        confirm_password: this.user.password_confirm,
+        name: this.user.name,
+      }
       this.errors = !this.user.terms
       if (this.errors) {
         setTimeout(() => {
           this.errors = !this.errors
         }, 600)
       } else {
-        this.signUp(formData)
+        this.$store.dispatch('users/signUp', body)
       }
     },
   },

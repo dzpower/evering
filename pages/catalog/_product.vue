@@ -34,7 +34,7 @@
           <h2 class='default-h2'>Popular articles</h2>
           <div class='catalog-product__articles'>
             <Slider :slides="3">
-              <post-interesting
+              <PostInteresting
                 v-for='i in 6'
                 :key='i'
               />

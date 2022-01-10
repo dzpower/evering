@@ -1,6 +1,6 @@
 <template>
   <NuxtLink
-    to='#'
+    :to='href'
     class="default-tag"
   >
     <slot />
@@ -9,6 +9,12 @@
 
 <script>
 export default {
-  name: "Tag"
+  name: "Tag",
+  props: {
+    href: {
+      type: String,
+      default: '#'
+    }
+  }
 }
 </script>

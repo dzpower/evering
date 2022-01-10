@@ -23,7 +23,7 @@
           <search-field class="profile-page__search" placeholder="Search" />
           <h2 class="default-h2">Recommendations</h2>
           <div class="profile-page__recommendations">
-            <Community v-for="item in 4" :key="item" class="community--small" />
+            <Community v-for="item in 4" :key="item" class="community--small" @click.stop='$router.push(item)'/>
           </div>
         </div>
       </div>

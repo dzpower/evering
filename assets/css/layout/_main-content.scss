@@ -225,12 +225,29 @@ html, body {
     }
   }
 
+
   &__content {
-    height: auto;
-    width: 58%;
+    width: 70%;
 
     @media screen and (max-width: $mobile) {
-      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  &__combiner {
+    width: 79%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    .profile-page__banner{
+      padding-bottom: 32px;
+      flex-basis: 100%;
+    }
+
+    .item-page__content {
+      flex-grow: 1;
+      padding-right: 16px;
     }
   }
 

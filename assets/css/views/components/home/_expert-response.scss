@@ -1,8 +1,11 @@
 .expert-response {
+  display: flex;
   width: 100%;
-  max-width: 258px;
+  max-width: 248px;
+  min-width: 246px;
   min-height: 233px;
   overflow: hidden;
+  text-decoration: none;
 
   @media screen and (max-width: $tablet) {
     max-width: none;
@@ -16,7 +19,8 @@
 
     img {
       display: block;
-      width: 246px;
+      width: 100%;
+      max-width: 246px;
       height: 178px;
       border-radius: 7px;
       overflow: hidden;
@@ -52,25 +56,30 @@
   }
 
   &.first-item {
-    max-width: 520px;
-    width: 100% !important;
-    padding-right: 12px;
+    width: 100%;
+    max-width: 505px;
+    min-width: 504px;
+    box-sizing: border-box;
 
     figure {
       display: flex;
       align-items: flex-start;
+      width: 100%;
 
       img{
-        height: 233px;
+        width: 100%;
+        max-width: 246px;
+        min-height: 223px;
 
         @media screen and (max-width: $tablet) {
-          width: 243px;
+          max-width: 243px;
         }
       }
 
       figcaption{
         margin-left: 12px;
-        width: 240px;
+        width: 100%;
+        max-width: 50%;
         flex-grow: 1;
         padding-top: 0;
 
@@ -84,7 +93,6 @@
   &__slider {
 
     .expert-response {
-
       &:first-child {
         @media screen and (max-width: $mobile) {
           display: none !important;

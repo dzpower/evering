@@ -1,33 +1,32 @@
 const state = () => ({
- news: []
+  news: []
 })
 
 const actions = {
- async fetchNews({ commit }) {
-  await this.$axios.$get('get/news').then(response => {
-   if(response.status) {
-    commit('SET_NEWS', response.result)
-   }
-  })
- }
+  async fetchNews({ commit }) {
+    await this.$axios.$get('get/news').then(response => {
+      if (response.status) {
+        commit('SET_NEWS', response.result)
+      }
+    })
+  }
 }
 
-
 const mutations = {
- SET_NEWS(state, payload) {
-  state.new = payload
- }
+  SET_NEWS(state, payload) {
+    state.news = payload.items
+  }
 }
 
 const getters = {
- getNews(state) {
-  return state.news
- }
+  getNews(state) {
+    return state.news
+  }
 }
 
 export default {
-state,
-mutations,
-getters,
-actions
+  state,
+  mutations,
+  getters,
+  actions
 }

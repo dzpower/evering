@@ -4,7 +4,7 @@
       <Navbar class="result-page-navbar" />
       <div class="result-page-column">
         <div class="profile-page__banner">
-          <img src="/content/banners/01.jpg" alt="banner">
+          <img src='/content/banners/01.jpg' alt="banner">
         </div>
         <div class="profile-page__community-bar community-bar">
           <h2 class="community-bar__title">Best of the best</h2>
@@ -13,12 +13,10 @@
         </div>
         <div class="profile-page__columns">
           <div class="profile-page__leftcol">
-
             <CommunityPost
               v-for="i in 3"
               :key="i"
             />
-
           </div>
           <div class="profile-page__rightcol">
             <h2 class='default-h2'>Article</h2>

@@ -23,8 +23,18 @@ export default {
   created() {
     this.$store.dispatch('content/fetchMenu')
     this.$store.dispatch('content/fetchContent')
-    this.$store.dispatch('content/fetchTest')
-    this.$store.dispatch('news/fetchNews')
+    if (process.client){
+      if (this.storage() && !this.$store.getters['users/getUserAuthorized']) {
+        this.$store.dispatch('users/setToken', this.storage())
+      }
+    }
+  },
+  methods: {
+    storage(){
+      if (process.client){
+        return localStorage.getItem('uid')
+      }
+    }
   }
 }
 </script>

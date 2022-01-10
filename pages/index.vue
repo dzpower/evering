@@ -1,133 +1,169 @@
 <template>
   <div class='home container'>
-    <main class='main'>
-      <div class='experts-responses'>
+    <main class='main' style='display: flex; flex-direction: column'>
+      <div
+        v-if="getHomeContent.blogs && getHomeContent.blogs.items"
+        class='experts-responses'
+        :style='`order: ${getHomeContent.blogs.positions}`'
+      >
         <h2 class='default-h2'>
-          Expert responses
+          {{ getHomeContent.blogs.title }}
         </h2>
-        <Slider
-          class="expert-response__slider"
-          :variable-width='!$device.isMobile'
-          :initial-slide="$device.isMobile ? 1 : 0">
-          <ExpertResponse
-            v-for='item in 15'
-            :key='item'
-            :class='item === 1 ? "first-item" : ""'
-            :title='item === 1 ? "Tips from puppet experts" : "New article"'
-            :content='item === 1 ? "Hello, everyone. Today I want to tell you a little bit about my creative process, how to create images and collections, and share tips" : "Overview of the wizard"'
+        <carousel
+          :margin='12'
+          :loop='false'
+          :auto-width='true'
+          :dots='false'
+          :mouse-drag='getHomeContent.blogs.items.length > 5'
+          :pull-drag='getHomeContent.blogs.items.length > 5'
+          :touch-drag='getHomeContent.blogs.items.length > 5'
+          class="expert-response__slider">
+          <BlogPost
+            v-for='(item, index) in getHomeContent.blogs.items'
+            :key='index'
+            :class='index === 0 ? "first-item" : ""'
+            :item='item'
           />
-        </Slider>
+        </carousel>
       </div>
-      <div class='most-interesting'>
-        <h2 class='default-h2'>The most interesting thing on Everigin</h2>
-        <Slider :slides="5" :slides-on-tablet="4">
+      <div
+        v-if='getHomeContent.reviews && getHomeContent.reviews.items'
+        class='most-interesting'
+        :style='`order: ${getHomeContent.reviews.positions}`'
+      >
+        <h2 class='default-h2'>{{ getHomeContent.reviews.title }}</h2>
+        <carousel
+          :margin='12'
+          :items='5'
+          :loop='false'
+          :dots='false'
+          :mouse-drag='getHomeContent.reviews.items.length > 5'
+          :pull-drag='getHomeContent.reviews.items.length > 5'
+          :touch-drag='getHomeContent.reviews.items.length > 5'
+          class='most-interesting__slider'>
           <PostInteresting
-            v-for='i in 20'
-            :key='i'
+            v-for='(item, index) in getHomeContent.reviews.items'
+            :key='index'
+            :item='item'
           />
-        </Slider>
+        </carousel>
+        <div class='more-interesting'>
+          <eve-button>More interesting things on Everigin</eve-button>
+        </div>
       </div>
-      <div class='more-interesting'>
-        <eve-button>More interesting things on Everigin</eve-button>
-      </div>
-      <div class='tag-wrapper'>
+      <div
+        v-if='getHomeContent.category && getHomeContent.category.items'
+        class='tag-wrapper'
+        :style='`order: ${getHomeContent.category.positions}`'
+      >
         <tag
-          v-for="(tag, index) in tags"
+          v-for="(item, index) in getHomeContent.category.items"
           :key="index"
-          :href="tag.link"
+          :href="`category/${item.id}`"
         >
-          {{tag.name}}</tag>
+          {{item.name}}
+        </tag>
       </div>
-      <div class='home-products'>
-        <Slider :slides="5" :slides-on-tablet="4" :rows="$device.isMobile ? 2 : 1">
+      <div
+        v-if='getHomeContent.offers && getHomeContent.offers.items'
+        class='home-products'
+        :style='`order: ${getHomeContent.offers.positions}`'
+      >
+        <carousel
+          :margin='12'
+          :items='5'
+          :loop='false'
+          :dots='false'
+          :mouse-drag='getHomeContent.offers.items.length > 5'
+          :pull-drag='getHomeContent.offers.items.length > 5'
+          :touch-drag='getHomeContent.offers.items.length > 5'
+          class='home-products__slider'>
           <ProductPreview
-            v-for='item in 10'
-            :key='item'
-            :rating='4'
-            :price='12222'
+            v-for='(item, index) in getHomeContent.offers.items'
+            :key='index'
+            :item='item'
           />
-        </Slider>
+        </carousel>
+        <div class='home-products__actions'>
+          <eve-button class="dark">
+            More offers
+          </eve-button>
+          <eve-button icon>
+            <template #icon><img src='/icons/edit.svg' alt=''></template>
+            Place an ad
+          </eve-button>
+        </div>
       </div>
-      <div class='home-products__actions'>
-        <eve-button class="dark">
-          More offers
-        </eve-button>
-        <eve-button icon>
-          <template #icon><img src='/icons/edit.svg' alt=''></template>
-          Place an ad
-        </eve-button>
+      <div
+        v-if='getHomeContent.community && getHomeContent.community.items'
+        class='home-categories'
+        :style='`order: ${getHomeContent.community.positions}`'
+      >
+        <carousel
+          :margin='12'
+          :items='5'
+          :loop='false'
+          :dots='false'
+          :mouse-drag='getHomeContent.community.items.length > 5'
+          :pull-drag='getHomeContent.community.items.length > 5'
+          :touch-drag='getHomeContent.community.items.length > 5'
+          class='home-categories__slider'>
+          <CategoryItem
+            v-for='(item, index) in getHomeContent.community.items'
+            :key='index'
+            :item='item'
+          />
+        </carousel>
       </div>
-      <div class='home-categories'>
-        <CategoryItem
-          v-for='(category, i) in categories'
-          :key='i'
-          to='#'
-        >
-          {{ category }}
-        </CategoryItem>
-      </div>
-      <div class='home-favourite'>
+      <div
+        v-if='getHomeContent.brands && getHomeContent.brands.items'
+        class='home-favourite'
+        :style='`order: ${getHomeContent.brands.positions}`'
+      >
         <h2 class='default-h2'>
-          Favourite brands
+          {{ getHomeContent.brands.title }}
         </h2>
-        <Slider :slides="5" :slides-on-tablet="4" :rows="$device.isMobile ? 3 : 1">
+        <carousel
+          :margin='12'
+          :items='5'
+          :loop='false'
+          :dots='false'
+          :mouse-drag='getHomeContent.brands.items.length > 5'
+          :pull-drag='getHomeContent.brands.items.length > 5'
+          :touch-drag='getHomeContent.brands.items.length > 5'
+          class='home-favourite__slider'>
           <ProductPreview
-            v-for='item in 10'
-            :key='item'
-            :rating='4'
-            :price='12222'
+            v-for='(item, index) in getHomeContent.brands.items'
+            :key='index'
+            :item='item'
           />
-        </Slider>
+        </carousel>
       </div>
     </main>
   </div>
 </template>
 
 <script>
-import ExpertResponse from '@/components/views/pages/home/ExpertResponse'
+import BlogPost from '@/components/views/pages/home/BlogPost'
 import PostInteresting from '@/components/views/pages/home/PostInteresting'
 import ProductPreview from '@/components/views/pages/home/ProductPreview'
 import CategoryItem from '@/components/views/pages/home/CategoryItem'
-import Slider from '@/components/ui-common/Slider';
 
 export default {
   components: {
-    Slider,
-    ExpertResponse,
+    BlogPost,
     PostInteresting,
     ProductPreview,
     CategoryItem
   },
-  data () {
-    return {
-      tags: [
-        {
-          name: 'Fashion',
-          link: '#'
-        },
-        {
-          name: 'Collectible',
-          link: '#'
-        },
-        {
-          name: 'Popular',
-          link: '#'
-        },
-        {
-          name: 'New products',
-          link: '#'
-        },
-        {
-          name: 'Recommendations',
-          link: '#'
-        },
-      ],
-      categories: ['Dolls', 'Brands', 'Experts', 'Author\'s dolls', 'Video']
-    }
-  },
   head() {
     return {
       title: this.$route.name
+    }
+  },
+  computed: {
+    getHomeContent() {
+      return this.$store.getters['content/getСontent']
     }
   }
 }

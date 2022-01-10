@@ -4,9 +4,9 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'evening',
+    title: 'Evening',
     htmlAttrs: {
-    
+
     },
     meta: [
       { charset: 'utf-8' },
@@ -30,9 +30,10 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    { src: '~plugins/owl.js', ssr: false },
     '~plugins/global-components',
     '~plugins/custom-flag.js',
-    '~plugins/axios.js'
+    '~plugins/axios.js',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -70,7 +71,7 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   },
-  
+
   server: {
     host: '0.0.0.0'
   }

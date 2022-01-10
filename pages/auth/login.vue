@@ -1,12 +1,14 @@
 <template>
-  <div class='login'>
+  <form class='login' @submit.prevent="signIn">
     <h2>Log in to Everigin</h2>
     <input
+      v-model='user.email'
       type='email'
       placeholder='Email *'
       required
       class='input-default'/>
     <input
+      v-model='user.password'
       type='password'
       placeholder='Password *'
       required
@@ -24,11 +26,24 @@
         <NuxtLink to='/auth/registration' class='eve-button eve-button--square'>Create an account</NuxtLink>
       </div>
     </div>
-  </div>
+  </form>
 </template>
 
 <script>
 export default {
   layout: 'auth',
+  data() {
+    return {
+      user: {
+        email: '',
+        password: '',
+      },
+    }
+  },
+  methods: {
+    signIn() {
+      this.$store.dispatch('users/signIn', this.user)
+    },
+  },
 }
 </script>

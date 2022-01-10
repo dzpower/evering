@@ -9,7 +9,7 @@
           class="expert-response__slider"
           :variable-width='!$device.isMobile'
           :initial-slide="$device.isMobile ? 1 : 0">
-          <ExpertResponse
+          <BlogPost
             v-for='item in 15'
             :key='item'
             :class='item === 1 ? "first-item" : ""'
@@ -85,7 +85,7 @@
   </div>
 </template>
 <script>
-import ExpertResponse from '@/components/views/pages/home/ExpertResponse'
+import BlogPost from '@/components/views/pages/home/BlogPost'
 import PostInteresting from '@/components/views/pages/home/PostInteresting'
 import ProductPreview from '@/components/views/pages/home/ProductPreview'
 import CategoryItem from '@/components/views/pages/home/CategoryItem'
@@ -93,7 +93,7 @@ import Popup from '@/components/ui-common/Popup';
 
 export default {
   components: {
-    ExpertResponse,
+    BlogPost,
     PostInteresting,
     ProductPreview,
     CategoryItem,

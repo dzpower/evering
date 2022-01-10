@@ -1,7 +1,8 @@
 .category-item {
   width: 100%;
   max-width: 246px;
-  display: block;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   border-radius: 7px;
 
