@@ -6,9 +6,29 @@
     margin-right: 16px;
     margin-top: 4px;
     cursor: pointer;
+    position: relative;
+
+    &--active {
+      &::after {
+        content: attr(data-count);
+        width: 10px;
+        height: 10px;
+        border-radius: 10px;
+        color: white;
+        background: $red;
+        font-size: 10px;
+        text-decoration: none;
+        position: absolute;
+        top: 10%;
+        z-index: 9;
+        left: 27%;
+      }
+    }
 
     img {
       width: 100%;
+      position: relative;
+      z-index: 10;
     }
   }
 

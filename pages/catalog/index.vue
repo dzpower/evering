@@ -18,35 +18,28 @@
           <a v-if="$device.isDesktopOrTablet" href="#" class="result-page-mp-button">Search in the marketplace</a>
         </div>
 
-        <Items>
-          <card
-            v-for="item in 20"
-            :key="item"
-            :to='`${$route.path}/${item}`'
-          ></card>
-          <template #element>
-            <div class="result-page-sort">
-              <span class="result-page-sort__label">Sorting</span>
-              <Select />
-            </div>
-          </template>
+        <Items v-if='getProducts'>
+          <ProductPreview
+            v-for='(item, index) in getProducts'
+            :key='index'
+            :item='item'
+          />
         </Items>
-
       </div>
     </main>
   </div>
 </template>
 
 <script>
-  import FilterBar from '@/components/ui-common/FilterBar';
-  // import Select from '@/components/ui-common/Select';
+  import FilterBar from '@/components/ui-common/FilterBar'
   import Items from '@/components/ui-common/Items'
+  import ProductPreview from '@/components/views/pages/home/ProductPreview'
 
   export default {
     components: {
       Items,
-      // Select,
       FilterBar,
+      ProductPreview
     },
     data() {
       return {
@@ -72,6 +65,14 @@
             link: '#'
           },
         ]
+      }
+    },
+    created() {
+      this.$store.dispatch('catalog/fetchFilters')
+    },
+    computed: {
+      getProducts(state) {
+        return this.$store.getters['catalog/getProducts']
       }
     }
   }

@@ -16,16 +16,20 @@ const state = () => ({
 const actions = {
   async fetchMenu({ commit }) {
     await this.$axios.$get('get/menu').then(response => {
-      if (response.status) {
+      if (response) {
         commit('SET_MENU', response.result)
       }
+    }).catch(error => {
+      throw new Error(error)
     })
   },
   async fetchContent({ commit }) {
     await this.$axios.get('get').then(response => {
-      if (response.status) {
+      if (response) {
         commit('SET_CONTENT', response.data.result.modules)
       }
+    }).catch(error => {
+      throw new Error(error)
     })
   },
   async fetchBlogs({ commit }) {
@@ -33,16 +37,17 @@ const actions = {
       if (response.status) {
         commit('SET_BLOGS', response.data.result.items)
       }
+    }).catch(error => {
+      throw new Error(error)
     })
-      .catch(error => {
-        this.$toast.error(error)
-      })
   },
   async fetchSingleBlog({ commit }, bid = '') {
     await this.$axios.get(`get/blogs/${bid}`).then(response => {
       if (response.status) {
         commit('SET_SINGLE_BLOG', response.data.result)
       }
+    }).catch(error => {
+      throw new Error(error)
     })
   },
   async fetchCategories({ commit }) {
@@ -50,6 +55,8 @@ const actions = {
       if (response.status) {
         commit('SET_CATEGORIES', response.data.result.items)
       }
+    }).catch(error => {
+      throw new Error(error)
     })
   }
 }

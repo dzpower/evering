@@ -21,9 +21,9 @@ export default {
     'footer-component': Footer
   },
   created() {
-    this.$store.dispatch('content/fetchMenu')
-    this.$store.dispatch('content/fetchContent')
     if (process.client){
+      this.$store.dispatch('content/fetchMenu')
+      this.$store.dispatch('content/fetchContent')
       if (this.storage() && !this.$store.getters['users/getUserAuthorized']) {
         this.$store.dispatch('users/setToken', this.storage())
       }

@@ -4,32 +4,32 @@
       <router-tabs
         :items='tabs'
       />
-      <div class='item-page__columns'>
+      <div class='item-page__columns' v-if='getSingleProduct'>
         <div v-if="$device.isDesktop" class="item-page__leftcol">
           <Photos />
         </div>
         <div class='item-page__content catalog-product__content'>
           <Preview>
             <template #body>
+              <div class="product-info">
+                <span class="product-info__title">{{ getSingleProduct.name }}</span>
+                <div v-if='getSingleProduct.price && getSingleProduct.price !== "0"' class="product-info__price">{{ getSingleProduct.price }} {{ getSingleProduct.currency }}</div>
+                <rating :stars='getSingleProduct.vote'/>
+              </div>
               <eve-button class="product-gallery__button">
                 <strong>Go to the seller's page</strong>
               </eve-button>
             </template>
           </Preview>
-
-          <AddCart v-if="$device.isMobile" />
-
-          <p class='default-text'>
-            Since the first release of the doll, the manufacturer has relied on quality: professional fashion designer
-            Charlotte Johnson develops outfits for it, which later became legendary and recognizable; artist Betty Lou
-            Mabey creates the first promotional photos and a literary image of Barbie for catalogs and the future
-            magazine "Barbie Magazine". Since the first release of the doll, the manufacturer has relied on quality:
-            professional fashion designer Charlotte Johnson develops outfits for it, which later became legendary and
-            recognizable; artist Betty Lou Mabey creates the first promotional photos and a literary image of Barbie for
-            catalogs and the future magazine "Barbie Magazine".Since the first release of the doll, the manufacturer has
-            relied on quality: professional fashion designer Charlotte Johnson develops outfits for it, which later
-            became legendary and recognizable; artist Betty Lou Mabey creates the first promotional photos and a
-            literary image of Barbie for catalogs and the future magazine "Barbie Magazine".
+          <AddCart
+            v-if="$device.isMobile"
+            :item='getSingleProduct'
+          />
+          <p
+            v-if='getSingleProduct.content'
+            class='default-text'
+          >
+            {{ getSingleProduct.content }}
           </p>
           <h2 class='default-h2'>Popular articles</h2>
           <div class='catalog-product__articles'>
@@ -40,11 +40,8 @@
               />
             </Slider>
           </div>
-
           <h2 class='default-h2'>The best photos of buyers</h2>
-
           <div class='catalog-product__user-photos'>
-
             <div
               v-for='item in 3'
               :key='item'
@@ -52,29 +49,19 @@
             >
               <img src='/content/01.png' alt='user photo'>
             </div>
-
           </div>
-
           <h2 class='default-h2'>Group discussions</h2>
-
           <div class='catalog-product__discussions'>
-
             <discussion
               v-for='item in 3'
               :key='item'
             />
-
           </div>
-
         </div>
         <div class='item-page__rightcol'>
-
           <AddCart v-if="$device.isDesktopOrTablet" edit-button />
-
           <h2 class='default-h2'>Video</h2>
-
           <Videos />
-
         </div>
       </div>
     </main>
@@ -113,6 +100,14 @@ export default {
         }
       ]
     }
+  },
+  computed: {
+    getSingleProduct() {
+      return this.$store.getters['catalog/getSingleProduct']
+    }
+  },
+  created() {
+    this.$store.dispatch('catalog/getSingleProduct', this.$route.params.product)
   }
 }
 </script>

@@ -1,6 +1,7 @@
 <template>
   <button
     :class='icon ? "eve-button eve-button--icon" : square ? "eve-button eve-button--square" : icon && square ? "eve-button eve-button--icon eve-button--square" : "eve-button"'
+    @click='$emit("onclick")'
   >
       <slot name='icon'></slot>
       <slot>Button</slot>
@@ -18,6 +19,11 @@ export default {
     square: {
       type: Boolean,
       default: false
+    }
+  },
+  methods: {
+    onClick() {
+      this.$emit('onClick')
     }
   }
 }

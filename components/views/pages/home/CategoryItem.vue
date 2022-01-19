@@ -20,8 +20,7 @@ export default {
   },
   computed: {
     getPicture() {
-      const picture = this.item.picture ? JSON.parse(this.item.picture) : ''
-      return `https://kukli.promositetest.ru${picture[0].big.webp}`
+      return this.item.picture ? `https://kukli.promositetest.ru${JSON.parse(this.item.picture)}.webp` : false
     },
   }
 }

@@ -9,7 +9,8 @@
 
   &__btn-wrapper {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
     margin-bottom: 16px;
   }
 
@@ -98,6 +99,7 @@
   .product-info {
     flex-direction: column;
     display: flex;
+    padding-bottom: 16px;
 
     &__title, &__price {
       font-size: 20px;

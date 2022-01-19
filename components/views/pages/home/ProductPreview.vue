@@ -1,19 +1,24 @@
 <template>
-  <div @click.stop='$router.push(`catalog/${item.id}`)' class='product-preview' v-if='item'>
-    <figure>
+  <div v-if='item'
+       @click.stop='goToProduct'
+       class='product-preview'
+  >
+    <figure v-if='getPicture'>
       <img :src='getPicture' alt=''>
     </figure>
-    <span class='title'>{{ item.name }}</span>
+    <span v-if='item.name' class='title'>{{ item.name }}</span>
     <div class='product-preview__body'>
       <div class='product-preview__body-combiner'>
         <span v-if='item.price' class='price'>{{ item.price + ' Руб.' }}</span>
         <rating :stars='3'/>
       </div>
-      <button class='buy'>
+      <button
+        class='buy'
+        @click.stop='addToBasket'
+      >
         <img src='/icons/basket.svg' alt=''>
       </button>
     </div>
-
   </div>
 </template>
 
@@ -29,9 +34,16 @@ export default {
   },
   computed: {
     getPicture() {
-      const picture = this.item.picture ? JSON.parse(this.item.picture) : 'try more'
-      return `https://kukli.promositetest.ru${picture[0].small.webp}`
+      return this.item.picture ? `https://kukli.promositetest.ru${JSON.parse(this.item.picture)[0]}.webp` : false
     },
+  },
+  methods: {
+    goToProduct() {
+      this.$router.replace(`catalog/${this.item.id}`)
+    },
+    addToBasket() {
+      this.$store.dispatch("basket/addToBasket", this.item)
+    }
   },
 }
 </script>

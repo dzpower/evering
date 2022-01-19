@@ -106,7 +106,7 @@ export default {
       return this.$store.getters['content/getSingleBlog']
     },
     getPicture() {
-      return this.getSingleBlog.picture ? `https://kukli.promositetest.ru${JSON.parse(this.getSingleBlog.picture)[0]?.big.webp}` : false
+      return this.getSingleBlog.picture ? `https://kukli.promositetest.ru${JSON.parse(this.getSingleBlog.picture)}.webp` : false
     },
   },
   created() {

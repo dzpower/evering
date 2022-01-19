@@ -1,7 +1,7 @@
 .blog-item {
   width: 100%;
-  max-width: 247px;
-  box-sizing: content-box;
+  max-width:32%;
+  box-sizing: border-box;
   padding-left: 8px;
   padding-right: 8px;
   display: flex;
@@ -17,7 +17,7 @@
 
   &:nth-child(4n),
   &:nth-child(5n){
-    max-width: 505px;
+    max-width: 68%;
   }
 
   &__header {

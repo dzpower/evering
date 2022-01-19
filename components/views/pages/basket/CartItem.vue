@@ -1,18 +1,18 @@
 <template>
-  <div class="cart-item">
+  <div v-if='item' class="cart-item">
     <div class="cart-item__image default-photo">
-      <img src="/content/01.png" alt="cart product image">
+      <img :src="getPicture" alt="cart product image">
     </div>
     <div class="cart-item__wrapper">
     <div class="cart-item__info">
       <div class="cart-item__info-item">
-        <strong>Pullip optical Queen</strong>
+        <strong>{{ item.name }}</strong>
         <s>15800</s>
         <mark>15800</mark>
       </div>
       <div class="cart-item__info-item">
         Price
-        <span>$18.90</span>
+        <span>{{ item.currency + item.price }}</span>
       </div>
       <div class="cart-item__info-item">
         Shipping
@@ -26,6 +26,7 @@
           :key="i"
           class="default-select__option"
           :value="i"
+          :selected='item.count === i'
         >
           {{i}}
         </option>
@@ -41,5 +42,16 @@
 <script>
 export default {
   name: "CartItem",
+  props: {
+    item: {
+      type: Object,
+      default: () => {}
+    }
+  },
+  computed: {
+    getPicture() {
+      return this.item.picture ? `https://kukli.promositetest.ru${this.item.picture}.webp` : false
+    },
+  }
 }
 </script>
