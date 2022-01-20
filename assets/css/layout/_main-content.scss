@@ -230,7 +230,7 @@ html, body {
     width:69%;
 
     @media screen and (max-width: $mobile) {
-      max-width: 100%;
+      width: 100%;
     }
   }
 
@@ -311,7 +311,11 @@ html, body {
   }
 }
 
+.hide-text {
+  overflow-y: scroll;
+  height: 190px;
 
-
-
-
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

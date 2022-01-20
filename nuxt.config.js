@@ -56,7 +56,8 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    '@nuxtjs/toast'
+    '@nuxtjs/toast',
+    'nuxt-vue-select',
   ],
 
   axios: {

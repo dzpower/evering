@@ -9,7 +9,7 @@
     <span v-if='item.name' class='title'>{{ item.name }}</span>
     <div class='product-preview__body'>
       <div class='product-preview__body-combiner'>
-        <span v-if='item.price' class='price'>{{ item.price + ' Руб.' }}</span>
+        <span v-if='item.price' class='price'>{{ item.price + ' pуб.' }}</span>
         <rating :stars='3'/>
       </div>
       <button
