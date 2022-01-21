@@ -6,13 +6,28 @@
   line-height: 17px;
   color: $black;
   padding: 0 12px;
-  background-image: url("static/icons/caret.svg");
   background-repeat: no-repeat;
   background-size: 7px;
   background-position: center right;
   appearance: none;
+  width: 150px;
 
-  option {
-    border: none;
+  &__caret {
+    width: 7px;
+    height: 4px;
+    background-image: url("static/icons/caret.svg");
+    display: block;
+    background-size: 100% 100%;
+  }
+
+  .vs__dropdown-toggle {
+    border: none !important;
+  }
+
+  .vs__dropdown-menu {
+    border: 1px solid #D2C5CC;
+    box-sizing: border-box;
+    border-radius: 7px;
+    padding: 6px 0;
   }
 }

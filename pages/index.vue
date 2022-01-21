@@ -14,9 +14,6 @@
           :loop='false'
           :auto-width='true'
           :dots='false'
-          :mouse-drag='getHomeContent.blogs.items.length > 5'
-          :pull-drag='getHomeContent.blogs.items.length > 5'
-          :touch-drag='getHomeContent.blogs.items.length > 5'
           class="expert-response__slider">
           <BlogPost
             v-for='(item, index) in getHomeContent.blogs.items'
@@ -35,11 +32,13 @@
         <carousel
           :margin='12'
           :items='5'
+          :responsive="{
+            0: { items:2 },
+            760: { items:4 },
+            1024: { items:5 }
+          }"
           :loop='false'
           :dots='false'
-          :mouse-drag='getHomeContent.reviews.items.length > 5'
-          :pull-drag='getHomeContent.reviews.items.length > 5'
-          :touch-drag='getHomeContent.reviews.items.length > 5'
           class='most-interesting__slider'>
           <PostInteresting
             v-for='(item, index) in getHomeContent.reviews.items'
@@ -74,6 +73,11 @@
           :items='5'
           :loop='false'
           :dots='false'
+          :responsive="{
+            0: { items:2 },
+            760: { items:4 },
+            1024: { items:5 }
+          }"
           :mouse-drag='getHomeContent.offers.items.length > 5'
           :pull-drag='getHomeContent.offers.items.length > 5'
           :touch-drag='getHomeContent.offers.items.length > 5'
@@ -104,6 +108,11 @@
           :items='5'
           :loop='false'
           :dots='false'
+          :responsive="{
+            0: { items:2 },
+            760: { items:4 },
+            1024: { items:5 }
+          }"
           :mouse-drag='getHomeContent.community.items.length > 5'
           :pull-drag='getHomeContent.community.items.length > 5'
           :touch-drag='getHomeContent.community.items.length > 5'
@@ -128,6 +137,11 @@
           :items='5'
           :loop='false'
           :dots='false'
+          :responsive="{
+            0: { items:2 },
+            760: { items:4 },
+            1024: { items:5 }
+          }"
           :mouse-drag='getHomeContent.brands.items.length > 5'
           :pull-drag='getHomeContent.brands.items.length > 5'
           :touch-drag='getHomeContent.brands.items.length > 5'

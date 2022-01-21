@@ -32,6 +32,11 @@
     width: 100%;
     padding-top: 32px;
 
+    .owl-nav {
+      top: 50% !important;
+      transform: translateY(-50%);
+    }
+
     @media screen and (max-width: $tablet) {
       .category-item {
         width: auto;
@@ -92,21 +97,29 @@
   }
 
   .tag-wrapper{
-    width: 100%;
     display: flex;
-    justify-content: space-between;
     gap: 12px;
-    padding-bottom: 29px;
+    padding-bottom: 5px;
+    margin-bottom: 24px;
+    width: auto;
+    overflow-x: scroll;
 
     @media screen and (max-width: $mobile) {
       padding-bottom: 16px;
       flex-wrap: wrap;
       justify-content: flex-start;
       white-space: nowrap;
+      overflow: hidden;
+      width: 100%;
     }
 
     .default-tag{
-      flex-basis: 20%;
+      min-width: calc((1280px - 48px) / 5);
+      max-width: none;
+
+      @media screen and (max-width: $mobile) {
+        min-width: calc((100% - 12px) / 2);
+      }
     }
   }
 }

@@ -39,7 +39,11 @@
   .logo {
     width: 100%;
     max-width: 112px;
-    margin-right: 114px;
+    margin-right: 142px;
+
+    @media screen and (max-width: $tablet) {
+      margin-right: 0;
+    }
 
     @media screen and (max-width: $mobile) {
       max-width: 99px;
@@ -64,6 +68,7 @@
 
     @media screen and (max-width: $tablet) {
       max-width: 46%;
+      margin-left: auto;
     }
 
     @media screen and (max-width: $mobile) {
@@ -92,7 +97,7 @@
     }
 
     a {
-      font-weight: normal;
+      font-weight: 500;
       font-size: 15px;
       line-height: 22px;
       color: $black;

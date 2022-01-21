@@ -10,7 +10,7 @@
       object-fit: cover;
       overflow: hidden;
       border-radius: 7px;
-      aspect-ratio: 1 / 1;
+      aspect-ratio: 1 / 0.9;
 
       //@media screen and (max-width: $mobile) {
       //  height: 153px;
@@ -22,7 +22,7 @@
     width: 100%;
     padding-top: 8px;
     padding-bottom: 2px;
-    font-weight: normal;
+    font-weight: 500;
     font-size: 12px;
     line-height: 17px;
   }
@@ -42,6 +42,10 @@
         font-size: 20px;
         line-height: 29px;
         padding-bottom: 1px;
+
+        span {
+          font-size: 12px;
+        }
       }
     }
 

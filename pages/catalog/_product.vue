@@ -25,20 +25,26 @@
             v-if="$device.isMobile"
             :item='getSingleProduct'
           />
-          <p
-            v-if='getSingleProduct.content'
-            class='default-text'
-          >
+          <HideText v-if='getSingleProduct.content'>
             {{ getSingleProduct.content }}
-          </p>
+          </HideText>
           <h2 class='default-h2'>Popular articles</h2>
           <div class='catalog-product__articles'>
-            <Slider :slides="3">
+            <carousel
+              :margin='12'
+              :items='3'
+              :loop='false'
+              :dots='false'
+              :responsive="{
+                0: { items:2 },
+                760: { items:4 },
+                1024: { items:3 }
+              }">
               <PostInteresting
-                v-for='i in 6'
-                :key='i'
+                v-for='is in 6'
+                :key='is'
               />
-            </Slider>
+            </carousel>
           </div>
           <h2 class='default-h2'>The best photos of buyers</h2>
           <div class='catalog-product__user-photos'>
@@ -74,7 +80,7 @@ import PostInteresting from '@/components/views/pages/home/PostInteresting'
 import Preview from '@/components/views/pages/product/Preview'
 import AddCart from '@/components/views/pages/product/AddCart'
 import Videos from '@/components/views/pages/product/Videos'
-import Slider from '@/components/ui-common/Slider';
+import HideText from '@/components/ui-common/HideText';
 
 export default {
   components: {
@@ -83,7 +89,7 @@ export default {
     Preview,
     PostInteresting,
     Photos,
-    Slider
+    HideText
   },
   data() {
     return {

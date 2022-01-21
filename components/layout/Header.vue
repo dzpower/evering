@@ -24,7 +24,7 @@
           v-for="(itemTopMenu, index) in getTopMenu"
           :key="index"
           :class='getRouteName.includes(itemTopMenu.name) ? "active" : ""'
-          :to='itemTopMenu.url_full.slice(0, -1)'
+          :to='index === 1 ? "/feed" : itemTopMenu.url_full.slice(0, -1)'
         >
           {{ itemTopMenu.name }}
         </NuxtLink>

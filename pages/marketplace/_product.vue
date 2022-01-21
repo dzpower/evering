@@ -115,6 +115,7 @@ export default {
   },
   data() {
     return {
+      rating: 5,
       tabs: [
         {
           tabContent: 'Page in the catalog',
