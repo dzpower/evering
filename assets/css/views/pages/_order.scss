@@ -1,0 +1,154 @@
+.order-page {
+  width: 100%;
+
+  .main {
+    max-width: 764px;
+  }
+
+  .default-h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.order-form {
+
+  strong {
+    font-weight: bold;
+    line-height: 23px;
+    display: inline-block;
+    margin-bottom: 14px;
+  }
+
+  &__promocode {
+    display: flex;
+    align-items: center;
+    margin-bottom: 18px;
+    margin-top: 10px;
+
+    .eve-button {
+      width: 29px;
+      height: 29px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+
+      img {
+        margin: 0;
+        width: 10px;
+        height: 10px;
+      }
+    }
+
+    .input-default {
+      margin-bottom: 0;
+      max-width: 248px;
+      margin-right: 10px;
+    }
+  }
+
+  &__radios {
+    margin-bottom: 20px;
+
+    label.order-form-radio {
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+      margin-bottom: 14px;
+      user-select: none;
+
+      br {
+        display: none;
+      }
+
+      @media screen and (max-width: $mobile) {
+        font-size: 14px;
+
+        br {
+          display: inline;
+        }
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .checkbox {
+        margin-right: 16px;
+      }
+
+      .checkmark {
+        position: static;
+        display: block;
+        min-width: 22px;
+      }
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    margin-bottom: 20px;
+
+    .eve-button {
+      margin-right: 16px;
+      font-size: 14px;
+      line-height: 20px;
+      padding: 5px 15px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .price-string {
+    display: block;
+  }
+
+  &__label {
+    margin-bottom: 12px;
+    display: block;
+
+    &-req {
+      margin-top: 20px;
+
+      &::after {
+        content: " *";
+        color: $red;
+      }
+    }
+  }
+
+  &__bordered {
+    padding-top: 20px;
+    margin-top: 5px;
+    border-top: 1px solid $border-color;
+  }
+
+  .eve-select, .advanced-input {
+    margin-bottom: 10px;
+  }
+
+  &__agree {
+    margin-top: 24px;
+
+    span {
+      font-size: 14px;
+      line-height: 20px;
+
+      a {
+        text-decoration: none;
+        font-weight: 700;
+      }
+    }
+  }
+
+  &__submit {
+    font-weight: bold !important;
+    padding: 6px 16px !important;
+    display: block;
+    margin: 0 auto 36px;
+  }
+}

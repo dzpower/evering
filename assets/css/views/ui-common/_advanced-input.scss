@@ -1,0 +1,32 @@
+.advanced-input {
+  position: relative;
+  display: block;
+  padding-top: 20px;
+
+  input {
+    margin-bottom: 0;
+  }
+
+  &__placeholder {
+    font-size: 12px;
+    line-height: 17px;
+    color: $placeholder-color;
+    position: absolute;
+    top: 27px;
+    left: 16px;
+    transition: all 0.2s;
+  }
+
+  input:focus ~ &__placeholder,
+  &.--completed &__placeholder
+  {
+    top: 0;
+    left: 0;
+    color: $black;
+  }
+
+  input:required ~ &__placeholder::after {
+    content: "*";
+    color: $red;
+  }
+}
