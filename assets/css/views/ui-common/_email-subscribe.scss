@@ -78,4 +78,10 @@
   line-height: 17px;
   color: $black;
 
+  &::placeholder{
+    color: $placeholder-color;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 17px;
+  }
 }

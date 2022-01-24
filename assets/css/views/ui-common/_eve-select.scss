@@ -1,0 +1,33 @@
+.eve-select {
+  font-size: 12px;
+  line-height: 17px;
+  height: 29px;
+
+  &__caret {
+    width: 7px;
+    height: 4px;
+    background-image: url("static/icons/caret.svg");
+    display: block;
+    background-size: 100% 100%;
+  }
+
+  .vs__dropdown-toggle {
+    border: 1px solid #D6C7CE !important;
+    border-radius: 40px !important;
+  }
+
+  .vs__selected {
+    padding-left: 10px;
+  }
+
+  .vs__actions {
+    padding-right: 16px;
+  }
+
+  .vs__dropdown-menu {
+    border: 1px solid #D2C5CC;
+    box-sizing: border-box;
+    border-radius: 7px;
+    padding: 6px 0;
+  }
+}
