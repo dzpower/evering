@@ -16,7 +16,7 @@
       </li>
       <li class="cart-price__list-item">
         <strong>Order Total</strong>
-        <strong>$18.90</strong>
+        <strong>{{ price }} p.</strong>
       </li>
     </ul>
     <div class="cart-price__buttons">
@@ -49,6 +49,12 @@
 import EveButton from '@/components/ui-common/EveButton';
 export default {
   name: "CartPrice",
-  components: {EveButton}
+  components: {EveButton},
+  props: {
+    price: {
+      type: Number,
+      default: 0
+    }
+  }
 }
 </script>

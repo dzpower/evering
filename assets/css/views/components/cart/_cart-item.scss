@@ -88,6 +88,14 @@
         margin-top: 8px;
       }
     }
+
+    &-product {
+      width: 100%;
+      margin: 0;
+      padding-left: 0;
+      padding-top: 8px;
+      list-style-type: none;
+    }
   }
 
   &__buttons {
@@ -131,6 +139,15 @@
       position: absolute;
       top: 0;
       left: calc(48% + 16px);
+    }
+  }
+
+  &__prices {
+    width: 100%;
+    display: flex;
+
+    mark {
+      padding-right: 24px;
     }
   }
 }

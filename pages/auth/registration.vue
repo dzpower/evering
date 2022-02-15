@@ -30,7 +30,7 @@
       class="input-default"
     />
     <div :class="errors ? 'auth-terms errors-have' : 'auth-terms'">
-      <checkbox :value="user.terms" @input="user.terms = $event" />
+      <checkbox :value="'true'" name='agree' @input="user.terms = $event" />
       <p>
         I agree to the
         <NuxtLink class="auth-link" to="#">privacy policy</NuxtLink>
@@ -67,7 +67,7 @@ export default {
         email: '',
         password: '',
         password_confirm: '',
-        terms: false,
+        terms: true,
       },
     }
   },

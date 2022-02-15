@@ -1,6 +1,6 @@
 <template>
   <label class="checkbox">
-    <input :type="type" :checked='value' @input='onInput($event.target.checked)'>
+    <input :type="type" :name='name' :value='value' @change='change($event.target.value)'>
     <span class="checkmark"></span>
   </label>
 </template>
@@ -10,18 +10,21 @@ export default {
   name: 'Checkbox',
   props: {
     value: {
-      type: Boolean,
-      default: false,
-      required: true
+      type: String,
+      default: 'checkbox'
     },
     type: {
+      type: String,
+      default: 'checkbox'
+    },
+    name: {
       type: String,
       default: 'checkbox'
     }
   },
   methods: {
-    onInput(e) {
-      this.$emit('input', e)
+    change(e) {
+      this.$emit('change', e)
     }
   }
 }

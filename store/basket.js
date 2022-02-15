@@ -26,6 +26,12 @@ const actions = {
       }, {})
       commit('SET_ITEMS_IN_BASKET', [response.data.result, result])
     }
+  },
+  changeCountInProduct({ commit }, data) {
+    commit('CHANGE_COUNT_IN_PRODUCT', { index: data.index, newCount: data.newCount})
+  },
+  deleteProduct({ commit }, index) {
+    commit('DELETE_ITEMS_FROM_BASKET', index)
   }
 }
 
@@ -46,6 +52,17 @@ const mutations = {
         itemsInBusket.push(prop)
     }
     state.itemsInBasket = itemsInBusket
+  },
+  SET_PID_IN_BUSKET(state) {
+    if(process) {
+      state.productsInBasket = localStorage.getItem('pids_basket')
+    }
+  },
+  CHANGE_COUNT_IN_PRODUCT(state, data) {
+    state.itemsInBasket[data.index].count = data.newCount
+  },
+  DELETE_ITEMS_FROM_BASKET(state, index) {
+    state.itemsInBasket.splice(index, 1)
   }
 }
 
@@ -55,6 +72,9 @@ const getters = {
   },
   getItemsInBasket(state) {
     return state.itemsInBasket
+  },
+  getProductInBasket() {
+    return state.productsInBasket
   }
 }
 

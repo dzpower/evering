@@ -1,7 +1,7 @@
 <template>
   <div class="cart-page container">
     <main class="main">
-      <h2 class="default-h2">2 items in your cart</h2>
+      <h2 class="default-h2">{{ getCountBasket }} items in your cart</h2>
       <div class="cart-page__columns">
         <div
           v-if='getItemsInBasket'
@@ -11,11 +11,20 @@
             v-for="(item, index) in getItemsInBasket"
             :key="index"
             :item='item'
+            :index='index'
           />
         </div>
+
         <div class="cart-page__right-col">
-         <CartPrice />
+         <CartPrice
+          :price='getFullPrice'
+         />
         </div>
+      </div>
+      <div class='centered-button'>
+        <eve-button @onclick='$router.push("/order")'>
+          Оформить заказ
+        </eve-button>
       </div>
     </main>
   </div>
@@ -30,12 +39,23 @@ export default {
   computed: {
     getItemsInBasket() {
       return this.$store.getters['basket/getItemsInBasket']
+    },
+    getFullPrice() {
+      let price = 0
+      for (const prop of this.$store.getters['basket/getItemsInBasket']) {
+        price = price + prop.price
+      }
+      return price
+    },
+    getCountBasket() {
+      return this.$store.getters['basket/getCountBasket']
     }
   },
   created() {
     if (this.storage()) {
       this.$store.dispatch('basket/fetchProductsInBasket', this.storage())
     }
+    this.$store.commit('basket/SET_PID_IN_BUSKET')
   },
   methods: {
     storage() {
@@ -46,3 +66,12 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  .centered-button{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 48px;
+  }
+</style>
