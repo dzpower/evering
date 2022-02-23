@@ -5,7 +5,7 @@
         <figcaption>
           How to get to the exhibition
         </figcaption>
-        <NuxtLink :to="to" class="post-interesting__link">Read</NuxtLink>
+        <NuxtLink to="#" class="post-interesting__link">Read</NuxtLink>
       </figure>
   </div>
 </template>
@@ -14,9 +14,9 @@
 export default {
   name: 'PostInteresting',
   props: {
-    to: {
-      type: String,
-      default: '#'
+    item: {
+      type: Object,
+      default: () => {}
     }
   }
 }

@@ -25,15 +25,19 @@
   }
 
   &-container {
-    background: $header-bg;
+    background: $header-bg-transparent;
   }
 
-  &-green {
-    background: $green;
+  &-catalog {
+    background: $header_catalog;
   }
 
-  &-purple {
+  &-marketplace {
     background: $header-bg__marketplace;
+  }
+
+  &-community {
+    background: $header-bg_community;
   }
 
   .logo {

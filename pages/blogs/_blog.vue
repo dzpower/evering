@@ -41,7 +41,7 @@
                 <button>
                   <img src="/icons/like-active.svg" alt="like">
                 </button>
-                <span>5345</span>
+                <span>{{ getSingleBlog.likes }}</span>
               </div>
               <eve-button v-if="$device.isDesktopOrTablet" icon>
                 Like
@@ -51,7 +51,7 @@
               </eve-button>
               <div class="action-bar__comments-count" >
                 <img src="/icons/comments.svg" alt="like">
-                176 comments
+                {{ getSingleBlog.comments }} comments
               </div>
               <button class="action-bar__comments">
                 COMMENTS
@@ -61,11 +61,11 @@
 
             <div class="article-page__comments">
               <div class="reviews-items">
-                <review
-                  v-for="item in 3"
-                  :key="item"
+                <Review
+                  v-for="(item, index) in getBlogComments"
+                  :key="index"
+                  :item='item'
                 />
-                <pagination />
               </div>
             </div>
           </div>
@@ -87,15 +87,13 @@
 
 <script>
 
-import SearchField from '@/components/ui-common/SearchField';
-import Article from "@/components/views/pages/brands/Article"
-import NewsHead from '@/components/views/pages/feed/news/NewsHead';
-import Review from '@/components/ui-common/Review';
-import Pagination from '@/components/ui-common/Pagination';
+import SearchField from '@/components/ui-common/SearchField'
+import Article from '@/components/views/pages/brands/Article'
+import NewsHead from '@/components/views/pages/feed/news/NewsHead'
+import Review from '@/components/ui-common/Review'
 
 export default {
   components: {
-    Pagination,
     Review,
     NewsHead,
     SearchField,
@@ -108,9 +106,13 @@ export default {
     getPicture() {
       return this.getSingleBlog.picture ? `https://kukli.promositetest.ru${JSON.parse(this.getSingleBlog.picture)}.webp` : false
     },
+    getBlogComments() {
+      return this.$store.getters['content/getBlogComments']
+    },
   },
-  created() {
-    this.$store.dispatch('content/fetchSingleBlog', this.$route.params.blog)
+  async created() {
+    await this.$store.dispatch('content/fetchSingleBlog', this.$route.params.blog)
+    await this.$store.dispatch('content/fetchBlogsComments', this.$route.params.blog)
   },
 }
 </script>

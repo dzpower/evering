@@ -23,7 +23,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'ProductPreview',
   props: {
@@ -41,8 +40,14 @@ export default {
     goToProduct() {
       this.$router.replace(`catalog/${this.item.id}`)
     },
-    addToBasket() {
+    addToBasket(e) {
+      const removeAnimation = () => setTimeout(function() {
+        e.target.classList.remove('adding-animation')
+      }, 800)
+      clearTimeout(removeAnimation())
       this.$store.dispatch("basket/addToBasket", this.item)
+      e.target.classList.add('adding-animation')
+      removeAnimation()
     }
   },
 }

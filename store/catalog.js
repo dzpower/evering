@@ -5,7 +5,8 @@ const state = () => ({
   entity_type: [],
   producer: [],
   products: [],
-  singleProduct: []
+  singleProduct: [],
+  singleProductComments: []
 })
 
 const actions = {
@@ -24,6 +25,14 @@ const actions = {
         commit('SET_SINGLE_PRODUCT', response.result)
       }
     })
+  },
+  async getSingleProductComments({ commit }, pid) {
+    await this.$axios.$get(`get/comments/products/${pid}`).then(response => {
+      if (response) {
+        console.log(response)
+        commit('SET_SINGLE_PRODUCT_COMMENTS', response?.result?.items)
+      }
+    })
   }
 }
 
@@ -38,6 +47,9 @@ const mutations = {
   },
   SET_SINGLE_PRODUCT(state, payload) {
     state.singleProduct = payload
+  },
+  SET_SINGLE_PRODUCT_COMMENTS(state, payload) {
+    state.singleProductComments = payload
   }
 }
 
@@ -47,6 +59,9 @@ const getters = {
   },
   getSingleProduct(state) {
     return state.singleProduct
+  },
+  getSingleProductComments(state) {
+    return state.singleProductComments
   }
 }
 

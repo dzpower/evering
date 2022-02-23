@@ -11,19 +11,32 @@
             <eve-button v-if="$device.isDesktopOrTablet">Clear</eve-button>
           </h2>
           <div class="profile-page__visited">
-            <Community visited />
-            <Community visited />
+<!--            <Community-->
+<!--              :item='getCommunities[0]'-->
+<!--              visited />-->
+<!--            <Community-->
+<!--              :item='getCommunities[1]'-->
+<!--              visited />-->
           </div>
           <router-tabs v-if="$device.isDesktopOrTablet" :items="tabs" />
           <Items class="profile-page__communities">
-            <Community v-for="item in 5" :key="item" />
+            <Community
+              v-for="(item, index) in getCommunities"
+              :key="index"
+              :item='item'
+            />
           </Items>
         </div>
         <div v-if="$device.isDesktopOrTablet" class="item-page__rightcol">
           <search-field class="profile-page__search" placeholder="Search" />
           <h2 class="default-h2">Recommendations</h2>
           <div class="profile-page__recommendations">
-            <Community v-for="item in 4" :key="item" class="community--small" @click.stop='$router.push(item)'/>
+            <Community
+              v-for="(item, index) in getCommunities"
+              :key="index"
+              :item='item'
+              class="community--small"
+            />
           </div>
         </div>
       </div>
@@ -39,7 +52,11 @@
   import Items from '@/components/ui-common/Items';
 
   export default {
-    components: {Items, Community, Navbar},
+    components: {
+      Items,
+      Community,
+      Navbar
+    },
     data() {
       return {
         tabs: [
@@ -54,6 +71,19 @@
             activeRouter: 'management'
           }
         ]
+      }
+    },
+    computed: {
+      getCommunities() {
+        return this.$store.getters['content/getCommunities']
+      }
+    },
+    async created() {
+      await this.$store.dispatch('content/fetchCommunities')
+    },
+    methods: {
+      openCommunity() {
+        console.log(1)
       }
     }
   }

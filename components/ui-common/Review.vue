@@ -1,7 +1,7 @@
 <template>
-  <div class='review'>
+  <div class='review' v-if='item'>
     <time datetime='11, 06, 2021'>
-      11.06.2021
+      {{ item.date_create.slice(0, 10).replace('-', '.').replace('-', '.') }}
     </time>
     <NuxtLink to='#' class='review-user'>
       <figure>
@@ -16,10 +16,7 @@
         :stars='4'
       />
       <p class='review-content'>
-        Since the first release of the doll, the manufacturer has relied on quality: professional fashion designer
-        Charlotte Johnson develops outfits for it, which later became legendary and recognizable; artist Betty Lou Mabey
-        creates the first promotional photos and a literary image of Barbie for catalogs and the future magazine "Barbie
-        Magazine".
+        {{item.content}}
       </p>
       <div class='discussion__row'>
         <span class='discussion__likes'>
@@ -44,6 +41,12 @@
 
 <script>
 export default {
-  name: 'Review'
+  name: 'Review',
+  props: {
+    item: {
+      type: Object,
+      default: () => {}
+    }
+  }
 }
 </script>

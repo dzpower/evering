@@ -29,19 +29,26 @@ const actions = {
   },
   changeCountInProduct({ commit }, data) {
     commit('CHANGE_COUNT_IN_PRODUCT', { index: data.index, newCount: data.newCount})
+    commit('UPDATE_BASKET')
   },
   deleteProduct({ commit }, index) {
     commit('DELETE_ITEMS_FROM_BASKET', index)
+    commit('UPDATE_BASKET')
   }
 }
 
 const mutations = {
   SET_PRODUCT_IN_BASKET(state, pid) {
+    if(process.client) {
+      if (localStorage.getItem('pids_basket')) {
+        state.productsInBasket = localStorage.getItem('pids_basket').split(',')
+      }
+    }
     if (!pid.offers) {
-      state.productsInBasket.push('p' + pid.id)
+      state.productsInBasket.push(`p${pid.id}`)
       localStorage.setItem('pids_basket', state.productsInBasket)
     } else {
-      state.productsInBasket.push('o' + pid.id)
+      state.productsInBasket.push(`o${pid.id}`)
       localStorage.setItem('pids_basket', state.productsInBasket)
     }
   },
@@ -54,8 +61,12 @@ const mutations = {
     state.itemsInBasket = itemsInBusket
   },
   SET_PID_IN_BUSKET(state) {
-    if(process) {
-      state.productsInBasket = localStorage.getItem('pids_basket')
+    if(process.client) {
+      if (localStorage.getItem('pids_basket')) {
+        state.productsInBasket = localStorage.getItem('pids_basket')?.split(',') || []
+      } else {
+        state.productsInBasket = []
+      }
     }
   },
   CHANGE_COUNT_IN_PRODUCT(state, data) {
@@ -63,12 +74,40 @@ const mutations = {
   },
   DELETE_ITEMS_FROM_BASKET(state, index) {
     state.itemsInBasket.splice(index, 1)
+  },
+  UPDATE_BASKET(state) {
+    const newItemsInBasket = []
+    state.itemsInBasket.forEach((item) => {
+      if (item.count > 1) {
+        for (let i = 1; i <= item.count; i++) {
+          if (item.offer) {
+            newItemsInBasket.push(`o${item.id}`)
+          } else {
+            newItemsInBasket.push(`p${item.id}`)
+          }
+        }
+      } else if (item.offer) {
+        newItemsInBasket.push(`o${item.id}`)
+      } else {
+        newItemsInBasket.push(`p${item.id}`)
+      }
+    })
+    if (process.client) {
+      localStorage.setItem('pids_basket', newItemsInBasket)
+    }
+    state.productsInBasket = newItemsInBasket
   }
 }
 
 const getters = {
   getCountBasket(state) {
-    return state.productsInBasket.length
+    let localStorageItems = 0
+    if (process.client) {
+      if (localStorage.getItem('pids_basket')) {
+        localStorageItems = localStorage.getItem('pids_basket').split().length
+      }
+    }
+    return state.productsInBasket.length || localStorageItems
   },
   getItemsInBasket(state) {
     return state.itemsInBasket

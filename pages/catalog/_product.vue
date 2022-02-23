@@ -110,10 +110,14 @@ export default {
   computed: {
     getSingleProduct() {
       return this.$store.getters['catalog/getSingleProduct']
+    },
+    getSingleProductComments() {
+      return this.$store.getters['catalog/getSingleProductComments']
     }
   },
-  created() {
-    this.$store.dispatch('catalog/getSingleProduct', this.$route.params.product)
+  async created() {
+    await this.$store.dispatch('catalog/getSingleProduct', this.$route.params.product)
+    await this.$store.dispatch('catalog/getSingleProductComments', this.$route.params.product)
   }
 }
 </script>

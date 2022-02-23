@@ -32,11 +32,11 @@
             </h2>
             <ActionBar comment-count />
             <div class="reviews-items">
-              <review
-                v-for='n in 3'
-                :key='n'
+              <Review
+                v-for='(item, index) in getSingleProductComments'
+                :key='index'
+                :item='item'
               />
-              <pagination />
             </div>
 
           </div>
@@ -95,15 +95,14 @@ import Photos from '@/components/views/pages/product/Photos'
 import Preview from '@/components/views/pages/product/Preview'
 import AddCart from '@/components/views/pages/product/AddCart'
 import ProductPreview from '@/components/views/pages/home/ProductPreview'
-import Slider from '@/components/ui-common/Slider';
-import Seller from '@/components/ui-common/Seller';
-import ActionBar from '@/components/ui-common/ActionBar';
-import Select from '@/components/ui-common/Select';
-import Pagination from '@/components/ui-common/Pagination';
+import Slider from '@/components/ui-common/Slider'
+import Seller from '@/components/ui-common/Seller'
+import ActionBar from '@/components/ui-common/ActionBar'
+import Select from '@/components/ui-common/Select'
+import Review from '@/components/ui-common/Review'
 
 export default {
   components: {
-    Pagination,
     Select,
     ActionBar,
     Seller,
@@ -111,7 +110,8 @@ export default {
     Preview,
     Photos,
     ProductPreview,
-    Slider
+    Slider,
+    Review,
   },
   data() {
     return {
@@ -129,6 +129,15 @@ export default {
         }
       ]
     }
+  },
+  computed: {
+    getSingleProductComments() {
+      return this.$store.getters['catalog/getSingleProductComments']
+    }
+  },
+  async created() {
+    await this.$store.dispatch('catalog/getSingleProduct', this.$route.params.product)
+    await this.$store.dispatch('catalog/getSingleProductComments', this.$route.params.product)
   }
 }
 </script>

@@ -22,7 +22,7 @@
         </div>
       </div>
       <div class='centered-button'>
-        <eve-button @onclick='$router.push("/order")'>
+        <eve-button v-if='getCountBasket' @onclick='$router.push("/order")'>
           Оформить заказ
         </eve-button>
       </div>
@@ -43,9 +43,10 @@ export default {
     getFullPrice() {
       let price = 0
       for (const prop of this.$store.getters['basket/getItemsInBasket']) {
-        price = price + prop.price
+
+        price = price + prop.price * prop.count
       }
-      return price
+      return price || 0
     },
     getCountBasket() {
       return this.$store.getters['basket/getCountBasket']
@@ -60,7 +61,7 @@ export default {
   methods: {
     storage() {
       if(process.client) {
-        return localStorage.getItem('pids_basket')
+        return localStorage.getItem('pids_basket') || []
       }
     }
   }

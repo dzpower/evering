@@ -64,11 +64,11 @@
 
           <div class="article-page__comments">
             <div class="reviews-items">
-              <review
-                v-for="item in 3"
-                :key="item"
+              <Review
+                v-for="(item, index) in getSingleReviewsComments"
+                :key="index"
+                :item='item'
               />
-              <pagination />
             </div>
           </div>
         </div>
@@ -108,14 +108,13 @@
 
 import SearchField from '@/components/ui-common/SearchField';
 import Article from "@/components/views/pages/brands/Article"
-import NewsHead from '@/components/views/pages/feed/news/NewsHead';
-import Review from '@/components/ui-common/Review';
-import Pagination from '@/components/ui-common/Pagination';
-import FilterBar from '@/components/ui-common/FilterBar';
+import NewsHead from '@/components/views/pages/feed/news/NewsHead'
+import Review from '@/components/ui-common/Review'
+import FilterBar from '@/components/ui-common/FilterBar'
+
 export default {
   components: {
     FilterBar,
-    Pagination,
     Review,
     NewsHead,
     SearchField,
@@ -146,6 +145,15 @@ export default {
         },
       ]
     }
+  },
+  computed: {
+    getSingleReviewsComments() {
+      return this.$store.getters['content/getSingleReviewsComments']
+    }
+  },
+  async created() {
+    await this.$store.dispatch('content/fetchSingleReviews', this.$route.params.article)
+    await this.$store.dispatch('content/fetchSingleReviewsComments', this.$route.params.article)
   }
 }
 </script>

@@ -37,7 +37,7 @@ export default {
     getUserAuthorized() {
       return this.$store.getters['users/getUserAuthorized']
     },
-    getCountBasket(state) {
+    getCountBasket() {
       return this.$store.getters['basket/getCountBasket']
     }
   }

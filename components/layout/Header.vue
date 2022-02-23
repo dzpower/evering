@@ -2,9 +2,11 @@
   <div
     :class='
       getRouteName.includes("catalog")
-      ? "container header-container header-green"
+      ? "container header-container header-catalog"
       : getRouteName.includes("marketplace")
-      ? "container header-container header-purple"
+      ? "container header-container header-marketplace"
+      : getRouteName.includes("feed")
+      ? "container header-container header-community"
       : "container header-container"
   '>
     <header class='header'>
@@ -23,7 +25,7 @@
         <NuxtLink
           v-for="(itemTopMenu, index) in getTopMenu"
           :key="index"
-          :class='getRouteName.includes(itemTopMenu.name) ? "active" : ""'
+          :class='getRouteName.includes(itemTopMenu.name.toLowerCase()) ? "active" : ""'
           :to='index === 1 ? "/feed" : itemTopMenu.url_full.slice(0, -1)'
         >
           {{ itemTopMenu.name }}
