@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/profile/settings/conversations", {data:[{}],fetch:{},mutations:[]});
