@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/basket", {data:[{}],fetch:{},mutations:[["basket\u002FSET_PID_IN_BUSKET",void 0]]});
