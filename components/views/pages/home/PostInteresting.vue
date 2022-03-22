@@ -31,7 +31,7 @@ export default {
   },
   computed: {
     getPicture() {
-      return this.item.picture ? `https://kukli.promositetest.ru${JSON.parse(this.item.picture)}.webp` : false
+      return this.item.picture ? `http://ec2-18-196-48-202.eu-central-1.compute.amazonaws.com${JSON.parse(this.item.picture)}.webp` : false
     },
   }
 }

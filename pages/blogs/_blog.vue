@@ -104,7 +104,7 @@ export default {
       return this.$store.getters['content/getSingleBlog']
     },
     getPicture() {
-      return this.getSingleBlog.picture ? `https://kukli.promositetest.ru${JSON.parse(this.getSingleBlog.picture)}.webp` : false
+      return this.getSingleBlog.picture ? `http://ec2-18-196-48-202.eu-central-1.compute.amazonaws.com${JSON.parse(this.getSingleBlog.picture)}.webp` : false
     },
     getBlogComments() {
       return this.$store.getters['content/getBlogComments']

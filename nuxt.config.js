@@ -61,7 +61,7 @@ export default {
   ],
 
   axios: {
-    baseUrl: 'https://kukli.promositetest.ru'
+    baseUrl: 'http://ec2-18-196-48-202.eu-central-1.compute.amazonaws.com'
   },
 
   toast: {

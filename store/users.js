@@ -29,7 +29,7 @@ const actions = {
       throw new Error(error)
     })
   },
-  async logout({ commit, dispatch, state }) {
+  async logout({ dispatch, state }) {
     await this.$axios.$get('users/logout', { params: {
       uid: state.uid
     }}).then(response => {
