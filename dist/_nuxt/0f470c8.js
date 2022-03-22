@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[53],{386:function(n,e,d){"use strict";d.r(e);var t={middleware:function(n){return(0,n.redirect)("auth/login")}},l=d(2),component=Object(l.a)(t,undefined,undefined,!1,null,null,null);e.default=component.exports}}]);
