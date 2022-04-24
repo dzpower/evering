@@ -2,7 +2,10 @@ const state = () => ({
   name: '',
   editable: false,
   picture: '',
-  uid: ''
+  id: null,
+  uid: null,
+  role: 'guest',
+  selfProfile: null
 })
 
 const actions = {
@@ -25,14 +28,16 @@ const actions = {
         this.$toast.error('Incorrect data!')
       }
     })
-    .catch(error => {
-      throw new Error(error)
-    })
+      .catch(error => {
+        throw new Error(error)
+      })
   },
   async logout({ dispatch, state }) {
-    await this.$axios.$get('users/logout', { params: {
-      uid: state.uid
-    }}).then(response => {
+    await this.$axios.$get('users/logout', {
+      params: {
+        uid: state.uid
+      }
+    }).then(response => {
       if (response.status) {
         dispatch('destroy')
       }
@@ -49,9 +54,38 @@ const actions = {
     commit('SET_TOKEN', token)
   },
   destroy({ commit }) {
-    localStorage.clear()
     commit('DESTROY_USER')
     this.$router.push('/')
+  },
+  async getSelfProfile({ commit }, token) {
+    await this.$axios.get('users/about', { params: { 'uid': token } }).then((res) => {
+      commit('SET_PROFILE', res.data.result)
+    }).catch((err) => {
+      throw err
+    })
+  },
+  // eslint-disable-next-line no-empty-pattern
+  async updateProfile({ commit }, profile) {
+    try {
+      const formData = new FormData()
+      for (const prop in profile) {
+        if(profile[prop]) {
+          formData.append(prop, profile[prop])
+        }
+      }
+      const res = await this.$axios.post('/users/about',
+        formData,
+        {
+          headers: {
+            'Content-Type': 'multipart/form-data'
+          }
+        }
+      )
+      commit('SET_PROFILE', res.data.result)
+      return res
+    } catch (e) {
+      console.log(e)
+    }
   }
 }
 
@@ -59,23 +93,35 @@ const mutations = {
   SET_USER(state, user) {
     state.name = user.name
     state.picture = user.picture
-    state.uid = user.uid
-    localStorage.setItem('uid', JSON.stringify(user.uid))
+    state.id = user.id
   },
   DESTROY_USER(state) {
     state.name = ''
     state.picture = ''
-    state.uid = ''
     state.editable = false
   },
   SET_TOKEN(state, token) {
     state.uid = token
+  },
+  SET_PROFILE(state, profileData) {
+    state.selfProfile = profileData
+  },
+  SET_ROLES(state, data) {
+    localStorage.setItem('uid', JSON.stringify(data.uid))
+    state.uid = data.uid
+    state.role = data.role
   }
 }
 
 const getters = {
   getUserAuthorized(state) {
-    return !!state.uid
+    return state.role !== 'guest'
+  },
+  getToken(state) {
+    return state.uid
+  },
+  getProfile(state) {
+    return state.selfProfile
   }
 }
 

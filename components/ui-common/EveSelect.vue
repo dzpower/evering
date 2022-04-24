@@ -17,7 +17,6 @@ export default {
   data() {
     return {
       options: [
-        { title: "Россия" },
         { title: "Беларусь" },
         { title: "Казахстан" },
         { title: "Украина" },

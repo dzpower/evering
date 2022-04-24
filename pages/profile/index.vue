@@ -17,9 +17,16 @@
 
 <script>
 
-import Navbar from '@/components/views/pages/profile/Navbar';
+import Navbar from '@/components/views/pages/profile/Navbar'
 
 export default {
   components: {Navbar},
+  created() {
+    if (process.client) {
+      let token = null
+      token = localStorage.getItem('uid')
+      this.$store.dispatch('users/getSelfProfile', token)
+    }
+  }
 }
 </script>

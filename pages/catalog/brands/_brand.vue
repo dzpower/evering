@@ -22,7 +22,7 @@
           <h2 v-if="$device.isDesktopOrTablet" class='default-h2'>
             <strong>Barbie</strong>
           </h2>
-          <p class='default-text'>
+          <div class='default-text'>
             It is no secret that the most favorite doll of both little girls and adult representatives of the fair sex is Barbie. She is so loved by representatives of the beautiful half of humanity that they are ready to take an example from her, adopting her style of clothing. The girl-doll has become a model of style for a huge number of young ladies. The number of clothes present in the Barbie wardrobe is very large. All little girls choose a Barbie doll for themselves, wanting to be like her when they become adults. The Barbie brand offers little princesses not to wait so long, but now to replenish their wardrobe with the outfits of their favorite Barbie.
 
             <br>
@@ -54,7 +54,8 @@
             <eve-button class="default-text__size-btn">
               <div class="--caret-after">Less</div>
             </eve-button>
-          </p>
+          </div>
+
 
           <div class='brand-page__products'>
             <Slider :slides="3" :rows="$device.isMobile ? 2 : 1">

@@ -34,6 +34,7 @@ export default {
     '~plugins/global-components',
     '~plugins/custom-flag.js',
     '~plugins/axios.js',
+    '~plugins/vue-js-modal.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -61,7 +62,7 @@ export default {
   ],
 
   axios: {
-    baseUrl: 'http://ec2-18-196-48-202.eu-central-1.compute.amazonaws.com'
+    baseUrl: 'https://api.everigin.com'
   },
 
   toast: {

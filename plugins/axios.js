@@ -1,10 +1,9 @@
-export default ({ $axios, $toast }) => {
+export default ({ $axios, $toast, store }) => {
   $axios.onRequest((config) => {
-    if (localStorage.getItem('uid')) {
-      $axios.setToken(localStorage.getItem('uid'), 'Bearer')  }
-    }
-  )
-  $axios.onResponse((config) => {
+    $axios.setToken(store.getters['users/getToken'] || localStorage.getItem('uid'), 'Bearer')
+  })
+  $axios.onResponse((response) => {
+    store.commit('users/SET_ROLES', response.data)
   })
   $axios.onError((err) => {
     $toast.error(err)

@@ -18,10 +18,13 @@
     "ap-style-title-case": "^1.1.2",
     "awesome-vue-star-rating": "^1.0.9",
     "core-js": "^3.15.1",
-    "nuxt": "^2.15.7",
+    "nuxt": "^2.15.8",
     "nuxt-vue-select": "^0.1.4",
     "v-owl-carousel": "^1.0.8",
+    "vue": "2.6.14",
+    "vue-js-modal": "^2.0.1",
     "vue-mobile-detection": "^1.0.0",
+    "vue-select": "^3.18.3",
     "vue-slick-carousel": "^1.0.6"
   },
   "devDependencies": {

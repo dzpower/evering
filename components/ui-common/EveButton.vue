@@ -20,11 +20,6 @@ export default {
       type: Boolean,
       default: false
     }
-  },
-  methods: {
-    onClick() {
-      this.$emit('onClick')
-    }
   }
 }
 </script>

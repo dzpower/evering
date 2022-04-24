@@ -168,7 +168,7 @@ export default {
     BlogPost,
     PostInteresting,
     ProductPreview,
-    CategoryItem
+    CategoryItem,
   },
   head() {
     return {

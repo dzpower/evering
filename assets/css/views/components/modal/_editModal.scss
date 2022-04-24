@@ -1,0 +1,148 @@
+.edit-modal {
+  padding: 0 16px 24px;
+  width: 100%;
+
+  .eve-input {
+    width: 100%;
+  }
+
+  &__field {
+    margin-bottom: 16px;
+
+    &--label{
+      width: 100%;
+      display: flex;
+
+      p {
+        max-width: 50%;
+        min-width: 15%;
+      }
+    }
+
+    &--wrapper{
+      flex-shrink: 1;
+      padding-left: 32px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 100%;
+
+      .v-select{
+        width: 100%;
+
+        .vs__dropdown-toggle {
+          border-radius: 7px !important;
+          outline: none !important;
+          padding: 10px 15px !important;
+          font-weight: normal !important;
+          font-size: 16px !important;
+          line-height: 23px !important;
+          background: transparent !important;
+          border: 1px solid #D5C8CF !important;
+          box-sizing: border-box !important;
+
+          .vs__selected{
+            padding-left: 0;
+            margin-left: 0;
+            margin-top: 0;
+          }
+        }
+      }
+
+      &--social{
+        img {
+          width: 42px;
+          margin-right: 12px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+
+
+  &__actions {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+      margin-left: 16px;
+    }
+  }
+}
+
+
+.avatar-wrapper {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 50px auto 25px;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: all .3s ease;
+  display: flex;
+  justify-content: center;
+  object-fit: cover;
+
+  &__actions{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 24px;
+
+    button {
+      margin-left: 8px;
+      margin-right: 8px;
+    }
+  }
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+  }
+
+  .file-upload {
+    display: none;
+  }
+
+  .profile-pic {
+    height: 100%;
+    width: 100%;
+    transition: all .3s ease;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+
+  &:hover .profile-pic {
+    opacity: .5;
+  }
+
+  .upload-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+
+    .fa-arrow-circle-up {
+      position: absolute;
+      font-size: 234px;
+      top: -17px;
+      left: 0;
+      text-align: center;
+      opacity: 0;
+      transition: all .3s ease;
+      color: #34495e;
+    }
+
+    &:hover .fa-arrow-circle-up {
+      opacity: .9;
+    }
+  }
+}

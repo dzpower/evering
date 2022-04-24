@@ -1,5 +1,6 @@
 <template>
   <div>
+    <preloader v-if='loader'/>
     <header-component/>
     <bread-crumbs />
     <Nuxt />
@@ -11,6 +12,7 @@
 <script>
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
+import Preloader from '@/components/ui-common/Preloader'
 import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 
@@ -18,7 +20,17 @@ export default {
   name: "Default",
   components: {
     'header-component': Header,
-    'footer-component': Footer
+    'footer-component': Footer,
+    'preloader': Preloader
+  },
+  middleware ({ store }) {
+    store.commit('common/SHOW_PRELOADER')
+    return store.dispatch('common/updatePreloader')
+  },
+  computed: {
+    loader() {
+      return this.$store.getters['common/getLoader']
+    }
   },
   created() {
     if (process.client){
@@ -28,6 +40,10 @@ export default {
         this.$store.dispatch('users/setToken', this.storage())
       }
     }
+  },
+  mounted() {
+    this.$store.commit('common/SHOW_PRELOADER')
+    this.$store.dispatch('common/updatePreloader')
   },
   methods: {
     storage(){

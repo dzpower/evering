@@ -67,7 +67,7 @@ export default {
       return JSON.parse(JSON.stringify(this.$store.getters['content/getSingleCommunities']))
     },
     getPicture() {
-      return `http://ec2-18-196-48-202.eu-central-1.compute.amazonaws.com${JSON.parse(this.getSingleCommunities?.picture)}.webp`
+      return `https://api.everigin.com${JSON.parse(this.getSingleCommunities?.picture)}.webp`
     },
   },
   async created() {

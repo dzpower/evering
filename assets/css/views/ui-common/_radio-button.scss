@@ -1,20 +1,25 @@
 .radio-button {
   display: flex;
   align-items: center;
-  padding: 8px 17px;
+  padding: 8px 17px 8px 0;
   justify-content: space-between;
+  background: transparent;
+  border-radius: 7px;
 
   @media screen and (max-width: $mobile) {
     padding: 12px;
     justify-content: center;
   }
 
+  &__content{
+    padding-left: 8px;
+  }
+
   input[type="radio"] {
     display: none;
   }
 
-  background: #FAF6F7;
-  border-radius: 7px;
+
 
   &__decor {
     width: 28px;
@@ -32,7 +37,7 @@
 
   input[type="radio"]:checked ~ &__decor {
     background: url(static/icons/radio-btn.svg) no-repeat;
-    background-size: 23px 23px;
-    background-position: 2px;
+    background-size: 12px 12px;
+    background-position: center center;
   }
 }
