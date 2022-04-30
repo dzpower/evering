@@ -34,7 +34,9 @@ export default {
     '~plugins/global-components',
     '~plugins/custom-flag.js',
     '~plugins/axios.js',
-    '~plugins/vue-js-modal.js'
+    '~plugins/vue-js-modal.js',
+    { src: '~/plugins/vue-datepicker', ssr: false },
+    { src: '~/plugins/vue-tags-input', ssr: false },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

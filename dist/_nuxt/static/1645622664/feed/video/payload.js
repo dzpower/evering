@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/feed/video", {data:[{}],fetch:{},mutations:[]});

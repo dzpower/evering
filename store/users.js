@@ -64,12 +64,25 @@ const actions = {
       throw err
     })
   },
-  // eslint-disable-next-line no-empty-pattern
-  async updateProfile({ commit }, profile) {
+  async updateProfile({ commit, moment }, [profile, uploadImage]) {
     try {
       const formData = new FormData()
       for (const prop in profile) {
-        if(profile[prop]) {
+        if (uploadImage) {
+          formData.append(prop, profile[prop])
+        } else if (prop === 'date_of_birth') {
+          const dateObj = new Date(profile[prop])
+          const month = dateObj.getUTCMonth() + 1 < 10 ? `0${dateObj.getUTCMonth() + 1}` : dateObj.getUTCMonth() + 1
+          const day = dateObj.getUTCDate() < 10 ? `0${dateObj.getUTCDate()}` : dateObj.getUTCDate()
+          const year = dateObj.getUTCFullYear()
+          const newdate = `${year}-${month}-${day}`
+
+          formData.append(prop, newdate)
+        } else if (prop === 'tags') {
+          for (let i = 0; i < profile[prop].length; i++) {
+            formData.append('tags[]', profile[prop][i])
+          }
+        } else if (profile[prop] && prop !== 'picture' && prop !== 'date_of_birth' && prop !== 'tags') {
           formData.append(prop, profile[prop])
         }
       }

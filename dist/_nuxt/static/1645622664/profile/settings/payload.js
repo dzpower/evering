@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/profile/settings", {data:[{}],fetch:{},mutations:[]});

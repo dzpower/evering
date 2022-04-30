@@ -64,14 +64,75 @@
   &__actions {
     width: 100%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
 
     button {
       margin-left: 16px;
     }
   }
+  
 }
 
+.vdp-datepicker{
+  width: 100%;
+
+  input {
+    min-width: 150px;
+    outline: none;
+    padding: 10px 15px;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 23px;
+    background: transparent;
+    border: 1px solid #D5C8CF;
+    box-sizing: border-box;
+    border-radius: 7px;
+  }
+}
+
+.vue-tags-input{
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.ti-input {
+  border: 1px solid #D5C8CF;
+  border-radius: 7px !important;
+  line-height: 23px;
+  font-size: 16px !important;
+  padding: 10px 15px !important;
+  min-height: 120px;
+
+  .ti-tags {
+    display: inline-flex !important;
+    padding-inline-start: 0 !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    flex-wrap: wrap !important;
+  }
+
+  .ti-tag {
+    background-color: #D2C5CC !important;
+    border-radius: 7px !important; 
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+    padding-left: 9px !important;
+    padding-right: 5px !important;
+
+    .ti-content span{
+      font-family: $default-font !important;
+      font-weight: 700 !important;
+      font-size: 14px !important;
+      line-height: 20px !important;
+      color: #fff !important;
+      margin-left: 5px;
+    }
+
+    i {
+      color: #fff !important;
+    }
+  }
+}
 
 .avatar-wrapper {
   position: relative;

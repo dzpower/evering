@@ -30,9 +30,9 @@
     box-sizing: border-box;
     border-radius: 7px;
 
-    @media screen and (max-width: $mobile) {
-      display: none;
-    }
+    // @media screen and (max-width: $mobile) {
+    //   display: none;
+    // }
   }
 
   input[type="radio"]:checked ~ &__decor {

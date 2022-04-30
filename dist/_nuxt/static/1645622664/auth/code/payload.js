@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/auth/code", {data:[{}],fetch:{},mutations:[]});

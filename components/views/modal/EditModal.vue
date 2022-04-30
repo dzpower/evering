@@ -43,13 +43,16 @@
     <div class='edit-modal__field edit-modal__field--label'>
       <p>Date of birth</p>
       <div class='edit-modal__field--wrapper'>
+        <client-only>
+          <date-picker placeholder="yyyy-MM-dd" format="yyyy-MM-dd" v-model="userData.date_of_birth" />
+        </client-only>
       </div>
     </div>
     <div class='edit-modal__field edit-modal__field--label'>
       <p>Country</p>
       <div class='edit-modal__field--wrapper'>
         <vSelect
-          v-model='country'
+          v-model='userData.country'
           :options='options.country'
         />
       </div>
@@ -58,13 +61,27 @@
       <p>Currency</p>
       <div class='edit-modal__field--wrapper'>
         <vSelect
-          v-model='currency'
+          v-model='userData.currency'
           :options='options.currency'
         />
       </div>
     </div>
+    <div class='edit-modal__field edit-modal__field--label'>
+      <p>Interests</p>
+      <div class='edit-modal__field--wrapper'>
+        <client-only>
+          <vue-tags-input
+            v-model="tag"
+            :tags="tags"
+            :add-on-key="[32]"
+            @tags-changed="newTags => tags = newTags"
+            :placeholder="'Add your interests'"
+          />
+        </client-only>
+      </div>
+    </div>
     <div class='edit-modal__actions'>
-      <eve-button>
+      <eve-button class="dark" @onclick="$emit('close-modal')">
         Cancel
       </eve-button>
       <eve-button @onclick='updateProfile'>
@@ -89,20 +106,21 @@ export default {
   data() {
     return {
       file: '',
-      country: '',
-      currency: '',
+      tag: '',
+      tags: [],
       userData: {
         gender: null,
-        url: null,
-        email: "supdzpower@gmail.com",
-        phone: null,
-        name: "Еуые",
-        fullname: null,
         country: null,
+        currency: null,
+        url: null,
+        email: null,
+        phone: null,
+        name: null,
+        fullname: null,
         patronymic: null,
         about_me: null,
         date_of_birth: null,
-        picture: null
+        picture: null,
       },
       options: {
         country: [
@@ -129,29 +147,52 @@ export default {
       return this.$store.getters['users/getProfile']
     },
     getPicture() {
-      return this.file ? `https://api.everigin.com${this.file}.webp` : '/icons/not-user.svg'
+      return this.userData.picture ? `https://api.everigin.com${this.userData.picture}.webp` : '/icons/not-user.svg'
     }
   },
   mounted() {
     this.userData = { ...this.getProfile }
-    this.file = this.$store.getters['users/getProfile'].picture
+    
+    if (this.userData.tags) {
+      this.setTags(this.userData.tags)
+    }
+    // this.file = this.$store.getters['users/getProfile'].picture
   },
   methods: {
+    setTags(tags) {
+      this.tags = []
+      for (const prop of tags) {
+        const newTag = {}
+        newTag.text = prop
+        newTag.tiClasses = ['ti-valid']
+        this.tags.push(newTag)
+      }
+    } ,
     async handleFileUpload( event ){
-      this.userData.picture = event.target.files[0]
-
-      await this.$store.dispatch('users/updateProfile', { 'picture': this.userData.picture }).then((res) => {
+      this.file = event.target.files[0]
+      const data = { picture: this.file }
+      await this.$store.dispatch('users/updateProfile', [data, true]).then((res) => {
         if(res.data.status) {
           this.userData.picture = res.data.result.picture
-          this.file = res.data.result.picture
+          this.file = null
         }
       })
     },
     async updateProfile() {
-      await this.$store.dispatch('users/updateProfile', this.userData).then((res) => {
+      const tags = []
+      if (this.tags) {
+        for (const prop in this.tags) {
+          tags.push(this.tags[prop].text)
+        }
+        this.userData.tags = [...tags]
+      }
+      await this.$store.dispatch('users/updateProfile', [this.userData, false]).then((res) => {
         if(res.data.status) {
-          this.userData = res.data.result
-          this.file = res.data.result.picture
+          this.userData = { ...res.data.result }
+          
+          if (res.data.result.tags) {
+            this.setTags(res.data.result.tags)
+          }
         }
       })
     }
